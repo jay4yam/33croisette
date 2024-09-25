@@ -1,0 +1,14 @@
+@import "font-awesome.css";
+@import "namari-color.css";
+@import "style.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    @font-face {
+        font-family: FontAwesome;
+        src: url('../fonts/fontawesome-webfont.woff');
+    }
+}
