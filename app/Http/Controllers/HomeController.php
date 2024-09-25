@@ -18,6 +18,11 @@ class HomeController extends Controller
         return view('welcome');
     }
 
+    public function test()
+    {
+        return view('welcome');
+    }
+
     public function sendRequest(RequestInformation $request)
     {
         try{
