@@ -339,7 +339,7 @@
 
                     <!-- Testimonial MZRE -->
                     <blockquote class="mx-auto w-1/2 flex flex-col justify-center">
-                        <img class="w-1/4 py-2 mx-auto" src="images/logo_MZCIRE_33.png" id="logo MZRE" alt="Michael Zingraf Real Estate">
+                        <img class="w-1/4 py-2 mx-auto" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="logo MZRE" alt="Michael Zingraf Real Estate">
                         <q class="text-center">Michael Zingraf, is proud to present this unique real estate project on the Croisette in Cannes,
                             where luxury, elegance and innovation meet to offer an unrivalled investment
                             and living opportunity in one of the world's most prestigious addresses.</q>
@@ -467,7 +467,7 @@ I'm interested in your new 33 Croisette development in Cannes. Please send me de
                         to protecting your privacy and will not share your data
                         with third parties without your explicit consent.</p>
                 </form>
-                <img class="mx-auto pt-12 w-32" src="{{ asset('images/logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">
+                <img class="mx-auto pt-12 w-32" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">
             </div>
         </section>
     </main>
