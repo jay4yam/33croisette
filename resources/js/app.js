@@ -1,4 +1,5 @@
 import './bootstrap';
+import Alpine from 'alpinejs'
 import './jquery.1.8.3.min.js';
 import './featherlight.min.js';
 import './featherlight.gallery.min.js';
@@ -12,6 +13,10 @@ import './lightbox.min.js';
 import './site.js';
 import anime from 'animejs/lib/anime.es.js';
 window.anime = anime;
+Alpine.start()
+window.Alpine = Alpine
+
+
 
 
 
