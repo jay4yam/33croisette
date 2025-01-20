@@ -2,20 +2,32 @@
 
 @section('content')
     <header id="banner" class="flex flex-col gap-12 clearfix" data-enllax-ratio=".5">
+
         <div id="header" class="nav-collapse">
+
             <div class="container mx-auto">
+
                 <div class="flex justify-between items-center gpa-12 w-full">
 
                     <!--Logo-->
-                    <div id="logo" class="px-24">
+                    <div id="logo" class="flex gap-1 px-24">
 
-                        <!--Logo that is shown on the banner-->
-                        <img src="{{ asset('images/logo-33-croisette.png') }}" id="banner-logo" alt="Landing Page"/>
-                        <!--End of Banner Logo-->
+                        <div class="flex gap-2" id="banner-logo">
+                            <!--Logo that is shown on the banner-->
+                            <img src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
+                            <!--End of Banner Logo-->
 
-                        <!--The Logo that is shown on the sticky Navigation Bar-->
-                        <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" id="navigation-logo" alt="Landing Page"/>
-                        <!--End of Navigation Logo-->
+                            <!--Logo that is shown on the banner-->
+                            <img src="{{ asset('images/logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
+                            <!--End of Banner Logo-->
+                        </div>
+
+                        <div id="navigation-logo">
+                            <!--The Logo that is shown on the sticky Navigation Bar-->
+                            <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
+                            <!--End of Navigation Logo-->
+                        </div>
+
 
                     </div>
                     <!--End of Logo-->
@@ -27,19 +39,10 @@
                                 <a href="#banner">Home</a>
                             </li>
                             <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#gallery">Gallery</a>
+                                <a href="#photos">Gallery</a>
                             </li>
                             <li>
                                 <a href="#services">Services</a>
-                            </li>
-                            <li>
-                                <a href="#testimonials">Testimonials</a>
-                            </li>
-                            <li>
-                                <a href="#clients">Clients</a>
                             </li>
                             <li>
                                 <a href="#pricing">Pricing</a>
@@ -64,7 +67,7 @@
                             </li>
                             <li>
                                 <a target="_blank" title="Pinterest" href="http://www.behance.net">
-                                    <i class="fa fa-pinterest fa-1x"></i><span>Behance</span>
+                                    <i class="fa fa-pinterest fa-1x"></i><span>Pinterest</span>
                                 </a>
                             </li>
                         </ul>
@@ -114,11 +117,6 @@
                     <div class="section-heading">
                         <h3>Cannes Croisette</h3>
                         <h2 class="section-title">A unique project on the <span class="text-gold">French Riviera</span></h2>
-                        <p class="section-subtitle">
-                            the <span class="text-gold"><strong>33 Croisette</strong></span> will be the epitome of exceptional real estate on the Côte d'Azur.
-                            Top-of-the-range services will be offered thanks to the use of noble materials
-                            and sublime finishes in the construction and fitting-out.
-                        </p>
                     </div>
 
                 </div>
@@ -126,61 +124,33 @@
                 <div class="w-2/3">
 
                     <!--Icon Block-->
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
-                        <!--Icon-->
-                        <div class="icon">
-                            <i class="fa fa-html5 fa-2x"></i>
-                        </div>
-                        <!--Icon Block Description-->
-                        <div class="icon-block-description">
-                            <h4>HTML5 &amp; CSS3</h4>
-                            <p>Has ne tritani atomorum conclusionemque, in dolorum volumus cotidieque eum. At vis choro
-                                neglegentur iudico</p>
-                        </div>
-                    </div>
-                    <!--End of Icon Block-->
+                    <div class="col-1 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
 
-                    <!--Icon Block-->
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
-                        <!--Icon-->
-                        <div class="icon">
-                            <i class="fa fa-bolt fa-2x"></i>
-                        </div>
                         <!--Icon Block Description-->
-                        <div class="icon-block-description">
-                            <h4>Easy to Use</h4>
-                            <p>Cu vero ipsum vim, doctus facilisi sea in. Eam ex falli honestatis repudiandae, sit
-                                detracto mediocrem disputationi</p>
-                        </div>
-                    </div>
-                    <!--End of Icon Block-->
+                        <div class="icon-block-description section-subtitle">
+                            <p class="section-subtitle pb-1">
+                                the <span class="text-gold"><strong>33 Croisette</strong></span> will be the epitome of exceptional real estate on the Côte d'Azur.
+                                Top-of-the-range services will be offered thanks to the use of noble materials
+                                and sublime finishes in the construction and fitting-out.
+                            </p>
 
-                    <!--Icon Block-->
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
-                        <!--Icon-->
-                        <div class="icon">
-                            <i class="fa fa-tablet fa-2x"></i>
-                        </div>
-                        <!--Icon Block Description-->
-                        <div class="icon-block-description">
-                            <h4>Fully Responsive</h4>
-                            <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
-                                nemore vivendum</p>
-                        </div>
-                    </div>
-                    <!--End of Icon Block-->
-
-                    <!--Icon Block-->
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
-                        <!--Icon-->
-                        <div class="icon">
-                            <i class="fa fa-rocket fa-2x"></i>
-                        </div>
-                        <!--Icon Block Description-->
-                        <div class="icon-block-description">
-                            <h4>Parallax Effect</h4>
-                            <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
-                                nemore vivendum</p>
+                            <p class="text-justify pb-1">
+                                Cannes, the emblematic city of the French Riviera,
+                                is a destination where legend meets glamour. La
+                                Croisette, the famous palm-lined promenade, is
+                                the beating heart of this city renowned for its
+                                film festival and prestigious events. It’s here that
+                                the world’s top fashion and gastronomy brands
+                                rub shoulders, attracting visitors from all over the
+                                world in search of elegance and sophistication.
+                            </p>
+                            <p class="text-justify pb-1">
+                                In the heart of this enchanting setting, on one of
+                                the world’s most prestigious boulevards, stands
+                                an exceptional real estate project: 33 Croisette.
+                                A true symbol of luxury and refinement, this new
+                                residence redefines the art of living in Cannes.
+                            </p>
                         </div>
                     </div>
                     <!--End of Icon Block-->
@@ -193,23 +163,109 @@
         <!--End of Introduction-->
 
         <!--Gallery-->
-        <aside id="gallery" class="container mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+        <div id="gallery" class="tab-wrapper py-4" x-data="{ activeTab:  0 }">
 
-            <a href="images/gallery-images/gallery-image-1.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.1s"><img src="images/gallery-images/gallery-image-1.jpg" alt="Landing Page"/></a>
-            <a href="images/gallery-images/gallery-image-2.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.3s"><img src="images/gallery-images/gallery-image-2.jpg" alt="Landing Page"/></a>
-            <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.5s"><img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/></a>
-            <a href="images/gallery-images/gallery-image-4.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="1.1s"><img src="images/gallery-images/gallery-image-4.jpg" alt="Landing Page"/></a>
-            <a href="images/gallery-images/gallery-image-5.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.9s"><img src="images/gallery-images/gallery-image-5.jpg" alt="Landing Page"/></a>
-            <a href="images/gallery-images/gallery-image-6.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.7s"><img src="images/gallery-images/gallery-image-6.jpg" alt="Landing Page"/></a>
+            <!-- selector de tabs -->
+            <div id="photos" class="scrollto label-wrapper flex gap-4 justify-around">
+                <label @click="activeTab = 0" class="w-1/2 py-2 text-center text-gold font-black uppercase cursor-pointer"
+                       :class="{ 'active': activeTab === 0 }">Exteriors</label>
+                <label @click="activeTab = 1" class="w-1/2 py-2 text-center text-gold font-black uppercase cursor-pointer"
+                       :class="{ 'active': activeTab === 1 }">Interiors</label>
+            </div>
+            <!-- ./ selector de tabs -->
 
-        </aside>
-        <!--End of Gallery-->
+            <!-- TABS / PANEL ANGLAIS -->
+            <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
+
+                <aside id="gallery-exteriors" class="container mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+
+                    <a href="images/gallery-images/gallery-image-1.jpg" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-1.jpg" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-2.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-2.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-3.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-3.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-4.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="1.1s">
+                        <img src="images/gallery-images/gallery-image-4.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-5.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.9s">
+                        <img src="images/gallery-images/gallery-image-5.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-6-b.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.7s">
+                        <img src="images/gallery-images/gallery-image-6-b.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-7.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-7.webp" alt="Terrace"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-6.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-6.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/>
+                    </a>
+
+                </aside>
+                <!--End of Gallery-->
+            </div>
+
+            <!-- TABS / PANEL FRANCAIS -->
+            <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
+                <aside id="gallery-interiors" class="container mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+
+                    <a href="images/gallery-images/gallery-image-1-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-1-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-2-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-2-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-3-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-3-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-4-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="1.1s">
+                        <img src="images/gallery-images/gallery-image-4-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-5-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.9s">
+                        <img src="images/gallery-images/gallery-image-5-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-6-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.7s">
+                        <img src="images/gallery-images/gallery-image-6-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-7-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-7-int.webp" alt="Terrace"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-8-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-8-int.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-9-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-9-int.webp" alt="Landing Page"/>
+                    </a>
+
+                </aside>
+                <!--End of Gallery-->
+            </div>
+
+        </div>
 
         <!--Content Section-->
         <div id="services" class="scrollto clearfix">
@@ -275,37 +331,45 @@
                 </div>
 
                 <!--Brand Testimonial-->
-                <div id="brands" class="flex gap-8">
-
-                    <!-- Testimonial Viguier -->
-                    <blockquote class="flex flex-col justify-between w-1/3">
-                        <img class="w-1/2 py-4 mx-auto" src="images/logo-viguier.png" alt="Viguier"/>
-                        <q class="text-justify">The timeless elegance and modern luxury of this project on the Croisette in Cannes,
-                            where every detail has been designed to offer an exceptional living experience,
-                            harmoniously blending the natural beauty of the Mediterranean with exceptional architectural design.</q>
-                        <footer class="text-gold font-black">VIGUIER Architect</footer>
-                    </blockquote>
-                    <!-- End of Testimonial Viguier -->
-
-                    <!-- Testimonial Iret -->
-                    <blockquote class="flex flex-col justify-between w-1/3">
-                        <img class="w-1/2 py-2 mx-auto" src="images/logo-iret-development.png" alt="Iret"/>
-                        <q class="text-justify">Our property development on the Croisette in Cannes represents the ultimate in lifestyle,
-                            combining a prestigious location, luxury amenities and exceptional contemporary
-                            architecture to offer our residents a unique and exclusive living environment.</q>
-                        <footer class="text-gold font-black">IRET Development</footer>
-                    </blockquote>
-                    <!-- End of Testimonial Iret -->
+                <div id="brands">
 
                     <!-- Testimonial MZRE -->
-                    <blockquote class="flex flex-col justify-between w-1/3">
-                        <img class="w-1/2 py-2 mx-auto" src="images/logo-michael-zingraf.png" alt="Michaël Zingraf Real Estate"/>
-                        <q class="text-justify">Michael Zingraf, is proud to present this unique real estate project on the Croisette in Cannes,
+                    <blockquote class="mx-auto w-1/2 flex flex-col justify-center">
+                        <img class="w-1/4 py-2 mx-auto" src="images/logo_MZCIRE_33.png" id="logo MZRE" alt="Michael Zingraf Real Estate">
+                        <q class="text-center">Michael Zingraf, is proud to present this unique real estate project on the Croisette in Cannes,
                             where luxury, elegance and innovation meet to offer an unrivalled investment
                             and living opportunity in one of the world's most prestigious addresses.</q>
-                        <footer class="text-gold font-black">MICHAËL ZINGRAF</footer>
+                        <footer class="flex flex-col gap-2 text-gold font-black pt-3">
+                            <div>MICHAËL ZINGRAF REAL ESTATE</div>
+                            <div>7 rue Docteur Gérard Monod - 06400 Cannes</div>
+                            <div><a href="+33(0)4.93.39.77.77">+33(0)4.93.39.77.77</a></div>
+                            <div><a href="33croisette@michaelzingraf.com">33croisette@michaelzingraf.com</a></div>
+                        </footer>
                     </blockquote>
                     <!-- End of Testimonial MZRE -->
+
+                    <div class="flex justify-around">
+                        <!-- Testimonial Viguier -->
+                        <blockquote class="flex flex-col justify-between w-1/3">
+                            <img class="w-1/4 py-4 mx-auto" src="images/logo-viguier.png" alt="Viguier"/>
+                            <q class="text-justify">The timeless elegance and modern luxury of this project on the Croisette in Cannes,
+                                where every detail has been designed to offer an exceptional living experience,
+                                harmoniously blending the natural beauty of the Mediterranean with exceptional architectural design.</q>
+                            <footer class="text-gold font-black">VIGUIER Architect</footer>
+                        </blockquote>
+                        <!-- End of Testimonial Viguier -->
+
+                        <!-- Testimonial Iret -->
+                        <blockquote class="flex flex-col justify-between w-1/3">
+                            <img class="w-1/4 py-2 mx-auto" src="images/logo-iret-development.png" alt="Iret"/>
+                            <q class="text-justify">Our property development on the Croisette in Cannes represents the ultimate in lifestyle,
+                                combining a prestigious location, luxury amenities and exceptional contemporary
+                                architecture to offer our residents a unique and exclusive living environment.</q>
+                            <footer class="text-gold font-black">IRET Development</footer>
+                        </blockquote>
+                        <!-- End of Testimonial Iret -->
+                    </div>
+
                 </div>
 
             </div>
@@ -399,7 +463,7 @@ I'm interested in your new 33 Croisette development in Cannes. Please send me de
                         to protecting your privacy and will not share your data
                         with third parties without your explicit consent.</p>
                 </form>
-                <img class="mx-auto pt-12 w-32" src="{{ asset('images/MZCIRE.jpg') }}" alt="logo michael zingraf real estate">
+                <img class="mx-auto pt-12 w-32" src="{{ asset('images/logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">
             </div>
         </section>
     </main>
@@ -444,7 +508,6 @@ I'm interested in your new 33 Croisette development in Cannes. Please send me de
         $('#gallery').waypoint(function (){
             let animeImage = anime.timeline({
                 duration:3000,
-
                 delay: anime.stagger(200)
             });
             animeImage.add({

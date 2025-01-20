@@ -362,7 +362,8 @@ section {
 }
 
 .nav-solid #logo #navigation-logo {
-    display: inline-block;
+    display: flex;
+    max-width: 150px;
 }
 
 /* --------- 2.3 Buttons ---------- */
