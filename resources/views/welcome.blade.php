@@ -18,14 +18,18 @@
                             <!--End of Banner Logo-->
 
                             <!--Logo that is shown on the banner-->
-                            <img src="{{ asset('images/logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
+                            <img src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
                             <!--End of Banner Logo-->
                         </div>
 
-                        <div id="navigation-logo">
+                        <div id="navigation-logo" class="flex gap-2">
                             <!--The Logo that is shown on the sticky Navigation Bar-->
                             <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
                             <!--End of Navigation Logo-->
+
+                            <!--Logo that is shown on the banner-->
+                            <img class="w-1/3" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo_min" alt="Michael Zingraf Real Estate"/>
+                            <!--End of Banner Logo-->
                         </div>
 
 
