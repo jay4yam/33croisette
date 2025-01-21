@@ -12,9 +12,18 @@ import './jquery.waypoints.min.js';
 import './lightbox.min.js';
 import './site.js';
 import anime from 'animejs/lib/anime.es.js';
+
+import {Autoplay, Navigation, Pagination} from 'swiper/modules';
+import Swiper from 'swiper';
+Swiper.use([Autoplay, Navigation]);
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 window.anime = anime;
 Alpine.start()
 window.Alpine = Alpine
+window.Swiper = Swiper
 
 
 

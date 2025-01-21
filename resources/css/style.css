@@ -80,6 +80,16 @@ figure {
     margin: 0;
 }
 
+.swiper{
+    height: calc(100vh - 30px);
+    width: 100%;
+}
+
+.interiors-carousel{
+    height: 400px;
+    width: 100%;
+}
+
 /* Page Border */
 
 .page-border {

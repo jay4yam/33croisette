@@ -4,19 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestInformation;
 use App\Mail\SendRequest;
+use App\Repository\PropertyRepository;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class HomeController extends Controller
 {
+    public function __construct(private PropertyRepository $propertyRepository)
+    {}
+
     /**
      * @return \Illuminate\Contracts\View\View
      */
     public function index():View
     {
-        return view('welcome');
+        $properties = $this->propertyRepository->getProperties();
+
+        return view('welcome', compact('properties'));
     }
+
 
     public function sendRequest(RequestInformation $request)
     {

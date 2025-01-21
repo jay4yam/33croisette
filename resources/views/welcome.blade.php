@@ -1,116 +1,117 @@
 @extends('layouts.app')
 
 @section('content')
-    <header id="banner" class="flex flex-col gap-12 clearfix" data-enllax-ratio=".5">
-
-        <div id="header" class="nav-collapse">
-
-            <div class="container mx-auto">
-
-                <div class="flex justify-center md:justify-between items-center gpa-12 w-full">
-
-                    <!--Logo-->
-                    <div id="logo" class="flex gap-1 px-24">
-
-                        <div class="flex gap-2 justify-center" id="banner-logo">
-                            <!--Logo that is shown on the banner-->
-                            <img class="w-1/4 md:w-1/2" src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
-                            <!--End of Banner Logo-->
-
-                            <!--Logo that is shown on the banner-->
-                            <img class="w-1/4 md:w-1/2" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
-                            <!--End of Banner Logo-->
-                        </div>
-
-                        <div id="navigation-logo" class="flex gap-2">
-                            <!--The Logo that is shown on the sticky Navigation Bar-->
-                            <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
-                            <!--End of Navigation Logo-->
-
-                            <!--Logo that is shown on the banner-->
-                            <img class="w-1/3" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo_min" alt="Michael Zingraf Real Estate"/>
-                            <!--End of Banner Logo-->
-                        </div>
-
-
-                    </div>
-                    <!--End of Logo-->
-
-                    <!--Main Navigation-->
-                    <nav id="nav-main">
-                        <ul>
-                            <li>
-                                <a href="#banner">Home</a>
-                            </li>
-                            <li>
-                                <a href="#photos">Gallery</a>
-                            </li>
-                            <li>
-                                <a href="#services">Services</a>
-                            </li>
-                            <li>
-                                <a href="#pricing">Pricing</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!--End of Main Navigation-->
-
-                    <aside class="hidden md:block">
-
-                        <!--Social Icons in Header-->
-                        <ul class="social-icons">
-                            <li>
-                                <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                                    <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
-                                    <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="Pinterest" href="http://www.behance.net">
-                                    <i class="fa fa-pinterest fa-1x"></i><span>Pinterest</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!--End of Social Icons in Header-->
-
-                    </aside>
-
-                </div>
-            </div>
-        </div><!--End of Header-->
-
-        <!--Banner Content-->
-        <div id="banner-content" class="container mx-auto absolute translate-y-20 md:translate-y-1/2 md:translate-x-72">
-
-            <div class="w-full md:w-1/2 px-4">
-
-                <div class="section-heading">
-                    <h1 id="intro" class="uppercase">The new luxury building program in cannes</h1>
-                    <h2 id="subintro">18 flats and 2 penthouses for sale for a unique experience
-                        in the heart of the famous Croisette in Cannes
-                    </h2>
-                </div>
-
-                <!--Call to Action-->
-                <a id="calltoaction" href="#form" class="button scrollto">Request Information</a>
-                <!--End Call to Action-->
-
-            </div>
-
-        </div><!--End of Row-->
-
-        <div class="relative mx-auto h-screen w-48 bottom-0">
-            <img class="w-40 absolute bottom-0" src="{{ asset('images/cire-logo.png') }}" alt="">
-        </div>
-
-    </header>
 
     <!--Main Content Area-->
     <main id="content">
+
+        <header id="banner" class="flex flex-col gap-12 clearfix" data-enllax-ratio=".5">
+
+            <div id="header" class="nav-collapse">
+
+                <div class="container mx-auto">
+
+                    <div class="flex justify-center md:justify-between items-center gpa-12 w-full">
+
+                        <!--Logo-->
+                        <div id="logo" class="flex gap-1 px-24">
+
+                            <div class="flex gap-2 justify-center" id="banner-logo">
+                                <!--Logo that is shown on the banner-->
+                                <img class="w-1/4 md:w-1/2" src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
+                                <!--End of Banner Logo-->
+
+                                <!--Logo that is shown on the banner-->
+                                <img class="w-1/4 md:w-1/2" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
+                                <!--End of Banner Logo-->
+                            </div>
+
+                            <div id="navigation-logo" class="flex gap-2">
+                                <!--The Logo that is shown on the sticky Navigation Bar-->
+                                <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
+                                <!--End of Navigation Logo-->
+
+                                <!--Logo that is shown on the banner-->
+                                <img class="w-1/3" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo_min" alt="Michael Zingraf Real Estate"/>
+                                <!--End of Banner Logo-->
+                            </div>
+
+
+                        </div>
+                        <!--End of Logo-->
+
+                        <!--Main Navigation-->
+                        <nav id="nav-main">
+                            <ul>
+                                <li>
+                                    <a href="#banner">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#photos">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#services">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#pricing">Pricing</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--End of Main Navigation-->
+
+                        <aside class="hidden md:block">
+
+                            <!--Social Icons in Header-->
+                            <ul class="social-icons">
+                                <li>
+                                    <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
+                                        <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
+                                        <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" title="Pinterest" href="http://www.behance.net">
+                                        <i class="fa fa-pinterest fa-1x"></i><span>Pinterest</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--End of Social Icons in Header-->
+
+                        </aside>
+
+                    </div>
+                </div>
+            </div><!--End of Header-->
+
+            <!--Banner Content-->
+            <div id="banner-content" class="container mx-auto absolute translate-y-20 md:translate-y-1/2 md:translate-x-72">
+
+                <div class="w-full md:w-1/2 px-4">
+
+                    <div class="section-heading">
+                        <h1 id="intro" class="uppercase">The new luxury building program in cannes</h1>
+                        <h2 id="subintro">18 flats and 2 penthouses for sale for a unique experience
+                            in the heart of the famous Croisette in Cannes
+                        </h2>
+                    </div>
+
+                    <!--Call to Action-->
+                    <a id="calltoaction" href="#form" class="button scrollto">Request Information</a>
+                    <!--End Call to Action-->
+
+                </div>
+
+            </div><!--End of Row-->
+
+            <div class="relative mx-auto h-screen w-48 bottom-0">
+                <img class="w-40 absolute bottom-0" src="{{ asset('images/cire-logo.png') }}" alt="">
+            </div>
+
+        </header>
 
         <!--Introduction-->
         <section id="about" class="scrollto">
@@ -401,6 +402,23 @@
                     <h2 class="section-title">Select the flat of your dreams</h2>
                 </div>
 
+            </div>
+
+            <div class="container mx-auto grid grid-cols-3 gap-4 pb-6">
+                @foreach($properties as $property)
+                    <a href="{{ route('property.show', ['property' => $property]) }}">
+                        <div class="group relative rounded-md cursor-pointer overflow-hidden">
+                            <img class="object-cover w-full group-hover:scale-110 transition-all duration-200 delay-150 ease-in-out" src="{{ $property->picture->url }}" alt="{{ $property->title }}">
+                            <div class="invisible -bottom-12 flex flex-col group-hover:bottom-0 group-hover:visible transition-all duration-200 delay-150 ease-in-out absolute w-full bg-white/90 text-gold p-4">
+                                <p>{{ $property->title }}</p>
+                                <div class="flex justify-between">
+                                    <p> rooms : <b>{{ $property->rooms }}</b> | bedrooms : <b>{{ $property->bedrooms }}</b> | area : <b>{{ $property->area }} .sqm</b></p>
+                                    <p class="font-black">{{ \Illuminate\Support\Number::currency($property->price , 'EUR', 'fr_FR') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
 
         </section>
