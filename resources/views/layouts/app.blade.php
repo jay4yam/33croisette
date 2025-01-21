@@ -48,11 +48,11 @@
 
 <!--Footer-->
 <footer id="landing-footer" class="clearfix">
-    <div class="container mx-auto w-1/2 flex justify-between gap-4 h-12">
+    <div class="container mx-auto w-full md:w-1/2 flex flex-wrap justify-between h-12 p-2">
 
-        <p id="copyright">Exclusive sale by <a href="https://www.michaelzingraf.com">Michaël Zingraf Real Estate</a></p>
+        <p class="w-full md:w-1/2 text-center">Exclusive sale by <a href="https://www.michaelzingraf.com">Michaël Zingraf Real Estate</a></p>
 
-        <p>call us on <a href="tel:+33(0)4.93.39.77.77">+33(0)4.93.39.7777</a></p>
+        <p class="w-full md:w-1/2 text-center">call us on <a href="tel:+33(0)4.93.39.77.77">+33(0)4.93.39.7777</a></p>
     </div>
 </footer>
 <!--End of Footer-->

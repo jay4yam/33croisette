@@ -2213,7 +2213,6 @@ blockquote {
     }
 
     #header aside {
-        display: inline-block;
         position: absolute;
         top: 40px;
         right: 60px;

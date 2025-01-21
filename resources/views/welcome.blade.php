@@ -7,18 +7,18 @@
 
             <div class="container mx-auto">
 
-                <div class="flex justify-between items-center gpa-12 w-full">
+                <div class="flex justify-center md:justify-between items-center gpa-12 w-full">
 
                     <!--Logo-->
                     <div id="logo" class="flex gap-1 px-24">
 
-                        <div class="flex gap-2" id="banner-logo">
+                        <div class="flex gap-2 justify-center" id="banner-logo">
                             <!--Logo that is shown on the banner-->
-                            <img src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
+                            <img class="w-1/4 md:w-1/2" src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
                             <!--End of Banner Logo-->
 
                             <!--Logo that is shown on the banner-->
-                            <img src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
+                            <img class="w-1/4 md:w-1/2" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
                             <!--End of Banner Logo-->
                         </div>
 
@@ -55,7 +55,7 @@
                     </nav>
                     <!--End of Main Navigation-->
 
-                    <aside>
+                    <aside class="hidden md:block">
 
                         <!--Social Icons in Header-->
                         <ul class="social-icons">
@@ -84,9 +84,9 @@
         </div><!--End of Header-->
 
         <!--Banner Content-->
-        <div id="banner-content" class="container mx-auto absolute translate-y-1/2 translate-x-72">
+        <div id="banner-content" class="container mx-auto absolute translate-y-20 md:translate-y-1/2 md:translate-x-72">
 
-            <div class="w-1/2 px-4">
+            <div class="w-full md:w-1/2 px-4">
 
                 <div class="section-heading">
                     <h1 id="intro" class="uppercase">The new luxury building program in cannes</h1>
@@ -115,9 +115,9 @@
         <!--Introduction-->
         <section id="about" class="scrollto">
 
-            <div class="container mx-auto p-28 flex gap-4">
+            <div class="container mx-auto p-6 md:p-28 flex flex-col md:flex-row gap-4">
 
-                <div class="w-1/3">
+                <div class="w-full md:w-1/3 ">
                     <div class="section-heading">
                         <h3>Cannes Croisette</h3>
                         <h2 class="section-title">A unique project on the <span class="text-gold">French Riviera</span></h2>
@@ -125,13 +125,9 @@
 
                 </div>
 
-                <div class="w-2/3">
-
-                    <!--Icon Block-->
-                    <div class="col-1 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
-
-                        <!--Icon Block Description-->
-                        <div class="icon-block-description section-subtitle">
+                <div class="w-full md:w-2/3 wow fadeInLeft" data-wow-delay="0.1s">
+                    <!--Icon Block Description-->
+                    <div class="icon-block-description section-subtitle">
                             <p class="section-subtitle pb-1">
                                 the <span class="text-gold"><strong>33 Croisette</strong></span> will be the epitome of exceptional real estate on the Côte d'Azur.
                                 Top-of-the-range services will be offered thanks to the use of noble materials
@@ -156,9 +152,6 @@
                                 residence redefines the art of living in Cannes.
                             </p>
                         </div>
-                    </div>
-                    <!--End of Icon Block-->
-
                 </div>
 
             </div>
@@ -167,7 +160,7 @@
         <!--End of Introduction-->
 
         <!--Gallery-->
-        <div id="gallery" class="tab-wrapper py-4" x-data="{ activeTab:  0 }">
+        <section id="gallery" class="tab-wrapper py-4" x-data="{ activeTab:  0 }">
 
             <!-- selector de tabs -->
             <div id="photos" class="scrollto label-wrapper flex gap-4 justify-around">
@@ -181,41 +174,41 @@
             <!-- TABS / PANEL ANGLAIS -->
             <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
 
-                <aside id="gallery-exteriors" class="container mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+                <aside id="gallery-exteriors" class="container mx-auto flex flex-wrap text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
 
-                    <a href="images/gallery-images/gallery-image-1.jpg" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-1.jpg" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.1s">
                         <img src="images/gallery-images/gallery-image-1.jpg" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-2.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-2.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.3s">
                         <img src="images/gallery-images/gallery-image-2.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-3.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-3.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.5s">
                         <img src="images/gallery-images/gallery-image-3.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-4.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-4.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="1.1s">
                         <img src="images/gallery-images/gallery-image-4.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-5.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-5.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.9s">
                         <img src="images/gallery-images/gallery-image-5.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-6-b.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-6-b.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.7s">
                         <img src="images/gallery-images/gallery-image-6-b.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-7.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-7.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.1s">
                         <img src="images/gallery-images/gallery-image-7.webp" alt="Terrace"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-6.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-6.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.3s">
                         <img src="images/gallery-images/gallery-image-6.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.5s">
                         <img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/>
                     </a>
@@ -226,41 +219,42 @@
 
             <!-- TABS / PANEL FRANCAIS -->
             <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
-                <aside id="gallery-interiors" class="container mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
 
-                    <a href="images/gallery-images/gallery-image-1-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                <aside id="gallery-interiors" class="container flex flex-wrap mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+
+                    <a href="images/gallery-images/gallery-image-1-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.1s">
                         <img src="images/gallery-images/gallery-image-1-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-2-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-2-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.3s">
                         <img src="images/gallery-images/gallery-image-2-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-3-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-3-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.5s">
                         <img src="images/gallery-images/gallery-image-3-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-4-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-4-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="1.1s">
                         <img src="images/gallery-images/gallery-image-4-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-5-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-5-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.9s">
                         <img src="images/gallery-images/gallery-image-5-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-6-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-6-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.7s">
                         <img src="images/gallery-images/gallery-image-6-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-7-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-7-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.1s">
                         <img src="images/gallery-images/gallery-image-7-int.webp" alt="Terrace"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-8-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-8-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.3s">
                         <img src="images/gallery-images/gallery-image-8-int.webp" alt="Landing Page"/>
                     </a>
-                    <a href="images/gallery-images/gallery-image-9-int.webp" data-featherlight="image" class="col-3 wow fadeIn"
+                    <a href="images/gallery-images/gallery-image-9-int.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.5s">
                         <img src="images/gallery-images/gallery-image-9-int.webp" alt="Landing Page"/>
                     </a>
@@ -269,28 +263,26 @@
                 <!--End of Gallery-->
             </div>
 
-        </div>
+        </section>
 
         <!--Content Section-->
-        <div id="services" class="scrollto clearfix">
+        <section id="services" class="scrollto clearfix p-6">
 
-            <div class="row no-padding-bottom clearfix">
-
+            <div class="container mx-auto flex flex-wrap gap-4 no-padding-bottom clearfix">
 
                 <!--Content Left Side-->
-                <div class="col-3">
-                    <!--User Testimonial-->
+                <div class="w-full md:w-1/4">
+
                     <blockquote class="testimonial text-right bigtest">
                         <q>Cannes is like a window opening onto a sunny dream, where reality dissolves into beauty.</q>
                         <footer>— André Gide - Famous French Writter</footer>
                     </blockquote>
-                    <!-- End of Testimonial-->
 
                 </div>
                 <!--End Content Left Side-->
 
                 <!--Content of the Right Side-->
-                <div class="col-3">
+                <div class="w-full md:w-1/3">
                     <div class="section-heading">
                         <h3>WHY CHOOSE CANNES ?</h3>
                         <h2 class="section-title">A landmark in French art de vivre</h2>
@@ -314,20 +306,20 @@
                 </div>
                 <!--End Content Right Side-->
 
-                <div class="col-3">
+                <div class="w-full md:w-1/3">
                     <img src="images/dancer.jpg" alt="Dancer"/>
                 </div>
 
             </div>
 
 
-        </div>
+        </section>
         <!--End of Content Section-->
 
         <!--brands -->
-        <aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
+        <section id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
 
-            <div class="container mx-auto p-12">
+            <div class="container mx-auto p-6 md:p-12">
 
                 <div class="section-heading">
                     <h3>FEEDBACK</h3>
@@ -338,7 +330,7 @@
                 <div id="brands">
 
                     <!-- Testimonial MZRE -->
-                    <blockquote class="mx-auto w-1/2 flex flex-col justify-center">
+                    <blockquote class="mx-auto w-full md:w-1/2 flex flex-col justify-center">
                         <img class="w-1/4 py-2 mx-auto" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="logo MZRE" alt="Michael Zingraf Real Estate">
                         <q class="text-center">Michael Zingraf, is proud to present this unique real estate project on the Croisette in Cannes,
                             where luxury, elegance and innovation meet to offer an unrivalled investment
@@ -352,9 +344,9 @@
                     </blockquote>
                     <!-- End of Testimonial MZRE -->
 
-                    <div class="flex justify-around">
+                    <div class="flex gap-6 justify-around py-6">
                         <!-- Testimonial Viguier -->
-                        <blockquote class="flex flex-col justify-between w-1/3">
+                        <blockquote class="flex flex-col justify-between w-full md:w-1/3">
                             <img class="w-1/4 py-4 mx-auto" src="images/logo-viguier.png" alt="Viguier"/>
                             <q class="text-justify">The timeless elegance and modern luxury of this project on the Croisette in Cannes,
                                 where every detail has been designed to offer an exceptional living experience,
@@ -364,7 +356,7 @@
                         <!-- End of Testimonial Viguier -->
 
                         <!-- Testimonial Iret -->
-                        <blockquote class="flex flex-col justify-between w-1/3">
+                        <blockquote class="flex flex-col justify-between w-full md:w-1/3">
                             <img class="w-1/4 py-2 mx-auto" src="images/logo-iret-development.png" alt="Iret"/>
                             <q class="text-justify">Our property development on the Croisette in Cannes represents the ultimate in lifestyle,
                                 combining a prestigious location, luxury amenities and exceptional contemporary
@@ -378,13 +370,13 @@
 
             </div>
 
-        </aside>
-        <!--End of Testimonials-->
+        </section>
+        <!--End of brands -->
 
         <!--maps -->
         <section id="maps" class="scrollto clearfix">
 
-            <div class="container mx-auto section-heading w-1/3 pt-24">
+            <div class="container mx-auto section-heading w-full md:w-1/3 p-6 pt-24">
                 <h3>MAP</h3>
                 <h2 class="section-title">Find the 33 Croisette</h2>
                 <p class="section-subtitle">
@@ -401,7 +393,8 @@
 
         <!-- flats Tables-->
         <section id="pricing" class="secondary-color scrollto clearfix">
-            <div class="container mx-auto section-heading w-1/3 pt-24">
+
+            <div class="container mx-auto section-heading w-full md:w-1/3 p-6 pt-24">
 
                 <div class="section-heading">
                     <h3>YOUR CHOICE</h3>
@@ -409,19 +402,22 @@
                 </div>
 
             </div>
+
         </section>
         <!--End of flats Tables-->
 
         <!-- main form -->
         <section id="form">
 
-            <div id="mainform" class="p-12">
-                <div class="container mx-auto section-heading w-1/3">
+            <div id="mainform" class="p-6 md:p-12">
+
+                <div class="container mx-auto section-heading w-full md:w-1/3">
                     <h3>REQUEST FORM</h3>
                     <h2 class="section-title">Send us a message</h2>
                     <p class="text-gray-400">if you would like more information about our new luxury property programme </p>
                 </div>
-                <form action="{{ route('send.request') }}" method="post" class="mx-auto w-1/3 flex flex-col items-center gap-2 bg-white p-12 rounded-xl drop-shadow-lg">
+
+                <form action="{{ route('send.request') }}" method="post" class="mx-auto w-full md:w-1/3 flex flex-col items-center gap-2 bg-white p-12 rounded-xl drop-shadow-lg">
                     @csrf
                     <div class="text-gray-400 w-full">
                         <label for="name">Your name *</label>
