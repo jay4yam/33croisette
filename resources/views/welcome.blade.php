@@ -11,31 +11,30 @@
 
                 <div class="container mx-auto">
 
-                    <div class="flex justify-center md:justify-between items-center gpa-12 w-full">
+                    <div class="flex justify-center md:justify-between items-center gap-12 w-full">
 
                         <!--Logo-->
                         <div id="logo" class="flex gap-1 px-24">
 
-                            <div class="flex gap-2 justify-center" id="banner-logo">
-                                <!--Logo that is shown on the banner-->
+                            <!-- logo before scroll -->
+                            <div id="banner-logo" class="flex gap-2 justify-center">
+
                                 <img class="w-1/4 md:w-1/2" src="{{ asset('images/logo-33-croisette.png') }}"  alt="Landing Page"/>
-                                <!--End of Banner Logo-->
 
-                                <!--Logo that is shown on the banner-->
                                 <img class="w-1/4 md:w-1/2" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo" alt="Michael Zingraf Real Estate"/>
-                                <!--End of Banner Logo-->
-                            </div>
 
+                            </div>
+                            <!-- end logo before scroll -->
+
+                            <!-- logo after scroll -->
                             <div id="navigation-logo" class="flex gap-2">
-                                <!--The Logo that is shown on the sticky Navigation Bar-->
+
                                 <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
-                                <!--End of Navigation Logo-->
 
-                                <!--Logo that is shown on the banner-->
                                 <img class="w-1/3" src="{{ asset('images/Logo_MZCIRE_33.png') }}" id="MZRE_logo_min" alt="Michael Zingraf Real Estate"/>
-                                <!--End of Banner Logo-->
-                            </div>
 
+                            </div>
+                            <!-- end logo after scroll -->
 
                         </div>
                         <!--End of Logo-->
