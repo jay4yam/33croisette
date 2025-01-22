@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestInformation;
 use App\Mail\SendRequest;
 use App\Repository\PropertyRepository;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
@@ -22,6 +23,11 @@ class HomeController extends Controller
         $properties = $this->propertyRepository->getProperties();
 
         return view('welcome', compact('properties'));
+    }
+
+    public function downloadBrochure(Request $request):View
+    {
+        dd($request->all());
     }
 
 

@@ -9,9 +9,7 @@
 
             <div id="header" class="nav-collapse">
 
-                <div class="container mx-auto">
-
-                    <div class="flex justify-center md:justify-between items-center gap-12 w-full">
+                <div class="container mx-auto flex justify-center md:justify-between items-center gap-12 w-full">
 
                         <!--Logo-->
                         <div id="logo" class="flex gap-1 px-24">
@@ -49,10 +47,10 @@
                                     <a href="#photos">Gallery</a>
                                 </li>
                                 <li>
-                                    <a href="#services">Services</a>
+                                    <a href="#pricing">Appartments</a>
                                 </li>
                                 <li>
-                                    <a href="#pricing">Pricing</a>
+                                    <a href="#contact">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -83,7 +81,7 @@
                         </aside>
 
                     </div>
-                </div>
+
             </div><!--End of Header-->
 
             <!--Banner Content-->
@@ -278,6 +276,21 @@
                         <footer>— André Gide - Famous French Writter</footer>
                     </blockquote>
 
+                    <div class="group cursor-pointer relative flex flex-col items-center justify-center py-6">
+                        <div class="invisible group-hover:visible transition-all ease-in-out delay-150 duration-200 absolute top-0 left-0 bg-white/80 w-full h-full"></div>
+                        <img src="{{ asset('images/download-the-brochure.webp') }}" alt="download">
+                        <div class="invisible group-hover:visible absolute -top-0 group-hover:top-20 transition-all ease-in-out delay-150 duration-200 text-center text-gold font-black">Download the presentation<br> of this new exceptional<br> real estate program</div>
+                    </div>
+
+                    <form class="flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
+                        @csrf
+                        <div>
+                            <input type="email" required name="email" class="w-full rounded-md p-6 text-gold border-gold" placeholder="email@domain.ext">
+                            @error('email')<p class="text-red-600">{{ $message }}</p>@enderror
+                        </div>
+                        <button class="text-gold border border-gold rounded-md p-4 hover:bg-gold hover:text-white">Get the Brochure</button>
+                    </form>
+
                 </div>
                 <!--End Content Left Side-->
 
@@ -426,7 +439,7 @@
         <!-- main form -->
         <section id="form">
 
-            <div id="mainform" class="p-6 md:p-12">
+            <div id="contact" class="scrollto p-6 md:p-12">
 
                 <div class="container mx-auto section-heading w-full md:w-1/3">
                     <h3>REQUEST FORM</h3>

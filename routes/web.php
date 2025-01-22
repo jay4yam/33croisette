@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 //affiche la home page du site
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/download/brochure', [\App\Http\Controllers\HomeController::class, 'downloadBrochure'])->name('download.brochure');
+
 //import excel
 Route::get('/import', [\App\Http\Controllers\PropertyImportController::class, 'index'])->name('import.index');
 Route::post('/import', [\App\Http\Controllers\PropertyImportController::class, 'import'])->name('import.request');

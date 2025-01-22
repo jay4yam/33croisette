@@ -2102,6 +2102,11 @@ blockquote {
 ===============================*/
 @media (max-width: 480px) {
 
+    .swiper{
+        height: fit-content;
+        width: 100%;
+    }
+
     #wrapper {
         margin:0;
         padding:0;
@@ -2195,6 +2200,11 @@ blockquote {
 ===============================*/
 @media (min-width: 480px) and (max-width: 767px) {
 
+    .swiper{
+        height: fit-content;
+        width: 100%;
+    }
+    
     #wrapper {
         margin:0;
         padding:0;
