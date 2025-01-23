@@ -416,7 +416,8 @@
 
             </div>
 
-            <div class="container mx-auto grid grid-cols-3 gap-4 pb-6">
+            <!-- list appart -->
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
                 @foreach($properties as $property)
                     <a href="{{ route('property.show', ['property' => $property]) }}">
                         <div class="group relative rounded-md cursor-pointer overflow-hidden">
