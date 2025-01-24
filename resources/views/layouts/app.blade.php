@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <!--Page Title-->
-    <title>New Luxury Building Program in Cannes | 33 Croisette</title>
+    <title>{{ $title ?? 'New Luxury Building Program in Cannes | 33 Croisette' }}</title>
 
     <!--Meta Keywords and Description-->
     <meta name="keywords" content="">

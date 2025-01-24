@@ -342,9 +342,9 @@
 
             <div class="container mx-auto p-6 md:p-12">
 
-                <div class="section-heading">
+                <div class="section-heading flex flex-col justify-center items-center mx-auto">
                     <h3>FEEDBACK</h3>
-                    <h2 class="section-title">What the project creators say</h2>
+                    <h2 class="section-title text-left">What they say about <br><span class="text-gold">the project</span></h2>
                 </div>
 
                 <!--Brand Testimonial-->
@@ -400,7 +400,7 @@
 
             <div class="container mx-auto section-heading w-full md:w-1/3 p-6 pt-24">
                 <h3>MAP</h3>
-                <h2 class="section-title">Find the 33 Croisette</h2>
+                <h2 class="section-title">Find the <br><span class="text-gold">33 Croisette</span></h2>
                 <p class="section-subtitle">
                     Le 33 Croisette, an exceptional location in the heart of the famous boulevard de la Croisette,
                     facing the Mediterranean Sea. Discover a prestigious address offering direct access to fine sandy beaches,
@@ -420,7 +420,7 @@
 
                 <div class="section-heading">
                     <h3>YOUR CHOICE</h3>
-                    <h2 class="section-title">Select the flat of your dreams</h2>
+                    <h2 class="section-title">Select the flat of <br><span class="text-gold">your dreams</span></h2>
                 </div>
 
             </div>
@@ -428,7 +428,7 @@
             <!-- list appart -->
             <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
                 @foreach($properties as $property)
-                    <a href="{{ route('property.show', ['property' => $property]) }}">
+                    <a href="{{ route('property.show', ['property' => $property, 'slug' => \Illuminate\Support\Str::slug($property->title)]) }}">
                         <div class="group relative rounded-md cursor-pointer overflow-hidden">
                             <img class="object-cover w-full group-hover:scale-110 transition-all duration-200 delay-150 ease-in-out" src="{{ $property->picture->url }}" alt="{{ $property->title }}">
                             <div class="invisible -bottom-12 flex flex-col group-hover:bottom-0 group-hover:visible transition-all duration-200 delay-150 ease-in-out absolute w-full bg-white/90 text-gold p-4">
@@ -453,7 +453,7 @@
 
                 <div class="relative container mx-auto section-heading w-full md:w-1/3">
                     <h3>REQUEST FORM</h3>
-                    <h2 class="section-title">Send us a message</h2>
+                    <h2 class="section-title">Send us a <br><span class="text-gold">message</span></h2>
                     <p class="text-gray-400">if you would like more information about our new luxury real estate program</p>
                 </div>
 
