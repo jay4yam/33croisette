@@ -26,10 +26,10 @@
 
         <!-- logo mzre et 33 -->
         <div class="absolute left-0 right-0 top-4 z-50">
-            <div class="mx-auto flex justify-center gap-2">
+            <a href="{{ route('home') }}" class="mx-auto flex justify-center gap-2">
                 <img loading="lazy" class="w-1/12" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="michael zingraf real estate">
                 <img loading="lazy" class="w-1/12" src="{{ asset('images/logo-33-croisette.png') }}" alt="michael zingraf real estate">
-            </div>
+            </a>
         </div>
         <!-- logo mzre et 33 -->
     </section>
