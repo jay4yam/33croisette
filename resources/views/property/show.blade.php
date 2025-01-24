@@ -12,15 +12,11 @@
                     </div>
                 @endforeach
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
 
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
 
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
         </div>
         <!-- end main carousel-->
 
@@ -41,27 +37,27 @@
 
             <div class="flex flex-col gap-4 text-2xl text-center text-gold">
                 <p class="italic">floor</p>
-                <p class="text-4xl font-black">{{ $property->floor }}</p>
+                <p class="text-2xl font-black">{{ $property->floor }}</p>
             </div>
 
             <div class="flex flex-col gap-4 text-2xl text-center text-gold">
                 <p class="italic">rooms</p>
-                <p class="text-4xl font-black">{{ $property->rooms }}</p>
+                <p class="text-2xl font-black">{{ $property->rooms }}</p>
             </div>
 
             <div class="flex flex-col gap-4 text-2xl text-center text-gold">
                 <p class="italic">bedrooms</p>
-                <p class="text-4xl font-black">{{ $property->bedrooms }}</p>
+                <p class="text-2xl font-black">{{ $property->bedrooms }}</p>
             </div>
 
             <div class="flex flex-col gap-4 text-2xl text-center text-gold">
                 <p class="italic">area</p>
-                <p class="text-4xl font-black">{{ $property->area }} <span class="text-xl">.sqm</span></p>
+                <p class="text-2xl font-black">{{ $property->area }} <span class="text-xl">.sqm</span></p>
             </div>
 
             <div class="col-span-2 md:col-span-1 p-0 flex flex-col gap-4 text-2xl text-center text-gold">
                 <p class="italic">price</p>
-                <p class="text-4xl font-black">{{ \Illuminate\Support\Number::currency($property->price, 'Eur', 'fr_FR') }}</p>
+                <p class="text-2xl font-black">Price On Request *</p>
             </div>
 
         </div>
@@ -85,39 +81,37 @@
         </div>
 
         <div class="w-full md:w-1/4 p-6 md:p-2">
-            <form action="{{ route('send.request') }}" method="post" class="w-full bg-white flex flex-col items-center gap-2 p-6 rounded-xl drop-shadow-xl">
+            <form action="{{ route('send.request') }}" method="post" class="w-full bg-white flex flex-col items-center gap-6 p-6 rounded-xl drop-shadow-xl">
                 @csrf
                 <div class="text-gray-400 w-full">
-                    <label for="name">Your name *</label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="text" id="name" name="name" required maxlength="255" placeholder="John Doe">
+                    <label for="name"></label>
+                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" value="{{ old('name') }}" type="text" name="name" required maxlength="255" placeholder="Your name *">
                     @error('name')
                     <span class="text-red">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="text-gray-400 w-full">
-                    <label for="email">Your Email *</label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="email" id="email" name="email" required maxlength="255" placeholder="John@Doe.com">
+                    <label for="email"></label>
+                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" value="{{ old('name') }}" type="email" name="email" required maxlength="255" placeholder="Your Email *">
                     @error('email')
-                    <span class="text-red">{{ $message}}</span>
+                    <span class="text-red">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="text-gray-400 w-full">
-                    <label for="phone">Your Phone *</label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" type="tel" id="phone" name="phone" required maxlength="255" placeholder="+33(0)6.12.34.56.78">
-                    @error('name')
-                    <span class="text-red">{{ $errors('phone') }}</span>
+                    <label for="phone"></label>
+                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" type="text" name="phone" required maxlength="255" placeholder="Your Phone *">
+                    @error('phone')
+                    <span class="text-red">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="text-gray-400 w-full">
-                    <label for="user_message">Your Message *</label>
-                    <textarea class="w-full p-4 focus:ring-4 ring-gold rounded-md h-32" id="user_message" name="user_message">Hello,
-I'm interested in the apartment with reference {{ $property->reference }} in your new “33 Croisette” program in Cannes. Please send me details of this apartment.
-                        </textarea>
-                    @error('name')
-                    <span class="text-red">{{ $errors('phone') }}</span>
+                    <label for="user_message"></label>
+                    <textarea class="w-full p-4 focus:ring-4 ring-gold rounded-md h-32" name="user_message">Hello, I'm interested in the apartment with reference {{ $property->reference }} in your new “33 Croisette” program in Cannes. Please send me details of this apartment.</textarea>
+                    @error('user_message')
+                    <span class="text-red">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -234,6 +228,8 @@ I'm interested in the apartment with reference {{ $property->reference }} in you
             </div>
 
         </div>
+
+        <img class="mx-auto w-48" src="{{ asset('images/christies-logo-or.png') }}" alt="Christie's International Real Estate">
 
     </section>
 

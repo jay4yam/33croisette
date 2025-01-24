@@ -195,6 +195,10 @@
                        data-wow-delay="0.9s">
                         <img src="images/gallery-images/gallery-image-5.webp" alt="Landing Page"/>
                     </a>
+                    <a href="images/gallery-images/gallery-image-9.jpg" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-9.jpg" alt="Landing Page"/>
+                    </a>
                     <a href="images/gallery-images/gallery-image-6-b.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.7s">
                         <img src="images/gallery-images/gallery-image-6-b.webp" alt="Landing Page"/>
@@ -206,10 +210,6 @@
                     <a href="images/gallery-images/gallery-image-6.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
                        data-wow-delay="0.3s">
                         <img src="images/gallery-images/gallery-image-6.webp" alt="Landing Page"/>
-                    </a>
-                    <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
-                       data-wow-delay="0.5s">
-                        <img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/>
                     </a>
 
                 </aside>
