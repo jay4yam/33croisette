@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestInformation;
+use App\Mail\DownloadBrochure;
 use App\Mail\SendRequest;
 use App\Repository\PropertyRepository;
 use Illuminate\Http\Request;
@@ -25,9 +26,21 @@ class HomeController extends Controller
         return view('welcome', compact('properties'));
     }
 
-    public function downloadBrochure(Request $request):View
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function downloadBrochure(Request $request): \Illuminate\Http\RedirectResponse
     {
-        dd($request->all());
+        try{
+            Mail::to($request->email)
+                ->bcc(['lea@michaelzingraf.com','team-marketing@michaelzingraf.com'])
+                ->queue(new DownloadBrochure());
+
+        }catch (\Exception $exception){
+            Log::error($exception->getMessage());
+        }
+        return back()->with(['brochure_success' => true]);
     }
 
 
@@ -36,10 +49,11 @@ class HomeController extends Controller
         try{
             Mail::to('lea@michaelzingraf.com')
                 ->bcc('team-marketing@michaelzingraf.com')
-                ->send(new SendRequest($request->all()));
+                ->queue(new SendRequest($request->all()));
+
         }catch (\Exception $exception){
             Log::error($exception->getMessage());
         }
-        return 'merci';
+        return back()->with(['form_success' => true]);
     }
 }

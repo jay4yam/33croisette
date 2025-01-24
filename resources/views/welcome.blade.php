@@ -62,7 +62,7 @@
                             <ul class="social-icons">
                                 <li>
                                     <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                                        <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+                                        <i class="fa fa-linkedin fa-1x"></i><span>Facebook</span>
                                     </a>
                                 </li>
                                 <li>
@@ -91,9 +91,10 @@
 
                     <div class="section-heading">
                         <h1 id="intro" class="uppercase">The new luxury building program in cannes</h1>
-                        <h2 id="subintro">18 flats and 2 penthouses for sale for a unique experience
+                        <p class="text-gold text-lg">18 flats and 2 penthouses for sale<br>
+                            A unique experience
                             in the heart of the famous Croisette in Cannes
-                        </h2>
+                        </p>
                     </div>
 
                     <!--Call to Action-->
@@ -284,11 +285,17 @@
 
                     <form class="flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
                         @csrf
+                        @if(! session('brochure_success'))
                         <div>
                             <input type="email" required name="email" class="w-full rounded-md p-6 text-gold border-gold" placeholder="email@domain.ext">
-                            @error('email')<p class="text-red-600">{{ $message }}</p>@enderror
+                            @error('email')<p x-init="$el.closest('form').scrollIntoView()" class="text-red-600">{{ $message }}</p>@enderror
                         </div>
                         <button class="text-gold border border-gold rounded-md p-4 hover:bg-gold hover:text-white">Get the Brochure</button>
+                        @else
+                            <p x-init="$el.closest('form').scrollIntoView()" class="text-center">
+                                Thank you, you will receive an email to get the<br> 33 croisette program brochure.
+                            </p>
+                        @endif
                     </form>
 
                 </div>
@@ -298,7 +305,8 @@
                 <div class="w-full md:w-1/3">
                     <div class="section-heading">
                         <h3>WHY CHOOSE CANNES ?</h3>
-                        <h2 class="section-title">A landmark in French art de vivre</h2>
+                        <h2 class="section-title">A landmark in <br>
+                            <span class="text-gold">French art de vivre</span></h2>
                         <p class="section-subtitle text-justify">
                             La Croisette is one of the most prestigious avenues in the world,
                             offering an exceptional lifestyle with direct access to beaches,
@@ -349,6 +357,7 @@
                             where luxury, elegance and innovation meet to offer an unrivalled investment
                             and living opportunity in one of the world's most prestigious addresses.</q>
                         <footer class="flex flex-col gap-2 text-gold font-black pt-3">
+                            <div class="uppercase">Sole Agent</div>
                             <div>MICHAËL ZINGRAF REAL ESTATE</div>
                             <div>7 rue Docteur Gérard Monod - 06400 Cannes</div>
                             <div><a href="+33(0)4.93.39.77.77">+33(0)4.93.39.77.77</a></div>
@@ -425,8 +434,8 @@
                             <div class="invisible -bottom-12 flex flex-col group-hover:bottom-0 group-hover:visible transition-all duration-200 delay-150 ease-in-out absolute w-full bg-white/90 text-gold p-4">
                                 <p>{{ $property->title }}</p>
                                 <div class="flex justify-between">
-                                    <p> rooms : <b>{{ $property->rooms }}</b> | bedrooms : <b>{{ $property->bedrooms }}</b> | area : <b>{{ $property->area }} .sqm</b></p>
-                                    <p class="font-black">{{ \Illuminate\Support\Number::currency($property->price , 'EUR', 'fr_FR') }}</p>
+                                    <p class="text-xs"> rooms : <b>{{ $property->rooms }}</b> | bedrooms : <b>{{ $property->bedrooms }}</b> | area : <b>{{ $property->area }} .sqm</b></p>
+                                    <p class="font-black text-xs">Price On Request</p>
                                 </div>
                             </div>
                         </div>
@@ -442,59 +451,66 @@
 
             <div id="contact" class="scrollto p-6 md:p-12">
 
-                <div class="container mx-auto section-heading w-full md:w-1/3">
+                <div class="relative container mx-auto section-heading w-full md:w-1/3">
                     <h3>REQUEST FORM</h3>
                     <h2 class="section-title">Send us a message</h2>
-                    <p class="text-gray-400">if you would like more information about our new luxury property programme </p>
+                    <p class="text-gray-400">if you would like more information about our new luxury real estate program</p>
                 </div>
 
-                <form action="{{ route('send.request') }}" method="post" class="mx-auto w-full md:w-1/3 flex flex-col items-center gap-2 bg-white p-12 rounded-xl drop-shadow-lg">
+                <form action="{{ route('send.request') }}" method="post" class="mx-auto w-full md:w-1/3 flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
+
+                    @if(! session('form_success'))
                     @csrf
                     <div class="text-gray-400 w-full">
-                        <label for="name">Your name *</label>
-                        <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="text" id="name" name="name" required maxlength="255" placeholder="John Doe">
+                        <label for="name"></label>
+                        <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="text" name="name" maxlength="255" placeholder="Your name *">
                         @error('name')
-                            <span class="text-red">{{ $message }}</span>
+                            <span class="text-red-600" x-init="$el.closest('form').scrollIntoView()">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="text-gray-400 w-full">
-                        <label for="email">Your Email *</label>
-                        <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="email" id="email" name="email" required maxlength="255" placeholder="John@Doe.com">
+                        <label for="email"></label>
+                        <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="email" name="email"  maxlength="255" placeholder="Your Email *">
                         @error('email')
-                        <span class="text-red">{{ $message}}</span>
+                        <span class="text-red-600" x-init="$el.closest('form').scrollIntoView()">{{ $message}}</span>
                         @enderror
                     </div>
 
                     <div class="text-gray-400 w-full">
-                        <label for="phone">Your Phone *</label>
-                        <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" type="tel" id="phone" name="phone" required maxlength="255" placeholder="+33(0)6.12.34.56.78">
-                        @error('name')
-                        <span class="text-red">{{ $errors('phone') }}</span>
+                        <label for="phone"></label>
+                        <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" type="tel" name="phone" maxlength="255" value="{{ old('name') }}" placeholder="Your Phone number *">
+                        @error('phone')
+                        <span class="text-red-600" x-init="$el.closest('form').scrollIntoView()">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="text-gray-400 w-full">
-                        <label for="user_message">Your Message *</label>
-                        <textarea class="w-full p-4 focus:ring-4 ring-gold rounded-md h-32" id="user_message" name="user_message">Hello,
-I'm interested in your new 33 Croisette development in Cannes. Please send me details of the flats available for sale.
-                        </textarea>
-                        @error('name')
-                        <span class="text-red">{{ $errors('phone') }}</span>
+                        <label for="user_message"></label>
+                        <textarea class="w-full p-4 focus:ring-4 ring-gold rounded-md h-32" id="user_message" name="user_message">Hello, I'm interested in your new 33 Croisette development in Cannes. Please send me details of the flats available for sale.</textarea>
+                        @error('user_message')
+                        <span class="text-red-600">{{ $message}}</span>
                         @enderror
                     </div>
 
                     <button type="submit" class="bg-gold text-white p-4 rounded-md w-1/2 hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
 
-                    <p class="text-gray-400 text-xs">By submitting this information request form,
+                    <p class="text-gray-400 text-xs text-justify">By submitting this information request form,
                         you consent to the collection and use of your personal
                         data in accordance with our privacy policy.
                         Your information will only be used to process your
                         request and to improve our services. We are committed
                         to protecting your privacy and will not share your data
                         with third parties without your explicit consent.</p>
+                    @else
+                        <p x-init="$el.closest('form').scrollIntoView()" class="text-justify">
+                            Thank you for your interest in the 33 croisette project.<br>
+                            The marketing team will be in touch with you in the next few days.
+                        </p>
+                    @endif
                 </form>
-                <img class="mx-auto pt-12 w-32" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">
+                <img class="relative mx-auto pt-12 w-32" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">
+                <img class="relative mx-auto w-44 pt-6" src="{{ asset('images/christies-logo-or.png') }}" alt="logo Christie's International Real Estate">
             </div>
         </section>
     </main>

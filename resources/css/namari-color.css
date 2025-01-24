@@ -137,8 +137,25 @@ a:hover, #header.nav-solid nav a:hover {
 /* Banner Background and Text Colors */
 
 #banner {
-    background: url("/public/images/banner-images/banner-image-1.webp") no-repeat center top;
+    background: url("/public/images/banner-images/banner-image-2.webp") no-repeat center top;
+    background-color: rgba(255,255,255,0.25);
     background-size:cover;
+}
+
+#form{
+    position: relative;
+    background: url("/public/images/bg-main-form.png") no-repeat center top;
+    background-size:cover;
+}
+
+#form:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255,0.7);
 }
 
 

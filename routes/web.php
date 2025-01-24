@@ -16,3 +16,12 @@ Route::get('/property/{property}', [\App\Http\Controllers\PropertyController::cl
 //gère le formulaire de contact
 Route::post('send/request', [\App\Http\Controllers\HomeController::class, 'sendRequest'])->name('send.request');
 
+Route::get('test-mail', function (){
+
+    $name = 'name';
+    $email = 'email';
+    $phone = 'phone';
+    $user_message = 'message';
+    return view('mails.brochure', compact('name', 'email', 'phone', 'user_message'));
+});
+
