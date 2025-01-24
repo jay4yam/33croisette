@@ -7,7 +7,7 @@
         <p>You have requested a brochure for the 33 Croisette new-build property development program.</p>
         <p>You can download the brochure by clicking on the image below</p>
 
-        <a href="https://www.33-croisette.com/pdf/33croisette.pdf">
+        <a href="https://www.33-croisette.com/pdf/33-croisette.pdf">
             <img src="{{ asset('images/couv-brochure.webp') }}" alt="couverture brochure">
         </a>
 
