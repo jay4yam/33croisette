@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Oneduo\RecaptchaEnterprise\Rules\Recaptcha;
 
 class RequestInformation extends FormRequest
 {

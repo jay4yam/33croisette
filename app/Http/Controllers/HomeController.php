@@ -6,6 +6,7 @@ use App\Http\Requests\RequestInformation;
 use App\Mail\DownloadBrochure;
 use App\Mail\SendRequest;
 use App\Repository\PropertyRepository;
+use App\Services\RecaptchaService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -13,7 +14,7 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function __construct(private PropertyRepository $propertyRepository)
+    public function __construct(private PropertyRepository $propertyRepository, private RecaptchaService $recaptchaService)
     {}
 
     /**
@@ -46,14 +47,19 @@ class HomeController extends Controller
 
     public function sendRequest(RequestInformation $request)
     {
-        try{
-            Mail::to('lea@michaelzingraf.com')
-                ->bcc('team-marketing@michaelzingraf.com')
-                ->queue(new SendRequest($request->all()));
+        $recaptcha = $this->recaptchaService->create_assessment( $request->get('g-recaptcha-response') );
 
-        }catch (\Exception $exception){
-            Log::error($exception->getMessage());
+        if($recaptcha['score'] > 0.7){
+            try{
+                Mail::to('lea@michaelzingraf.com')
+                    ->bcc('team-marketing@michaelzingraf.com')
+                    ->queue(new SendRequest($request->all()));
+
+            }catch (\Exception $exception){
+                Log::error($exception->getMessage());
+            }
         }
+
         return back()->with(['form_success' => true]);
     }
 }

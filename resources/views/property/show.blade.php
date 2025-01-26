@@ -81,50 +81,7 @@
         </div>
 
         <div class="w-full md:w-1/4 p-6 md:p-2">
-            <form action="{{ route('send.request') }}" method="post" class="w-full bg-white flex flex-col items-center gap-6 p-6 rounded-xl drop-shadow-xl">
-                @csrf
-                <div class="text-gray-400 w-full">
-                    <label for="name"></label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" value="{{ old('name') }}" type="text" name="name" required maxlength="255" placeholder="Your name *">
-                    @error('name')
-                    <span class="text-red">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="text-gray-400 w-full">
-                    <label for="email"></label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" value="{{ old('name') }}" type="email" name="email" required maxlength="255" placeholder="Your Email *">
-                    @error('email')
-                    <span class="text-red">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="text-gray-400 w-full">
-                    <label for="phone"></label>
-                    <input class="w-full p-4 focus:ring-4 ring-gold rounded-md" type="text" name="phone" required maxlength="255" placeholder="Your Phone *">
-                    @error('phone')
-                    <span class="text-red">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="text-gray-400 w-full">
-                    <label for="user_message"></label>
-                    <textarea class="w-full p-4 focus:ring-4 ring-gold rounded-md h-32" name="user_message">Hello, I'm interested in the apartment with reference {{ $property->reference }} in your new “33 Croisette” program in Cannes. Please send me details of this apartment.</textarea>
-                    @error('user_message')
-                    <span class="text-red">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <button type="submit" class="bg-gold text-white p-4 rounded-md w-full hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
-
-                <p class="text-gray-300 text-xs text-justify">By submitting this information request form,
-                    you consent to the collection and use of your personal
-                    data in accordance with our privacy policy.
-                    Your information will only be used to process your
-                    request and to improve our services. We are committed
-                    to protecting your privacy and will not share your data
-                    with third parties without your explicit consent.</p>
-            </form>
+            @include('partials._form_request')
             <img loading="lazy" class="pt-6" src="{{ asset('images/property/chaise-bleue.webp') }}" alt="blue chair in cannes">
         </div>
 
