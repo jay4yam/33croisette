@@ -64,10 +64,11 @@ class RecaptchaService
                 // Get the risk score and the reason(s).
                 // For more information on interpreting the assessment, see:
                 // https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment
-                Log::debug('The score for the protection action is:');
-                Log::debug($response->getRiskAnalysis()->getScore());
+                //Log::debug('The score for the protection action is:');
+                //Log::debug($response->getRiskAnalysis()->getScore());
 
                 return ['score' => $response->getRiskAnalysis()->getScore(), 'reason' => $response->getRiskAnalysis()->getReasons()];
+
             } else {
                 Log::debug('The action attribute in your reCAPTCHA tag does not match the action you are expecting to score');
             }
