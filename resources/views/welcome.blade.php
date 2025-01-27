@@ -290,7 +290,10 @@
                             <input type="email" required name="email" class="w-full rounded-md p-6 text-gold border-gold" placeholder="email@domain.ext">
                             @error('email')<p x-init="$el.closest('form').scrollIntoView()" class="text-red-600">{{ $message }}</p>@enderror
                         </div>
-                        <button class="text-gold border border-gold rounded-md p-4 hover:bg-gold hover:text-white">Get the Brochure</button>
+                        <button type="submit"
+                            data-sitekey="{{ config('google_recaptcha.site_key') }}"
+                            data-callback='onSubmit'
+                            data-action='request' class="text-gold border border-gold rounded-md p-4 hover:bg-gold hover:text-white">Get the Brochure</button>
                         @else
                             <p x-init="$el.closest('form').scrollIntoView()" class="text-center">
                                 Thank you, you will receive an email to get the<br> 33 croisette program brochure.
