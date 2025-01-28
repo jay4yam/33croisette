@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Log;
 class RecaptchaService
 {
     private string $recaptchaKey;
-    private string $project_id;
     private string $action = "request";
 
     public function __construct()
