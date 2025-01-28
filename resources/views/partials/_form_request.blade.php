@@ -1,4 +1,4 @@
-<form action="{{ route('send.request') }}" method="post" class="form mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
+<form id="form_request" action="{{ route('send.request') }}" method="post" class="form mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
     @if(! session('form_success'))
         @csrf
         <div class="text-gray-400 w-full">
