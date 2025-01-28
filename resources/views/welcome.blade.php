@@ -283,7 +283,8 @@
                         <div class="invisible group-hover:visible absolute -top-0 group-hover:top-20 transition-all ease-in-out delay-150 duration-200 text-center text-gold font-black">Download the presentation<br> of this new exceptional<br> real estate program</div>
                     </div>
 
-                    <form class="flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
+                    <!-- form brochure -->
+                    <form id="download_brochure" class="flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
                         @csrf
                         @if(! session('brochure_success'))
                         <div>
