@@ -61,17 +61,17 @@
                             <!--Social Icons in Header-->
                             <ul class="social-icons">
                                 <li>
-                                    <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                                        <i class="fa fa-linkedin fa-1x"></i><span>Facebook</span>
+                                    <a target="_blank" title="Facebook" href="https://www.linkedin.com/company/michael-zingraf-immobilier">
+                                        <i class="fa fa-linkedin fa-1x"></i><span>Linkedin</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
+                                    <a target="_blank" title="Instagram" href="https://www.instagram.com/33croisette/">
                                         <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a target="_blank" title="Pinterest" href="http://www.behance.net">
+                                    <a target="_blank" title="Pinterest" href="https://fr.pinterest.com/33croisette/">
                                         <i class="fa fa-pinterest fa-1x"></i><span>Pinterest</span>
                                     </a>
                                 </li>
