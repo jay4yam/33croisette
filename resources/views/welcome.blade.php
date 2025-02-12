@@ -432,6 +432,11 @@
             <!-- list appart -->
             <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
                 @foreach($properties as $property)
+                    @if($loop->index % 3 === 0)
+                        <div class="col-span-1 md:col-span-3 p-0 text-xl text-gold font-black">
+                            {{ config('floors.'.$property->floor) }} Floor
+                        </div>
+                    @endif
                     <a href="{{ route('property.show', ['property' => $property, 'slug' => \Illuminate\Support\Str::slug($property->title)]) }}">
                         <div class="group relative rounded-md cursor-pointer overflow-hidden">
                             <img class="object-cover w-full group-hover:scale-110 transition-all duration-200 delay-150 ease-in-out" src="{{ $property->picture->url }}" alt="{{ $property->title }}">

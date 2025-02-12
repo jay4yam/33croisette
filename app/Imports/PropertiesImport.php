@@ -20,7 +20,7 @@ class PropertiesImport implements ToModel, WithHeadingRow, PersistRelations
     {
         $property = new Property([
             'status' => 'available',
-            'reference' => $row['reference'],
+            'reference' => "MZIIN1292",
             'type' => $row['type'],
             'address' => $row['adresse'],
             'residence' => $row['residence'],
