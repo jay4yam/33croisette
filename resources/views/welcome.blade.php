@@ -25,7 +25,7 @@
                             <!-- end logo before scroll -->
 
                             <!-- logo after scroll -->
-                            <div id="navigation-logo" class="flex gap-2">
+                            <div id="navigation-logo" class="flex justify-center gap-2">
 
                                 <img class="w-1/3" src="{{ asset('images/logo-33-croisette.png') }}" alt="Landing Page"/>
 
@@ -167,10 +167,12 @@
                        :class="{ 'active': activeTab === 0 }">Exteriors</label>
                 <label @click="activeTab = 1" class="w-1/2 py-2 text-center text-gold font-black uppercase cursor-pointer"
                        :class="{ 'active': activeTab === 1 }">Interiors</label>
+                <label @click="activeTab = 2" class="w-1/2 py-2 text-center text-gold font-black uppercase cursor-pointer"
+                       :class="{ 'active': activeTab === 2 }">Penthouses</label>
             </div>
             <!-- ./ selector de tabs -->
 
-            <!-- TABS / PANEL ANGLAIS -->
+            <!-- TABS / EXTERIORS  -->
             <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
 
                 <aside id="gallery-exteriors" class="container mx-auto flex flex-wrap text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
@@ -216,7 +218,7 @@
                 <!--End of Gallery-->
             </div>
 
-            <!-- TABS / PANEL FRANCAIS -->
+            <!-- TABS / INTERIORS-->
             <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
 
                 <aside id="gallery-interiors" class="container flex flex-wrap mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
@@ -262,12 +264,57 @@
                 <!--End of Gallery-->
             </div>
 
+            <!-- TABS / PENTHOUSE -->
+            <div class="tab-panel p-4" :class="{ 'active-tab': activeTab === 2 }" x-show.transition.in.opacity.duration.600="activeTab === 2">
+
+                <aside id="gallery-interiors" class="container flex flex-wrap mx-auto text-center clearfix" data-featherlight-gallery data-featherlight-filter="a">
+
+                    <a href="images/gallery-images/gallery-image-1-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-1-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-2-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-2-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-3-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-3-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-4-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="1.1s">
+                        <img src="images/gallery-images/gallery-image-4-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-5-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.9s">
+                        <img src="images/gallery-images/gallery-image-5-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-6-pent.webpp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.7s">
+                        <img src="images/gallery-images/gallery-image-6-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-7-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.1s">
+                        <img src="images/gallery-images/gallery-image-7-pent.webp" alt="Terrace"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-8-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.3s">
+                        <img src="images/gallery-images/gallery-image-8-pent.webp" alt="Landing Page"/>
+                    </a>
+                    <a href="images/gallery-images/gallery-image-9-pent.webp" data-featherlight="image" class="w-full md:w-1/3 wow fadeIn"
+                       data-wow-delay="0.5s">
+                        <img src="images/gallery-images/gallery-image-9-pent.webp" alt="Landing Page"/>
+                    </a>
+
+                </aside>
+                <!--End of Gallery-->
+            </div>
         </section>
 
         <!--Content Section-->
         <section id="services" class="scrollto clearfix p-6">
 
-            <div class="container mx-auto flex flex-wrap gap-4 no-padding-bottom clearfix">
+            <div class="container mx-auto flex flex-wrap items-center justify-center gap-4 no-padding-bottom clearfix">
 
                 <!--Content Left Side-->
                 <div class="w-full md:w-1/4">
@@ -307,6 +354,7 @@
 
                 <!--Content of the Right Side-->
                 <div class="w-full md:w-1/3">
+
                     <div class="section-heading">
                         <h3>WHY CHOOSE CANNES ?</h3>
                         <h2 class="section-title">A landmark in <br>
@@ -317,6 +365,7 @@
                             luxury boutiques and gourmet restaurants.
                         </p>
                     </div>
+
                     <p class="py-2 text-justify">
                         Enjoy breathtaking views of the Mediterranean Sea,
                         the Lérins islands and the Estérel hills, with spectacular sunsets.
@@ -330,10 +379,6 @@
                     </a>
                 </div>
                 <!--End Content Right Side-->
-
-                <div class="w-full md:w-1/3">
-                    <img src="images/dancer.jpg" alt="Dancer"/>
-                </div>
 
             </div>
 
@@ -466,7 +511,7 @@
                     <p class="text-gray-400">if you would like more information about our new luxury real estate program</p>
                 </div>
 
-                <div class="w-1/3 mx-auto">
+                <div class="w-full md:w-1/3 mx-auto">
                     @include('partials._form_request')
                 </div>
 
