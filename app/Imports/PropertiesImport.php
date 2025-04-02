@@ -26,7 +26,7 @@ class PropertiesImport implements ToModel, WithHeadingRow, PersistRelations
             'residence' => $row['residence'],
             'postal_code' => $row['code_postal'],
             'city' => $row['ville'],
-            'price' => $row['prix'],
+            'price' => 'Price On Request',
             'rooms' => $row['pieces'],
             'bedrooms' => $row['chambres'],
             'area' => $row['surface'],

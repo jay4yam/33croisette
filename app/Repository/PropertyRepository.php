@@ -12,6 +12,6 @@ class PropertyRepository
 
     public function getProperties(): \Illuminate\Database\Eloquent\Collection
     {
-        return $this->property->with('pictures')->get();
+        return $this->property->with('pictures')->orderBy('floor')->get();
     }
 }
