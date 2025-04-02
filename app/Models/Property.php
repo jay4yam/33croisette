@@ -32,6 +32,6 @@ class Property extends Model
 
     public function picture()
     {
-        return $this->hasOne(Picture::class)->orderBy('rank', 'desc');
+        return $this->hasOne(Picture::class)->orderBy('rank', 'asc');
     }
 }
