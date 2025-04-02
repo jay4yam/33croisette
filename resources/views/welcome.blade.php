@@ -373,10 +373,11 @@
                         prestigious events such as the Cannes Film Festival, MIDEM and Cannes Lions.
                     </p>
 
-                    <!-- Just replace the Video ID "UYJ5IjBRlW8" with the ID of your video on YouTube (Found within the URL) -->
+                    <!-- Just replace the Video ID "UYJ5IjBRlW8" with the ID of your video on YouTube (Found within the URL)
                     <a href="#" data-videoid="UYJ5IjBRlW8" data-videosite="youtube" class="button video link-lightbox">
                         WATCH VIDEO <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
+                    -->
                 </div>
                 <!--End Content Right Side-->
 
