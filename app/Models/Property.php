@@ -27,7 +27,7 @@ class Property extends Model
 
     public function pictures()
     {
-        return $this->hasMany(Picture::class);
+        return $this->hasMany(Picture::class)->orderBy('rank', 'desc');
     }
 
     public function picture()
