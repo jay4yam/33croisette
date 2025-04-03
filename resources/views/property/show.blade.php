@@ -208,7 +208,9 @@
                 <button aria-label="Close" x-on:click="isModalOpen=false">✖ close</button>
             </div>
             <div>
+                @if($property->floorPlan)
                 <img src="{{ asset('storage/plan/'. $property->floorPlan->name) }}" alt="plan">
+                @endif
             </div>
         </div>
     </div>
