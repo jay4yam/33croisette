@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => "New Building Program in Cannes", 'robots' => 'index,follow'])
+@extends('layouts.app', ['title' => "New Building Program in Cannes | 33 Croisette", 'robots' => 'index,follow'])
 
 @section('content')
 
