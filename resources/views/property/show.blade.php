@@ -82,10 +82,12 @@
 
         <div class="flex flex-col gap-4 w-full md:w-1/4 p-6 md:p-2">
 
+            @if($property->floorPlan)
             <div x-on:click="isModalOpen = true" class="flex gap-2 justify-center items-center bg-gold hover:bg-gold/80 text-white rounded-md p-4 drop-shadow cursor-pointer">
                 <img src="{{ asset('images/floor-plan.png') }}" alt="floor_plan">
                 <span class="font-bold">Take a look at the floor plan</span>
             </div>
+            @endif
 
             @include('partials._form_request')
             <img loading="lazy" class="pt-6" src="{{ asset('images/property/chaise-bleue.webp') }}" alt="blue chair in cannes">
