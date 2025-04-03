@@ -30,7 +30,7 @@
         })(window,document,'script','dataLayer','GTM-KQNR7868');</script>
     <!-- End Google Tag Manager -->
 </head>
-<body>
+<body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>

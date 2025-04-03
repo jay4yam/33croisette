@@ -80,7 +80,13 @@
             </div>
         </div>
 
-        <div class="w-full md:w-1/4 p-6 md:p-2">
+        <div class="flex flex-col gap-4 w-full md:w-1/4 p-6 md:p-2">
+
+            <div x-on:click="isModalOpen = true" class="flex gap-2 justify-center items-center bg-gold hover:bg-gold/80 text-white rounded-md p-4 drop-shadow cursor-pointer">
+                <img src="{{ asset('images/floor-plan.png') }}" alt="floor_plan">
+                <span class="font-bold">Take a look at the floor plan</span>
+            </div>
+
             @include('partials._form_request')
             <img loading="lazy" class="pt-6" src="{{ asset('images/property/chaise-bleue.webp') }}" alt="blue chair in cannes">
         </div>
@@ -189,6 +195,24 @@
         <img class="mx-auto w-48" src="{{ asset('images/christies-logo-or.png') }}" alt="Christie's International Real Estate">
 
     </section>
+
+
+    <!-- overlay plan -->
+    <div class="overlay" x-show="isModalOpen"></div>
+
+    <!-- modal plan -->
+    <div class="modal" role="dialog" tabindex="-1" x-show="isModalOpen" x-on:click.away="isModalOpen = false" x-cloak x-transition>
+        <div class="model-inner">
+            <div class="modal-header text-center w-full">
+                <h3 class="uppercase text-center">Floor Plan</h3>
+                <button aria-label="Close" x-on:click="isModalOpen=false">✖ close</button>
+            </div>
+            <div>
+                <img src="{{ asset('storage/plan/'. $property->floorPlan->name) }}" alt="plan">
+            </div>
+        </div>
+    </div>
+    <!-- end modal plan -->
 
 @endsection
 

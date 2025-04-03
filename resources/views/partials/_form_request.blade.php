@@ -36,7 +36,7 @@
         <button type="submit"
                 data-sitekey="{{ config('google_recaptcha.site_key') }}"
                 data-callback='onSubmit'
-                data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md w-1/2 hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
+                data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
 
         @error('g-recaptcha-response')<p>{{ $message }}</p>@enderror
         <p class="text-gray-400 text-xs text-justify">By submitting this information request form,

@@ -34,4 +34,9 @@ class Property extends Model
     {
         return $this->hasOne(Picture::class)->orderBy('rank', 'asc');
     }
+
+    public function floorPlan()
+    {
+        return $this->hasOne(FloorPlan::class);
+    }
 }
