@@ -120,3 +120,14 @@
     opacity: 0.75;
     z-index: 9999;
 }
+
+@media only screen and (max-width: 600px) {
+    .model-inner {
+        width: 90%;
+        background-color: white;
+        border-radius: 0.5em;
+        max-width: 90%;
+        padding: 2em;
+        margin: auto;
+    }
+}
