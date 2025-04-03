@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RequestInformation;
 use App\Mail\DownloadBrochure;
 use App\Mail\SendRequest;
+use App\Models\Contact;
 use App\Repository\PropertyRepository;
 use App\Services\RecaptchaService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -24,42 +26,79 @@ class HomeController extends Controller
     {
         $properties = $this->propertyRepository->getProperties();
 
-        return view('welcome', compact('properties'));
+        return view('home', compact('properties'));
     }
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function downloadBrochure(Request $request): \Illuminate\Http\RedirectResponse
+    public function downloadBrochure(Request $request): RedirectResponse
     {
         try{
+
+            //1. crée le contact en bdd
+            Contact::create([
+                'source' => $request->source,
+                'ip_address' => $request->ip_address,
+                'email' => $request->email,
+            ]);
+
+            //2. envoie le mail au client au au marketing
             Mail::to($request->email)
                 ->bcc(['lea@michaelzingraf.com','team-marketing@michaelzingraf.com'])
                 ->queue(new DownloadBrochure());
 
+            //3. retour avec message en session
+            return back()->with(['brochure_success' => true]);
+
         }catch (\Exception $exception){
+
             Log::error($exception->getMessage());
+
+            return back()->with(['failed' => 'something went wrong']);
         }
-        return back()->with(['brochure_success' => true]);
+
     }
 
-
-    public function sendRequest(RequestInformation $request)
+    /**
+     * Gère l'envoie du formulaire de contact
+     * @param RequestInformation $request
+     * @return RedirectResponse
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function sendRequest(RequestInformation $request): RedirectResponse
     {
+        //1. récupère la captcha depuis l'api google recaptcha
         $recaptcha = $this->recaptchaService->create_assessment( $request->get('g-recaptcha-response') );
 
+        //2. test le score de la captcha
         if($recaptcha['score'] > 0.7){
+
             try{
+
+                //3. crée le contact en bdd
+                Contact::create([
+                    'source' => $request->source,
+                    'ip_address' => $request->ip_address,
+                    'email' => $request->email,
+                    'name' => $request->name,
+                    'phone' => $request->phone,
+                ]);
+
                 Mail::to('lea@michaelzingraf.com')
                     ->bcc('team-marketing@michaelzingraf.com')
                     ->queue(new SendRequest($request->all()));
 
+                return back()->with(['form_success' => true]);
+
             }catch (\Exception $exception){
                 Log::error($exception->getMessage());
+
+
             }
         }
 
-        return back()->with(['form_success' => true]);
+        return back()->with(['failed' => 'something went wrong']);
     }
 }

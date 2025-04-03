@@ -3,6 +3,11 @@
 @section('content')
 <main id="content" class="flex flex-col gap-12 p-24">
 
+    <section class="flex items-center justify-center gap-4">
+        <a href="{{ route('import.index') }}" class="bg-gray-600 text-white p-4 rounded-md hover:text-white hover:bg-gray-800">Import Produit & Plan</a>
+        <a href="{{ route('contacts.index') }}" class="bg-gray-600 text-white p-4 rounded-md hover:text-white hover:bg-gray-800">Contacts</a>
+    </section>
+
     <!-- import fichier excel de produit -->
     <section class="bg-gray-50 p-4 border">
         <h2 class="font-bold text-xl">Import de Produits</h2>

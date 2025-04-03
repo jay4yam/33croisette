@@ -2,6 +2,8 @@
     @if(! session('form_success'))
         @csrf
         <div class="text-gray-400 w-full">
+            <input type="hidden" name="source" value="{{ $source }}">
+            <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
             <label for="name"></label>
             <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="text" name="name" maxlength="255" placeholder="Your name *">
             @error('name')

@@ -335,6 +335,8 @@
                         @csrf
                         @if(! session('brochure_success'))
                         <div>
+                            <input type="hidden" name="source" value="download_brochure">
+                            <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
                             <input type="email" required name="email" class="w-full rounded-md p-6 text-gold border-gold" placeholder="email@domain.ext">
                             @error('email')<p x-init="$el.closest('form').scrollIntoView()" class="text-red-600">{{ $message }}</p>@enderror
                         </div>
@@ -513,7 +515,7 @@
                 </div>
 
                 <div class="w-full md:w-1/3 mx-auto">
-                    @include('partials._form_request')
+                    @include('partials._form_request', ['source' => 'form_home_page'])
                 </div>
 
                 <img class="relative mx-auto pt-12 w-32" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="logo michael zingraf real estate">

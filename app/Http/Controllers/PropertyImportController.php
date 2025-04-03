@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\PropertiesImport;
+use App\Models\Contact;
 use App\Repository\PropertyRepository;
 use App\Traits\Uploadable;
 use Illuminate\Contracts\View\View;
@@ -49,7 +50,7 @@ class PropertyImportController extends Controller
     }
 
     /**
-     * Gère l'upload des plans de chaque appartement
+     * Upload image plan appartement
      * @param Request $request
      * @return RedirectResponse
      */
@@ -68,5 +69,16 @@ class PropertyImportController extends Controller
         }catch (\Exception $exception){
             return back()->withErrors($exception->getMessage());
         }
+    }
+
+    /**
+     * Affiche la liste des contacts
+     * @return View
+     */
+    public function contacts():View
+    {
+        $contacts = Contact::paginate(30);
+
+        return view('import.contact', compact('contacts'));
     }
 }

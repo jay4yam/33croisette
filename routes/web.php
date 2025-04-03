@@ -10,8 +10,14 @@ Route::post('/download/brochure', [\App\Http\Controllers\HomeController::class, 
 //import excel
 Route::get('/import', [\App\Http\Controllers\PropertyImportController::class, 'index'])->name('import.index');
 Route::post('/import', [\App\Http\Controllers\PropertyImportController::class, 'import'])->name('import.request');
+
+//upload image plan
 Route::post('/add/plan', [\App\Http\Controllers\PropertyImportController::class, 'addPlan'])->name('add.plan');
 
+//page liste contact
+Route::get('/contacts', [\App\Http\Controllers\PropertyImportController::class, 'contacts'])->name('contacts.index');
+
+//affiche la vue détaillée d'un appartement
 Route::get('/property/{property}/{slug}', [\App\Http\Controllers\PropertyController::class, 'show'])->name('property.show');
 
 //gère le formulaire de contact
