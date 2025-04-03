@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => $property->title, 'robots' => 'index,follow'])
+@extends('layouts.app', ['title' => "New Building Program in Cannes", 'robots' => 'index,follow'])
 
 @section('content')
 
