@@ -331,7 +331,7 @@
                     </div>
 
                     <!-- form brochure -->
-                    <form id="download_brochure" class="flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
+                    <form id="download_brochure" class="form flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
                         @csrf
                         @if(! session('brochure_success'))
                         <div>
@@ -341,9 +341,9 @@
                             @error('email')<p x-init="$el.closest('form').scrollIntoView()" class="text-red-600">{{ $message }}</p>@enderror
                         </div>
                         <button type="submit"
-                            data-sitekey="{{ config('google_recaptcha.site_key') }}"
-                            data-callback='onSubmit'
-                            data-action='request' class="text-gold border border-gold rounded-md p-4 hover:bg-gold hover:text-white">Get the Brochure</button>
+                                data-sitekey="{{ config('google_recaptcha.site_key') }}"
+                                data-callback='onSubmit'
+                                data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Get the Brochure</button>
                         @else
                             <p x-init="$el.closest('form').scrollIntoView()" class="text-center">
                                 Thank you, you will receive an email to get the<br> 33 croisette program brochure.

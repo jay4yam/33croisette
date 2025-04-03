@@ -35,30 +35,38 @@ class HomeController extends Controller
      */
     public function downloadBrochure(Request $request): RedirectResponse
     {
-        try{
+        //1. récupère la captcha depuis l'api google recaptcha
+        $recaptcha = $this->recaptchaService->create_assessment( $request->get('g-recaptcha-response') );
 
-            //1. crée le contact en bdd
-            Contact::create([
-                'source' => $request->source,
-                'ip_address' => $request->ip_address,
-                'email' => $request->email,
-            ]);
+        //2. test valeur captcha
+        if($recaptcha['score'] > 0.7) {
 
-            //2. envoie le mail au client au au marketing
-            Mail::to($request->email)
-                ->bcc(['lea@michaelzingraf.com','team-marketing@michaelzingraf.com'])
-                ->queue(new DownloadBrochure());
+            try {
 
-            //3. retour avec message en session
-            return back()->with(['brochure_success' => true]);
+                //1. crée le contact en bdd
+                Contact::create([
+                    'source' => $request->source,
+                    'ip_address' => $request->ip_address,
+                    'email' => $request->email,
+                ]);
 
-        }catch (\Exception $exception){
+                //2. envoie le mail au client au au marketing
+                Mail::to($request->email)
+                    ->bcc(['lea@michaelzingraf.com', 'team-marketing@michaelzingraf.com'])
+                    ->queue(new DownloadBrochure());
 
-            Log::error($exception->getMessage());
+                //3. retour avec message en session
+                return back()->with(['brochure_success' => true]);
 
-            return back()->with(['failed' => 'something went wrong']);
+            } catch (\Exception $exception) {
+
+                Log::error($exception->getMessage());
+
+                return back()->with(['failed' => 'something went wrong']);
+            }
         }
 
+        return back()->with(['failed' => 'something went wrong']);
     }
 
     /**
