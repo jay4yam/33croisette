@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => $property->title])
+@extends('layouts.app', ['title' => $property->title, 'robots' => 'index,follow'])
 
 @section('content')
     <section class="relative">

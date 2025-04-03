@@ -10,6 +10,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="Buy a luxury flat in Cannes with the new building program 33Croisette, sold in exclusivity by Michaël Zingraf Real Estate">
 
+    <!--Meta robots and Description-->
+    <meta name="robots" content="{{ $robots }}">
+
     <!--Favicon-->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" title="Favicon"/>
 

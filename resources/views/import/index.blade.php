@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'import', 'robots' => 'noindex'])
 
 @section('content')
 <main id="content" class="flex flex-col gap-12 p-24">
