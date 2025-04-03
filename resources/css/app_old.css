@@ -1,0 +1,133 @@
+@import "font-awesome.css";
+@import "namari-color.css";
+@import "style.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    @font-face {
+        font-family: FontAwesome;
+        src: url('../fonts/fontawesome-webfont.woff');
+    }
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../fonts/EurostileRegular.woff2') format('woff2'),
+    url('../fonts/EurostileRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../fonts/Eurostile-Oblique.woff2') format('woff2'),
+    url('../fonts/Eurostile-Oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../fonts/EurostileBold.woff2') format('woff2'),
+    url('../fonts/EurostileBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eurostile Extended';
+    src: url('../fonts/EurostileExtended-Roman.woff2') format('woff2'),
+    url('../fonts/EurostileExtended-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham-Light.woff2') format('woff2'),
+    url('../fonts/Gotham-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Retro Signature';
+    src: url('../fonts/RetroSignatureRegular.woff2') format('woff2'),
+    url('../fonts/RetroSignatureRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    background-color: rgba(255,255,255, 0.8)!important;
+    padding: 30px!important;
+    color: #B6967B!important;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.model-inner {
+    width: 33.3%;
+    background-color: white;
+    border-radius: 0.5em;
+    max-width: 600px;
+    padding: 2em;
+    margin: auto;
+}
+
+.model-inner input{
+    padding: 0 1rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgray;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.75;
+    z-index: 9999;
+}
+
+@media only screen and (max-width: 600px) {
+    .model-inner {
+        width: 90%;
+        background-color: white;
+        border-radius: 0.5em;
+        max-width: 90%;
+        padding: 2em;
+        margin: auto;
+    }
+}
