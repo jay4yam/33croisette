@@ -37,6 +37,7 @@ class RecaptchaService
     {
         // Create the reCAPTCHA client.
         $client = new RecaptchaEnterpriseServiceClient([ 'credentials' => static::credentials()] );
+
         $projectName = $client->projectName( config('google_recaptcha.project_id') );
 
         // Set the properties of the event to be tracked.

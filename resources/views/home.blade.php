@@ -331,7 +331,7 @@
                     </div>
 
                     <!-- form brochure -->
-                    <form id="download_brochure" class="form flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
+                    <form id="download_brochure" class="form_brochure flex flex-col gap-2 py-6" action="{{ route('download.brochure') }}" method="post">
                         @csrf
                         @if(! session('brochure_success'))
                         <div>
@@ -342,7 +342,7 @@
                         </div>
                         <button type="submit"
                                 data-sitekey="{{ config('google_recaptcha.site_key') }}"
-                                data-callback='onSubmit'
+                                data-callback='onSubmitBrochure'
                                 data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Get the Brochure</button>
                         @else
                             <p x-init="$el.closest('form').scrollIntoView()" class="text-center">

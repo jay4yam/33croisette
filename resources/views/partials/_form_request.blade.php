@@ -1,4 +1,4 @@
-<form id="form_request" action="{{ route('send.request') }}" method="post" class="form mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
+<form id="form_request" action="{{ route('send.request') }}" method="post" class="form_request mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
     @if(! session('form_success'))
         @csrf
         <div class="text-gray-400 w-full">
@@ -37,10 +37,10 @@
 
         <button type="submit"
                 data-sitekey="{{ config('google_recaptcha.site_key') }}"
-                data-callback='onSubmit'
+                data-callback='onSubmitRequest'
                 data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
-
         @error('g-recaptcha-response')<p>{{ $message }}</p>@enderror
+
         <p class="text-gray-400 text-xs text-justify">By submitting this information request form,
             you consent to the collection and use of your personal
             data in accordance with our privacy policy.

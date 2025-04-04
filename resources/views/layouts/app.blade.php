@@ -83,8 +83,12 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
 <script>
-    function onSubmit(token) {
-        document.querySelector(".form").submit();
+    function onSubmitBrochure(token) {
+        document.querySelector(".form_brochure").submit();
+    }
+
+    function onSubmitRequest(token) {
+        document.querySelector(".form_request").submit();
     }
 </script>
 
