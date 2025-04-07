@@ -412,7 +412,7 @@
                             <div class="uppercase">Sole Agent</div>
                             <div>MICHAËL ZINGRAF REAL ESTATE</div>
                             <div>7 rue Docteur Gérard Monod - 06400 Cannes</div>
-                            <div><a href="+33(0)4.93.39.77.77">+33(0)4.93.39.77.77</a></div>
+                            <div><a href="tel:+33(0)4.93.39.77.77">+33(0)4.93.39.77.77</a></div>
                             <div><a href="mailto:33croisette@michaelzingraf.com">33croisette@michaelzingraf.com</a></div>
                         </footer>
                     </blockquote>
