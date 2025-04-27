@@ -33,7 +33,7 @@
         })(window,document,'script','dataLayer','GTM-KQNR7868');</script>
     <!-- End Google Tag Manager -->
 </head>
-<body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false">
+<body x-data="{'isModalOpen': false, 'menuOpen': false}" x-on:keydown.escape="isModalOpen=false">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -42,15 +42,6 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Preloader -->
-<div id="preloader">
-    <div id="status" class="la-ball-triangle-path">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-<!--End of Preloader-->
 
 <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
     <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
@@ -60,6 +51,7 @@
 </div>
 
 <div id="wrapper">
+    @include('partials._nav')
     @yield('content')
 </div>
 
@@ -82,13 +74,26 @@
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
-<script>
+<script type="module">
     function onSubmitBrochure(token) {
         document.querySelector(".form_brochure").submit();
     }
 
     function onSubmitRequest(token) {
         document.querySelector(".form_request").submit();
+    }
+
+    window.loadMenu = function() {
+
+        //anim le menu ul li du layer menu
+        let Tl = gsap.timeline();
+
+        Tl.from('#menu_ul li', {opacity: 0, duration: 1, x: 50, stagger: 0.2})
+        Tl.fromTo('#form_brochure', {x:50, opacity:0}, {x:0, opacity:1}, '-=0.5');
+        Tl.fromTo('#form_brochure .h4', {x:50, opacity:0}, {x:0, opacity:1}, '-=0.5');
+        Tl.fromTo('#form_brochure .img', {y:50, opacity:0}, {y:0, opacity:1});
+        Tl.fromTo('#form_brochure .form_brochure_form .email', {y:50, opacity:0}, {y:0, opacity:1});
+        Tl.fromTo('#form_brochure .form_brochure_form button', {y:50, opacity:0}, {y:0, opacity:1});
     }
 </script>
 

@@ -94,14 +94,14 @@ figure {
 
 .page-border {
     position: fixed;
-    z-index: 999999;
+    z-index: 49;
     pointer-events: none;
 }
 
 .page-border .bottom-border, .page-border .left-border, .page-border .right-border, .page-border .top-border {
     background: #FFFFFF;
     position: fixed;
-    z-index: 9999;
+    z-index: 49;
 }
 
 .page-border > .top-border, .page-border > .right-border, .page-border > .bottom-border, .page-border > .left-border {
@@ -138,7 +138,6 @@ figure {
 }
 
 #wrapper {
-    margin:0 15px;
     padding: 15px 0;
     position: relative;
 }
@@ -715,17 +714,6 @@ a img:hover {
 /* 3. Fonts */
 /*------------------------------------------------------------------------------------------*/
 
-h1 {
-    padding: 20px 0;
-}
-
-h2 {
-    padding: 14px 0;
-}
-
-h3 {
-    padding: 10px 0;
-}
 
 h4 {
     padding: 7px 0;

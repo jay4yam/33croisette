@@ -20,7 +20,8 @@ export default {
                 eurostile: ['Eurostile'],
                 eurostileExtended:['Eurostile Extended'],
                 retro: ['Retro Signature'],
-                gotham: ['Gotham']
+                gotham: ['Gotham'],
+                cinzel:['Cinzel'],
             },
             aspectRatio: {
                 'image': '4/3'

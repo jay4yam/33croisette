@@ -15,6 +15,9 @@ Route::get('/property/{property}/{slug}', [\App\Http\Controllers\PropertyControl
 //gère le formulaire de contact
 Route::post('send/request', [\App\Http\Controllers\HomeController::class, 'sendRequest'])->name('send.request');
 
+//route vers brochure digitale
+Route::get('digital/brochure', [\App\Http\Controllers\HomeController::class, 'digitalBrochure'])->name('digital.brochure');
+
 
 //routes protegées par mot de passe
 Route::middleware(['auth', 'verified'])->group(function () {

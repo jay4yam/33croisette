@@ -8,6 +8,7 @@ use App\Mail\SendRequest;
 use App\Models\Contact;
 use App\Repository\PropertyRepository;
 use App\Services\RecaptchaService;
+use Google\ApiCore\ValidationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -29,9 +30,15 @@ class HomeController extends Controller
         return view('home', compact('properties'));
     }
 
+    public function digitalBrochure()
+    {
+        return view('digital');
+    }
+
     /**
      * @param Request $request
      * @return RedirectResponse
+     * @throws ValidationException
      */
     public function downloadBrochure(Request $request): RedirectResponse
     {

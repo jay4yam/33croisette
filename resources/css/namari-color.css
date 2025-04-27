@@ -25,10 +25,6 @@ a, .la-ball-triangle-path {
     color:#B6967B;
 }
 
-a:hover, #header.nav-solid nav a:hover {
-    color:#B6967B;
-}
-
 /* Default Icon Color */
 
 .icon i {
@@ -242,28 +238,25 @@ body {
 /* Standard Headings h1-h6 */
 
 h1 {
-    font-family: 'Open Sans', sans-serif, Arial, Helvetica;
+    font-family: 'Cinzel', serif;
     font-size: 40px;
     font-weight:300;
-    color:#111;
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif, Arial, Helvetica;
+    font-family: 'Cinzel', serif;
     font-size: 34px;
     font-weight:300;
-    color:#111;
 }
 
 h3 {
-    font-family: 'Open Sans', sans-serif, Arial, Helvetica;
+    font-family: 'Cinzel', serif;
     font-size: 30px;
     font-weight:700;
-    color:#111;
 }
 
 h4 {
-    font-family: 'Open Sans', sans-serif, Arial, Helvetica;
+    font-family: 'Cinzel', serif;
     font-size: 18px;
     font-weight:400;
     color:#111;

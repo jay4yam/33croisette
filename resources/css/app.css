@@ -14,6 +14,43 @@
 }
 
 @font-face {
+    font-family: 'Cinzel';
+    src: url('../fonts/Cinzel-Black.otf') format('otf'),
+    url('../fonts/Cinzel-Black.otf') format('otf');
+    font-weight: bolder;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../fonts/Cinzel-Bold.otf') format('otf'),
+    url('../fonts/Cinzel-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../fonts/Cinzel-Regular.otf') format('otf'),
+    url('../fonts/Cinzel-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../fonts/Cinzel-Bold.otf') format('otf'),
+    url('../fonts/Cinzel-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
     font-family: 'Eurostile';
     src: url('../fonts/EurostileRegular.woff2') format('woff2'),
     url('../fonts/EurostileRegular.woff') format('woff');
@@ -65,6 +102,130 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root {
+    --primary-brand-color: #2563eb;
+    --swiper-scrollbar-drag-bg-color:#B6967B;
+    --swiper-scrollbar-border-radius:0;
+    --swiper-scrollbar-sides-offset:5%;
+}
+
+/* debut du menu et du layer */
+
+[x-cloak] {
+    display: none !important;
+}
+
+.menu-button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.line {
+    fill: none;
+    stroke: #b6967b;
+    stroke-width: 3;
+    transition: all 0.3s ease;
+}
+
+.line1, .line3 {
+    transform-origin: 15px 25px;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 99999;
+    padding: 50px 20px;
+}
+
+.side-menu.show {
+    transform: translateX(0);
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.grecaptcha-badge{ display: none!important;}
+ /* fin du menu et du layer */
+
+.swiper_exterior{
+    width: 100%;
+    height: 580px;
+}
+
+@media screen and (max-width: 640px) {
+    .swiper_exterior{
+        width: 100%;
+        height: 350px;
+    }
+}
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    display: flex;
+    align-items: center;
+}
+
+.swiper-scrollbar-drag{
+    padding: 4px;
+}
+
+
+.parralax{
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parralax_2{
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .swiper-button-prev, .swiper-button-next{
@@ -120,6 +281,8 @@
     opacity: 0.75;
     z-index: 9999;
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .model-inner {
