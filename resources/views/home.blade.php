@@ -282,8 +282,8 @@
         <!-- end bedrooms -->
 
         <!-- kitchen -->
-        <section id="kitchen" class="pb-24">
-            <div class="flex items-end justify-around gap-12">
+        <section class="pb-24">
+            <div id="kitchen" class="flex items-end justify-around gap-12">
                 <div class="img_left hidden md:block">
                     <img class="h-dvh" loading="lazy" src="{{ asset('images/apartments/view-3.webp') }}" alt="kitchen in the apartment">
                 </div>
