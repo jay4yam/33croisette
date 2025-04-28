@@ -1,6 +1,7 @@
-<form id="form_request" action="{{ route('send.request') }}" method="post" class="form_request mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
+<form action="{{ route('send.request') }}" method="post" class="form_request mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
     @if(! session('form_success'))
         @csrf
+        @method('post')
         <div class="text-gray-400 w-full">
             <input type="hidden" name="source" value="{{ $source }}">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">

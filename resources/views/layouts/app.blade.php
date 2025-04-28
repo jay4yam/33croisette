@@ -71,18 +71,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
-
-<script src="https://www.google.com/recaptcha/api.js"></script>
-
 <script type="module">
-    function onSubmitBrochure(token) {
-        document.querySelector(".form_brochure").submit();
-    }
-
-    function onSubmitRequest(token) {
-        document.querySelector(".form_request").submit();
-    }
-
     window.loadMenu = function() {
 
         //anim le menu ul li du layer menu

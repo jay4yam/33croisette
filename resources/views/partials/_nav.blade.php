@@ -62,6 +62,7 @@
         <img class="img" src="{{ asset('/images/download-the-brochure.webp') }}" alt="download">
         <form class="form_brochure_form" action="{{ route('download.brochure') }}" method="post">
             @csrf
+            @method('post')
             <input type="hidden" name="source" value="download_brochure">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
             <div class="py-2">

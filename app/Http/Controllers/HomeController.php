@@ -42,38 +42,29 @@ class HomeController extends Controller
      */
     public function downloadBrochure(Request $request): RedirectResponse
     {
-        //1. récupère la captcha depuis l'api google recaptcha
-        $recaptcha = $this->recaptchaService->create_assessment( $request->get('g-recaptcha-response') );
+        try {
 
-        //2. test valeur captcha
-        if($recaptcha['score'] > 0.7) {
+            //1. crée le contact en bdd
+            Contact::create([
+                'source' => $request->source,
+                'ip_address' => $request->ip_address,
+                'email' => $request->email,
+            ]);
 
-            try {
+            //2. envoie le mail au client au au marketing
+            Mail::to($request->email)
+                ->bcc(['lea@michaelzingraf.com', 'team-marketing@michaelzingraf.com'])
+                ->queue(new DownloadBrochure());
 
-                //1. crée le contact en bdd
-                Contact::create([
-                    'source' => $request->source,
-                    'ip_address' => $request->ip_address,
-                    'email' => $request->email,
-                ]);
+            //3. retour avec message en session
+            return back()->with(['brochure_success' => true]);
 
-                //2. envoie le mail au client au au marketing
-                Mail::to($request->email)
-                    ->bcc(['lea@michaelzingraf.com', 'team-marketing@michaelzingraf.com'])
-                    ->queue(new DownloadBrochure());
+        } catch (\Exception $exception) {
 
-                //3. retour avec message en session
-                return back()->with(['brochure_success' => true]);
+            Log::error($exception->getMessage());
 
-            } catch (\Exception $exception) {
-
-                Log::error($exception->getMessage());
-
-                return back()->with(['failed' => 'something went wrong']);
-            }
+            return back()->with(['failed' => 'something went wrong']);
         }
-
-        return back()->with(['failed' => 'something went wrong']);
     }
 
     /**
@@ -84,36 +75,28 @@ class HomeController extends Controller
      */
     public function sendRequest(RequestInformation $request): RedirectResponse
     {
-        //1. récupère la captcha depuis l'api google recaptcha
-        $recaptcha = $this->recaptchaService->create_assessment( $request->get('g-recaptcha-response') );
+        try{
 
-        //2. test le score de la captcha
-        if($recaptcha['score'] > 0.7){
+            //3. crée le contact en bdd
+            Contact::create([
+                'source' => $request->source,
+                'ip_address' => $request->ip_address,
+                'email' => $request->email,
+                'name' => $request->name,
+                'phone' => $request->phone,
+            ]);
 
-            try{
+            Mail::to('lea@michaelzingraf.com')
+                ->bcc('team-marketing@michaelzingraf.com')
+                ->queue(new SendRequest($request->all()));
 
-                //3. crée le contact en bdd
-                Contact::create([
-                    'source' => $request->source,
-                    'ip_address' => $request->ip_address,
-                    'email' => $request->email,
-                    'name' => $request->name,
-                    'phone' => $request->phone,
-                ]);
+            return back()->with(['form_success' => true]);
 
-                Mail::to('lea@michaelzingraf.com')
-                    ->bcc('team-marketing@michaelzingraf.com')
-                    ->queue(new SendRequest($request->all()));
+        }catch (\Exception $exception){
+            Log::error($exception->getMessage());
 
-                return back()->with(['form_success' => true]);
+            return back()->with(['failed' => 'something went wrong']);
 
-            }catch (\Exception $exception){
-                Log::error($exception->getMessage());
-
-
-            }
         }
-
-        return back()->with(['failed' => 'something went wrong']);
     }
 }
