@@ -57,7 +57,7 @@
         </li>
     </ul>
 
-    <div id="form_brochure" class="border-t border-t-gold">
+    <div id="form_brochure" class="border-t border-t-gold pb-6">
         <h4 class="h4 text-xl text-gray-600 font-bold font-cinzel">Get the Brochure</h4>
         <img class="img" src="{{ asset('/images/download-the-brochure.webp') }}" alt="download">
         <form class="form_brochure_form" action="{{ route('download.brochure') }}" method="post">
@@ -74,6 +74,21 @@
                     data-action="request"
                     class="g-recaptcha w-full bg-gold text-white p-1 rounded-md hover:bg-white hover:ring-gold hover:ring-2 hover:text-gold uppercase">Get the Brochure</button>
         </form>
+    </div>
+
+    <div id="socials" class="border-t border-t-gold">
+        <h4 class="h4 text-xl text-gray-600 font-bold font-cinzel">Follow Us</h4>
+        <div id="social_icons" class="flex justify-between gap-4 text-gray-600">
+            <a href="https://www.instagram.com/33croisette/" class="hover:text-gold" target="_blank">
+                <x-fab-instagram class="w-6"/>
+            </a>
+            <a href="https://fr.pinterest.com/33croisette/" class="hover:text-gold" target="_blank">
+                <x-fab-pinterest class="w-6"/>
+            </a>
+            <a href="https://www.linkedin.com/company/michael-zingraf-immobilier" class="hover:text-gold" target="_blank">
+                <x-fab-linkedin class="w-6"/>
+            </a>
+        </div>
     </div>
 </div>
 <!-- end Menu Slide -->

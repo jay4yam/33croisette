@@ -9,8 +9,8 @@
         <header class="relative h-svh md:h-[calc(100vh-40px)] overflow-hidden flex items-center justify-center flex-col gap-12 ">
 
             <div class="absolute top-6 md:top-14 w-full z-30 flex gap-4 items-center justify-center">
-                <img id="logo33" class="w-32 md:w-40" src="{{ asset('images/logo-33-croisette.webp') }}" alt="logo 33 croisette">
-                <img id="logoMZ" class="w-32 md:w-40" src="{{ asset('images/logo-MZRE.webp') }}" alt="logo 33">
+                <img id="logo33" class="w-24 md:w-40" src="{{ asset('images/logo-33-croisette.webp') }}" alt="logo 33 croisette">
+                <img id="logoMZ" class="w-24 md:w-40" src="{{ asset('images/logo-MZRE.webp') }}" alt="logo 33">
             </div>
 
             <!-- image bg -->
@@ -121,7 +121,7 @@
         <!-- end slogan -->
 
         <!-- swiper home -->
-        <section class="relative px-2">
+        <section class="relative px-2 h-svh md:h-[calc(100vh-40px)]">
             <!-- Slider main container -->
             <div class="swiper_exterior">
                 <!-- Additional required wrapper -->
@@ -236,7 +236,7 @@
         <!-- image appartements -->
 
         <!-- living space -->
-        <section class="py-6 md:py-24">
+        <section class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The living room</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
@@ -269,7 +269,7 @@
         <!-- tv -->
 
         <!-- bedrooms -->
-        <section class="py-24">
+        <section class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The Bedrooms</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">Perfect isolation and comfort</p>
@@ -506,7 +506,7 @@
                     trigger: '#view',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=400', // end after scrolling 800px beyond the start
+                    end: '+=100', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
                     once:true,
                     snap: {
@@ -551,7 +551,7 @@
                     trigger: '#interior',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=400', // end after scrolling 800px beyond the start
+                    end: '+=200', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
                     once:true,
                     snap: {

@@ -83,6 +83,9 @@
         Tl.fromTo('#form_brochure .img', {y:50, opacity:0}, {y:0, opacity:1});
         Tl.fromTo('#form_brochure .form_brochure_form .email', {y:50, opacity:0}, {y:0, opacity:1});
         Tl.fromTo('#form_brochure .form_brochure_form button', {y:50, opacity:0}, {y:0, opacity:1});
+        Tl.fromTo('#socials', {x:50, opacity:0}, {x:0, opacity:1}, '-=0.5');
+        Tl.fromTo('#socials .h4', {x:50, opacity:0}, {x:0, opacity:1}, '-=0.5');
+        Tl.fromTo('#socials #social_icons', {y:50, opacity:0}, {y:0, opacity:1, stagger: 3});
     }
 </script>
 
