@@ -121,7 +121,7 @@
         <!-- end slogan -->
 
         <!-- swiper home -->
-        <section class="relative px-2 h-svh md:h-[calc(100vh-40px)]">
+        <section class="relative px-2 h-1/2 md:h-[calc(100vh-40px)]">
             <!-- Slider main container -->
             <div class="swiper_exterior">
                 <!-- Additional required wrapper -->
@@ -152,8 +152,6 @@
                         <img class="w-full" src="{{ asset('images/swipers/cannes-croisette-8.webp') }}" alt="bd de la croisette">
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
