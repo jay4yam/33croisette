@@ -20,7 +20,7 @@
             </div>
 
             <!--Banner Content-->
-            <div id="banner-content" class="absolute w-full md:w-1/2 px-4 text-gray-600 translate-y-1/2">
+            <div id="banner-content" class="absolute w-full md:w-1/2 px-4 text-gray-600 translate-y-1/5 md:translate-y-1/2">
 
                 <h1 class="text-4xl md:text-5xl uppercase font-black">
                     <span id="intro" class="block">The new luxury</span>
