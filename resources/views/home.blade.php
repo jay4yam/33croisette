@@ -254,7 +254,7 @@
         <section>
             <div id="interior" class="flex items-end justify-around gap-12">
                 <div class="flex flex-col items-end">
-                    <div id="text_right" class="px-6 md:pb-2 w-full md:w-1/2 text-right">
+                    <div id="text_right" class="md:pb-2 w-full md:w-1/2 text-right">
                         <span class="font-gotham text-gray-400">Tv Room</span>
                         <p class="text-4xl text-gray-600 font-bold font-cinzel">A haven of comfort</p>
                         <p class="font-gotham text-gray-400">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings, and advanced technology for an exceptional entertainment experience.</p>
