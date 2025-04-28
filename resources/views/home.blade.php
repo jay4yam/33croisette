@@ -293,7 +293,7 @@
                         <p class="text-4xl text-gray-600 font-bold font-cinzel">A space for culinary inspiration</p>
                         <p class="font-gotham text-gray-400">Each kitchen is a refined, functional space with high-end finishes, perfectly suited to a Mediterranean seaside lifestyle.</p>
                     </div>
-                    <img class="img_right w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
+                    <img class="img_right w-full h-auto" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
                 </div>
             </div>
         </section>
