@@ -179,7 +179,7 @@
                 <div class="w-full md:w-1/2">
 
                     <div>
-                        <h3 class="text-xl text-gray-600 pb-4 font-gotham font-bold">Why Choose Cannes ?</h3>
+                        <h3 class="text-xl text-gray-600 pb-4 font-gotham font-bold">Why Choosing Cannes ?</h3>
                         <h2 class="text-4xl text-gray-600 font-bold font-cinzel">A landmark in <br>
                             <span class="text-gold">French art de vivre</span>
                         </h2>
