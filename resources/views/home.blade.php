@@ -237,7 +237,7 @@
 
         <!-- living space -->
         <section class="py-6 md:py-24">
-            <div id="text_left" class="pl-6 md:pl-4 py-12 w-full md:w-1/2 text-left">
+            <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The living room</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
                 <p class="font-gotham text-gray-400">Each apartment has open, airy living spaces that open onto breathtaking views. These panoramas - whether of the infinite blue of the Mediterranean or the red rocks of the Esterel - are framed by three-metre-high ceilings, floor-to-ceiling windows and vast private terraces.</p>
@@ -270,7 +270,7 @@
 
         <!-- bedrooms -->
         <section class="py-24">
-            <div id="text_left" class="pl-4 py-12 w-full md:w-1/2 text-left">
+            <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The Bedrooms</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">Perfect isolation and comfort</p>
                 <p class="font-gotham text-gray-400">The bedrooms offer perfect insulation and comfort, as well as magnificent views thanks to floor-to-ceiling windows. They go effortlessly from a Mediterranean getaway to a peaceful sleeping space. a peaceful sleeping space.</p>
