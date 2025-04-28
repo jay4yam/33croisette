@@ -216,8 +216,8 @@
         <!-- end video -->
 
         <!-- image terrace with view -->
-        <section class="px-6 md:px-0 py-6">
-            <div id="view" class="flex items-end justify-around gap-12">
+        <section id="view" class="px-6 md:px-0 py-6">
+            <div  class="flex items-end justify-around gap-12">
                 <div id="img_left" class="hidden md:block">
                     <img class="h-[calc(100svh-40px)]" loading="lazy" src="{{ asset('images/apartments/view-1.webp') }}" alt="front of the building">
                 </div>
@@ -234,14 +234,14 @@
         <!-- image appartements -->
 
         <!-- living space -->
-        <section class="py-6">
+        <section id="living_room" class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The living room</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
                 <p class="font-gotham text-gray-400">Each apartment has open, airy living spaces that open onto breathtaking views. These panoramas - whether of the infinite blue of the Mediterranean or the red rocks of the Esterel - are framed by three-metre-high ceilings, floor-to-ceiling windows and vast private terraces.</p>
             </div>
 
-            <div id="living_room" class="flex">
+            <div class="flex">
                 <img id="living_1" class="object-cover w-full" src="{{ asset('images/apartments/living-area-2.webp') }}" alt="living area 1">
                 <img id="living_2" class="object-cover w-full" src="{{ asset('images/apartments/living-area-1.webp') }}" alt="living area 2">
             </div>
@@ -249,8 +249,8 @@
         <!-- end living space -->
 
         <!-- tv -->
-        <section>
-            <div id="interior" class="flex items-end justify-around gap-12">
+        <section id="interior" class="py-6">
+            <div  class="flex items-end justify-around gap-12">
                 <div class="flex flex-col items-end">
                     <div id="text_right" class="md:pb-2 w-full md:w-1/2 text-right">
                         <span class="font-gotham text-gray-400">Tv Room</span>
@@ -267,14 +267,14 @@
         <!-- tv -->
 
         <!-- bedrooms -->
-        <section class="py-6">
+        <section id="bedrooms" class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The Bedrooms</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">Perfect isolation and comfort</p>
                 <p class="font-gotham text-gray-400">The bedrooms offer perfect insulation and comfort, as well as magnificent views thanks to floor-to-ceiling windows. They go effortlessly from a Mediterranean getaway to a peaceful sleeping space. a peaceful sleeping space.</p>
             </div>
 
-            <div id="bedrooms" class="w-full flex overflow-hidden">
+            <div class="w-full flex overflow-hidden">
                 <img id="bedroom_1" class="object-cover w-full" src="{{ asset('images/apartments/bedroom-1.webp') }}" alt="bedroom 1">
                 <img id="bedroom_2" class="object-cover w-full" src="{{ asset('images/apartments/bedroom-2.webp') }}" alt="bedroom 2">
             </div>
@@ -282,8 +282,8 @@
         <!-- end bedrooms -->
 
         <!-- kitchen -->
-        <section class="pb-24">
-            <div id="kitchen" class="flex items-end justify-around gap-12">
+        <section id="kitchen" class="pb-24">
+            <div  class="flex items-end justify-around gap-12">
                 <div class="img_left hidden md:block">
                     <img class="h-dvh" loading="lazy" src="{{ asset('images/apartments/view-3.webp') }}" alt="kitchen in the apartment">
                 </div>
