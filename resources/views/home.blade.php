@@ -503,6 +503,7 @@
             //view
             let view = gsap.timeline({
                 scrollTrigger: {
+                    normalize:true,
                     trigger: '#view',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
