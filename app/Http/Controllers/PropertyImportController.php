@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ContactsExport;
 use App\Imports\PropertiesImport;
 use App\Models\Contact;
 use App\Repository\PropertyRepository;
@@ -11,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Matrix\Exception;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PropertyImportController extends Controller
 {
@@ -80,5 +82,14 @@ class PropertyImportController extends Controller
         $contacts = Contact::paginate(30);
 
         return view('import.contact', compact('contacts'));
+    }
+
+    /**
+     * Génère le fichier excel d'export des contacts
+     * @return BinaryFileResponse
+     */
+    public function export(): BinaryFileResponse
+    {
+        return Excel::download(new ContactsExport, 'contacts.xlsx', \Maatwebsite\Excel\Excel::XLSX);
     }
 }

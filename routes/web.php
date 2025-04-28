@@ -30,6 +30,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 //page liste contact
     Route::get('/contacts', [\App\Http\Controllers\PropertyImportController::class, 'contacts'])->name('contacts.index');
+
+    Route::get('contact/export/', [\App\Http\Controllers\PropertyImportController::class, 'export'])->name('export.contacts');
+
 })->name('dashboard');
 
 require __DIR__.'/auth.php';

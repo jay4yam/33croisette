@@ -508,7 +508,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=400', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -553,7 +553,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=400', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -597,7 +597,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=400', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)

@@ -9,6 +9,14 @@
         <a href="{{ route('contacts.index') }}" class="bg-gray-600 text-white p-4 rounded-md hover:text-white hover:bg-gray-800">Contacts</a>
     </section>
 
+
+    <section class="bg-gray-50 border p-4">
+        <h2 class="font-gotham py-2">Export Contacts</h2>
+        <a href="{{ route('export.contacts') }}" class="bg-green-700 text-white p-2 rounded-md">
+            Export Excel
+        </a>
+    </section>
+
     <!-- liste contacts -->
     <section class="bg-gray-50 border p-4">
 
