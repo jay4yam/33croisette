@@ -50,7 +50,7 @@
             <div class="container mx-auto p-6 md:p-28 flex flex-col md:flex-row gap-4">
 
                 <div class="w-full md:w-1/3">
-                    <h2 class="text-lg md:text-xl text-gray-600 pb-4 font-gotham font-bold">Cannes Croisette</h2>
+                    <h2 class="text-base md:text-xl text-gray-600 pb-4 font-gotham font-bold">Cannes Croisette</h2>
                     <span class="text-2xl md:text-4xl text-gray-600 font-bold font-cinzel">A unique project on the<br> <span class="text-gold">French Riviera</span></span>
                 </div>
 
