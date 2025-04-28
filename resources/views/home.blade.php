@@ -215,7 +215,7 @@
         </section>
         <!-- end video -->
 
-        <!-- image terrace with view -->
+        <!-- view -->
         <section id="view" class="px-6 md:px-0 py-6">
             <div  class="flex items-end justify-around gap-12">
                 <div id="img_left" class="hidden md:block">
@@ -227,11 +227,11 @@
                         <p class="text-4xl text-gray-600 font-bold font-cinzel">offers an exceptional view</p>
                         <p class="font-gotham text-gray-400">The prime location of La Croisette providing an exceptional seafront living environnement with the Mediterranean as a backdrop</p>
                     </div>
-                    <img id="img_right" class="" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="view from the terrace">
+                    <img id="img_right" class="w-full h-auto" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="view from the terrace">
                 </div>
             </div>
         </section>
-        <!-- image appartements -->
+        <!-- view  -->
 
         <!-- living space -->
         <section id="living_room" class="py-6">
