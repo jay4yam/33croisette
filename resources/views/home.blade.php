@@ -285,7 +285,7 @@
         <section id="kitchen" class="pb-24">
             <div class="flex items-end justify-around gap-12">
                 <div class="img_left hidden md:block">
-                    <img class="h-[calc(100svh-40px)]" loading="lazy" src="{{ asset('images/apartments/view-3.webp') }}" alt="kitchen in the apartment">
+                    <img class="h-dvh" loading="lazy" src="{{ asset('images/apartments/view-3.webp') }}" alt="kitchen in the apartment">
                 </div>
                 <div class="flex flex-col items-start">
                     <div class="text_right px-6 md:px-0 pb-2 w-full md:w-1/2 text-left">
