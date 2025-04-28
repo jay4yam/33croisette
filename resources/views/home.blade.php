@@ -216,7 +216,7 @@
         <!-- end video -->
 
         <!-- view -->
-        <section id="view" class="px-6 md:px-0 py-6">
+        <section id="view" class="h-dvh px-6 md:px-0 py-6">
             <div  class="flex items-end justify-around gap-12">
                 <div id="img_left" class="hidden md:block">
                     <img class="h-[calc(100svh-40px)]" loading="lazy" src="{{ asset('images/apartments/view-1.webp') }}" alt="front of the building">
