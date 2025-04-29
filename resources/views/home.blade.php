@@ -282,9 +282,9 @@
         <!-- end bedrooms -->
 
         <!-- kitchen -->
-        <section id="kitchen" class="h-[calc(100dvh-40px)] pb-12">
+        <section id="kitchen" class="w-full h-[calc(100dvh-40px)]">
 
-            <div class="h-full flex">
+            <div class="h-full flex mx-auto">
 
                 <div class="img_left hidden md:block">
                     <img class="h-full" loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
