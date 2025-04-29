@@ -177,10 +177,10 @@
                 <div class="w-full md:w-1/2">
 
                     <div>
-                        <h3 class="text-xl text-gray-600 pb-4 font-gotham font-bold">Why Choosing Cannes ?</h3>
-                        <h2 class="text-4xl text-gray-600 font-bold font-cinzel">A landmark in <br>
+                        <h2 class="text-xl text-gray-600 pb-4 font-gotham font-bold">Why Choosing Cannes ?</h2>
+                        <h3 class="text-4xl text-gray-600 font-bold font-cinzel">A landmark in <br>
                             <span class="text-gold">French art de vivre</span>
-                        </h2>
+                        </h3>
                         <div class="text-justify text-gray-400 font-gotham pt-6">
                             <p>
                                 La Croisette is one of the most prestigious avenues in the world,
@@ -245,8 +245,6 @@
 
         </section>
         <!-- tv -->
-
-
 
         <!-- living space -->
         <section class="py-6">
@@ -340,6 +338,23 @@
 
         </section>
         <!-- end kitchen -->
+
+        <section class="container mx-auto pb-16">
+            <div class="w-1/2 mx-auto">
+                <h3 class="text-4xl text-gray-600 font-cinzel font-bold">18 apartments, 2 penthouses<br>
+                    <span class="text-gold">and luxury boutiques</span>
+                </h3>
+                <div class="text-justify text-gray-400 font-gotham pt-6">
+                    <p>
+                        33 Croisette offers a premium package with its two sumptuous
+                        penthouses and eighteen exceptional apartments offering
+                        breathtaking views over the Bay of Cannes, the lush palm trees of
+                        the Croisette and the surrounding gardens.
+                        Luxury boutiques on the ground floor enhance this unique living experience.
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- parralax -->
         <section id="parralax_2" class="py-24 flex flex-col items-center justify-center" style="background-image: url('{{ asset('images/apartments/balcony.webp') }}')">
