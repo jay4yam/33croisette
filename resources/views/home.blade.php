@@ -234,14 +234,14 @@
         <!-- view  -->
 
         <!-- living space -->
-        <section id="living_room" class="py-6">
+        <section class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The living room</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
                 <p class="font-gotham text-gray-400">Each apartment has open, airy living spaces that open onto breathtaking views. These panoramas - whether of the infinite blue of the Mediterranean or the red rocks of the Esterel - are framed by three-metre-high ceilings, floor-to-ceiling windows and vast private terraces.</p>
             </div>
 
-            <div class="flex">
+            <div id="living_room" class="flex">
                 <img id="living_1" class="object-cover w-full" src="{{ asset('images/apartments/living-area-2.webp') }}" alt="living area 1">
                 <img id="living_2" class="object-cover w-full" src="{{ asset('images/apartments/living-area-1.webp') }}" alt="living area 2">
             </div>
@@ -267,14 +267,14 @@
         <!-- tv -->
 
         <!-- bedrooms -->
-        <section id="bedrooms" class="py-6">
+        <section class="py-6">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The Bedrooms</span>
                 <p class="text-4xl text-gray-600 font-bold font-cinzel">Perfect isolation and comfort</p>
                 <p class="font-gotham text-gray-400">The bedrooms offer perfect insulation and comfort, as well as magnificent views thanks to floor-to-ceiling windows. They go effortlessly from a Mediterranean getaway to a peaceful sleeping space. a peaceful sleeping space.</p>
             </div>
 
-            <div class="w-full flex overflow-hidden">
+            <div id="bedrooms" class="w-full flex overflow-hidden">
                 <img id="bedroom_1" class="object-cover w-full" src="{{ asset('images/apartments/bedroom-1.webp') }}" alt="bedroom 1">
                 <img id="bedroom_2" class="object-cover w-full" src="{{ asset('images/apartments/bedroom-2.webp') }}" alt="bedroom 2">
             </div>
@@ -282,20 +282,27 @@
         <!-- end bedrooms -->
 
         <!-- kitchen -->
-        <section id="kitchen" class="pb-24">
-            <div  class="flex items-end justify-around gap-12">
+        <section id="kitchen" class="h-[calc(100dvh-40px)] pb-12">
+
+            <div class="h-full flex">
+
                 <div class="img_left hidden md:block">
-                    <img class="h-dvh" loading="lazy" src="{{ asset('images/apartments/view-3.webp') }}" alt="kitchen in the apartment">
+                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
                 </div>
-                <div class="flex flex-col items-start">
-                    <div class="text_right px-6 md:px-0 pb-2 w-full md:w-1/2 text-left">
-                        <span class="font-gotham text-gray-400">The Kitchen</span>
-                        <p class="text-4xl text-gray-600 font-bold font-cinzel">A space for culinary inspiration</p>
-                        <p class="font-gotham text-gray-400">Each kitchen is a refined, functional space with high-end finishes, perfectly suited to a Mediterranean seaside lifestyle.</p>
+
+                <div class="relative flex flex-col items-start justify-center">
+
+                    <div class="absolute z-20 text_right px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
+                        <span class="text-intro font-gotham">The Kitchen</span>
+                        <p class="text-intro text-4xl font-cinzel">A space for culinary inspiration</p>
+                        <p class="text-intro font-gotham">Each kitchen is a refined, functional space with high-end finishes, perfectly suited to a Mediterranean seaside lifestyle.</p>
                     </div>
-                    <img class="img_right w-full h-auto" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
+
+                    <img class="img_right h-full w-full h-auto" loading="lazy" src="{{ asset('images/apartments/kitchen-right.webp') }}" alt="Kitchen">
                 </div>
+
             </div>
+
         </section>
         <!-- end kitchen -->
 
@@ -507,7 +514,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=800', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:true,
+                    once:false,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -552,7 +559,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=800', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:true,
+                    once:false,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -596,7 +603,7 @@
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=400', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:true,
+                    once:false,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -608,8 +615,9 @@
 
             //kitchen mov.
             kitchen.addLabel('start')
-                .fromTo('#kitchen .text_right', { x:400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
-                .fromTo('#kitchen .img_right', { x:400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", });
+                .fromTo('#kitchen .img_left', { y:400, opacity:0 },{ y:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#kitchen .img_right', { x:400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#kitchen .text-intro', { translateX:800, opacity:0 },{ translateX:0, opacity:1, duration:3, ease: "sine.out", stagger:2, }, '+=1');
 
             let parralax_2 = gsap.timeline({
                 scrollTrigger:{
