@@ -215,23 +215,38 @@
         </section>
         <!-- end video -->
 
-        <!-- view -->
-        <section id="view" class="h-dvh px-6 md:px-0 py-6">
-            <div  class="flex items-end justify-around gap-12">
-                <div id="img_left" class="hidden md:block">
-                    <img class="h-[calc(100svh-40px)]" loading="lazy" src="{{ asset('images/apartments/view-1.webp') }}" alt="front of the building">
-                </div>
-                <div class="flex flex-col items-start">
-                    <div id="text_right" class="pb-2 w-full md:w-1/2 text-left">
-                        <span class="font-gotham text-gray-400">The Terrace</span>
-                        <p class="text-4xl text-gray-600 font-bold font-cinzel">offers an exceptional view</p>
-                        <p class="font-gotham text-gray-400">The prime location of La Croisette providing an exceptional seafront living environnement with the Mediterranean as a backdrop</p>
+        <!-- terrace -->
+        <section id="terrace" class="w-full h-[calc(100dvh-40px)]">
+
+            <!-- container -->
+            <div  class="h-full flex mx-auto items-center justify-center">
+
+                <!-- text-container -->
+                <div class="relative flex flex-col items-end justify-center">
+
+                    <!-- text -->
+                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
+                        <span class="text-intro font-gotham">The Terrace</span>
+                        <p class="text-intro text-4xl font-cinzel">offers an exceptional view</p>
+                        <p class="text-intro font-gotham">The prime location of La Croisette providing an exceptional seafront living environnement with the Mediterranean as a backdrop</p>
                     </div>
-                    <img id="img_right" class="w-full h-auto" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="view from the terrace">
+                    <!-- end text -->
+
+                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/terrace-left.webp') }}" alt="tv room">
                 </div>
+                <!-- end text-container -->
+
+                <div class="img_left hidden md:block">
+                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/terrace-right.webp') }}" alt="apartment's terrace">
+                </div>
+
             </div>
+            <!-- container -->
+
         </section>
-        <!-- view  -->
+        <!-- tv -->
+
+
 
         <!-- living space -->
         <section class="py-6">
@@ -525,11 +540,11 @@
                 .fromTo('#slogan .mask2', { x: 0, scaleX:1 },{ x:'100%', scaleX:0, duration:3, ease: "sine.out", })
                 .fromTo('#slogan .mask3', { x: 0, scaleX:1 },{ x:'100%', scaleX:0, duration:3, ease: "sine.out", });
 
-            //view
-            let view = gsap.timeline({
+            //terrace
+            let terrace = gsap.timeline({
                 scrollTrigger: {
                     normalize:true,
-                    trigger: '#view',
+                    trigger: '#terrace',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=800', // end after scrolling 400px beyond the start
@@ -545,9 +560,10 @@
             });
 
             //view mov.
-            view.addLabel('start')
-                .fromTo('#view #text_right', { x:400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
-                .fromTo('#view #img_right', { x:400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", });
+            terrace.addLabel('start')
+                .fromTo('#terrace .img_left', { y:-400, opacity:0 },{ y:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#terrace .img_right', { x:-400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#terrace .text-intro', { translateX:-800, opacity:0 },{ translateX:0, opacity:1, duration:3, ease: "sine.out", stagger:2, }, '+=1');
 
 
             let living = gsap.timeline({
