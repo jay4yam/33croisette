@@ -249,20 +249,33 @@
         <!-- end living space -->
 
         <!-- tv -->
-        <section id="interior" class="py-6">
-            <div  class="flex items-end justify-around gap-12">
-                <div class="flex flex-col items-end">
-                    <div id="text_right" class="md:pb-2 w-full md:w-1/2 text-right">
-                        <span class="font-gotham text-gray-400">Tv Room</span>
-                        <p class="text-4xl text-gray-600 font-bold font-cinzel">A haven of comfort</p>
-                        <p class="font-gotham text-gray-400">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings, and advanced technology for an exceptional entertainment experience.</p>
+        <section id="tvroom" class="w-full h-[calc(100dvh-40px)]">
+
+            <!-- container -->
+            <div  class="h-full flex mx-auto items-center justify-center">
+
+                <!-- text-container -->
+                <div class="relative flex flex-col items-end justify-center">
+
+                    <!-- text -->
+                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
+                        <span class="text-intro font-gotham">Tv Room</span>
+                        <p class="text-intro text-4xl font-cinzel">A haven of comfort</p>
+                        <p class="text-intro font-gotham">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings, and advanced technology for an exceptional entertainment experience.</p>
                     </div>
-                    <img id="img_right" class="" loading="lazy" src="{{ asset('images/apartments/tv-saloon.webp') }}" alt="tv room">
+                    <!-- end text -->
+
+                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/tv-left.webp') }}" alt="tv room">
                 </div>
-                <div id="img_left" class="hidden md:block">
-                    <img class="h-[calc(100svh-40px)]" loading="lazy" src="{{ asset('images/apartments/view-2.webp') }}" alt="front of the building">
+                <!-- end text-container -->
+
+                <div class="img_left hidden md:block">
+                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/tv-right.webp') }}" alt="front of the building">
                 </div>
+
             </div>
+            <!-- container -->
+
         </section>
         <!-- tv -->
 
@@ -284,24 +297,31 @@
         <!-- kitchen -->
         <section id="kitchen" class="w-full h-[calc(100dvh-40px)]">
 
-            <div class="h-full flex mx-auto">
+            <!-- container -->
+            <div class="h-full flex mx-auto items-center justify-center">
 
+                <!-- image left -->
                 <div class="img_left hidden md:block">
                     <img class="h-full" loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
                 </div>
 
+                <!-- text container -->
                 <div class="relative flex flex-col items-start justify-center">
 
-                    <div class="absolute z-20 text_right px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
+                    <!-- text -->
+                    <div class="absolute z-20 px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
                         <span class="text-intro font-gotham">The Kitchen</span>
                         <p class="text-intro text-4xl font-cinzel">A space for culinary inspiration</p>
                         <p class="text-intro font-gotham">Each kitchen is a refined, functional space with high-end finishes, perfectly suited to a Mediterranean seaside lifestyle.</p>
                     </div>
+                    <!-- end text -->
 
-                    <img class="img_right h-full w-full h-auto" loading="lazy" src="{{ asset('images/apartments/kitchen-right.webp') }}" alt="Kitchen">
+                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-right.webp') }}" alt="Kitchen">
                 </div>
+                <!-- end text container -->
 
             </div>
+            <!-- end container -->
 
         </section>
         <!-- end kitchen -->
@@ -552,9 +572,9 @@
 
 
             //tv room
-            let interior = gsap.timeline({
+            let tvroom = gsap.timeline({
                 scrollTrigger: {
-                    trigger: '#interior',
+                    trigger: '#tvroom',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
                     end: '+=800', // end after scrolling 800px beyond the start
@@ -570,9 +590,10 @@
             });
 
             //tv room mov.
-            interior.addLabel('start')
-                .fromTo('#interior #text_right', { x:-400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
-                .fromTo('#interior #img_right', { x:-400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", });
+            tvroom.addLabel('start')
+                .fromTo('#tvroom .img_left', { y:-400, opacity:0 },{ y:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#tvroom .img_right', { x:-400, opacity:0 },{ x:0, opacity:1, duration:3, ease: "sine.out", })
+                .fromTo('#tvroom .text-intro', { translateX:-800, opacity:0 },{ translateX:0, opacity:1, duration:3, ease: "sine.out", stagger:2, }, '+=1');
 
 
             let bedrooms = gsap.timeline({
