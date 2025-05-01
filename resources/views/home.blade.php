@@ -128,9 +128,6 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img class="w-full" src="{{ asset('images/swipers/cannes-croisette-1.webp') }}" alt="bd de la croisette">
-                    </div>
-                    <div class="swiper-slide">
                         <img class="w-full" src="{{ asset('images/swipers/cannes-croisette-2.webp') }}" alt="bd de la croisette">
                     </div>
                     <div class="swiper-slide">
