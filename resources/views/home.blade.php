@@ -336,7 +336,8 @@
         </section>
         <!-- end kitchen -->
 
-        <section class="container mx-auto pb-16">
+        <!-- text -->
+        <section class="container mx-auto py-16">
             <div class="w-1/2 mx-auto">
                 <h3 class="text-4xl text-gray-600 font-cinzel font-bold">18 apartments, 2 penthouses<br>
                     <span class="text-gold">and luxury boutiques</span>
@@ -352,6 +353,7 @@
                 </div>
             </div>
         </section>
+        <!-- end text -->
 
         <!-- parralax -->
         <section id="parralax_2" class="py-24 flex flex-col items-center justify-center" style="background-image: url('{{ asset('images/apartments/balcony.webp') }}')">
