@@ -222,7 +222,7 @@
                 <div class="relative flex flex-col items-end justify-center">
 
                     <!-- text -->
-                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
+                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-gray-600 font-bold">
                         <span class="text-intro font-gotham">The Terrace</span>
                         <p class="text-intro text-4xl font-cinzel">offers an exceptional view</p>
                         <p class="text-intro font-gotham">The prime location of La Croisette providing an exceptional seafront living environnement with the Mediterranean as a backdrop</p>
