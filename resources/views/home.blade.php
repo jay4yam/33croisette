@@ -756,6 +756,51 @@
             attribution: '© 33 Croisette - Cannes'
         }).addTo(maCarte);
 
-        let marker = L.marker([43.55057365795593, 7.022358178214604]).addTo(maCarte);
+        const customIconMajestic = L.icon({
+            iconUrl: '/images/logo-majestic-cannes.png', // chemin vers le logo
+            iconSize: [64, 64],              // taille du logo (px)
+            iconAnchor: [16, 32],            // point d’ancrage (bas-centre)
+            shadowUrl: true,
+        });
+
+        const customIconPalais = L.icon({
+            iconUrl: '/images/logo-palais-cannes.png', // chemin vers le logo
+            iconSize: [64, 64],              // taille du logo (px)
+            iconAnchor: [16, 32],            // point d’ancrage (bas-centre)
+            shadowUrl: true,
+        });
+
+        const customIcon33croisette = L.icon({
+            iconUrl: '/images/logo-mini-33.png', // chemin vers le logo
+            iconSize: [64, 64],             // taille du logo (px)
+            iconAnchor: [16, 32],            // point d’ancrage (bas-centre)
+            shadowUrl: true,
+        });
+
+        const customIconCarlton = L.icon({
+            iconUrl: '/images/logo-carlton-cannes.png', // chemin vers le logo
+            iconSize: [64, 64],            // taille du logo (px)
+            iconAnchor: [16, 32],            // point d’ancrage (bas-centre)
+            shadowUrl: true,
+        });
+
+        const customIconMartinez = L.icon({
+            iconUrl: '/images/logo-martinez-cannes.png', // chemin vers le logo
+            iconSize: [64, 64],            // taille du logo (px)
+            iconAnchor: [16, 32],            // point d’ancrage (bas-centre)
+            shadowUrl: true,
+        });
+
+        const markers = [
+            { coords: [43.55057, 7.02235], icon: customIcon33croisette },
+            { coords: [43.54977, 7.02725], icon: customIconCarlton },
+            { coords: [43.54789, 7.03069], icon: customIconMartinez },
+            { coords: [43.55105, 7.01974], icon: customIconMajestic },
+            { coords: [43.55081, 7.01816], icon: customIconPalais },
+        ];
+
+        markers.forEach(({ coords, icon }) => {
+            L.marker(coords, { icon }).addTo(maCarte);
+        });
     </script>
 @endsection
