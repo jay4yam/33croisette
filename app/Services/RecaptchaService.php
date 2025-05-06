@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Log;
 class RecaptchaService
 {
     private string $recaptchaKey;
-    private string $action = "request";
 
     public function __construct()
     {
@@ -33,7 +32,7 @@ class RecaptchaService
      * @return array
      * @throws ValidationException
      */
-    public function create_assessment(string $token): array
+    public function create_assessment(string $token, string $action): array
     {
         // Create the reCAPTCHA client.
         $client = new RecaptchaEnterpriseServiceClient([ 'credentials' => static::credentials()] );
@@ -60,7 +59,7 @@ class RecaptchaService
             }
 
             // Check if the expected action was executed.
-            if ($response->getTokenProperties()->getAction() == $this->action) {
+            if ($response->getTokenProperties()->getAction() == $action) {
                 // Get the risk score and the reason(s).
                 // For more information on interpreting the assessment, see:
                 // https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment

@@ -1,10 +1,13 @@
-<form action="{{ route('send.request') }}" method="post" class="form_request mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
+<form id="sendRequestId" action="{{ route('send.request') }}" method="post" class="form_request mx-auto w-full flex flex-col items-center gap-6 bg-white p-12 rounded-xl drop-shadow-lg">
     @if(! session('form_success'))
         @csrf
         @method('post')
         <div class="text-gray-400 w-full">
             <input type="hidden" name="source" value="{{ $source }}">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
+            <input type="hidden" name="recaptcha_token" id="recaptcha-token-request">
+            <input type="hidden" name="action" value="send_request">
+
             <label for="name"></label>
             <input class="w-full p-4 focus:ring-4 ring-gold @error('name') ring-red-500 text-red-500 @enderror rounded-md" value="{{ old('name') }}" type="text" name="name" maxlength="255" placeholder="Your name *">
             @error('name')
@@ -36,10 +39,7 @@
             @enderror
         </div>
 
-        <button type="submit"
-                data-sitekey="{{ config('google_recaptcha.site_key') }}"
-                data-callback='onSubmitRequest'
-                data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
+        <button onclick="sendRequest(event, 'send_request')" type="submit" data-action='request' class="g-recaptcha bg-gold text-white p-4 rounded-md hover:bg-white hover:ring-gold hover:ring-4 hover:text-gold uppercase">Send your request</button>
         @error('g-recaptcha-response')<p>{{ $message }}</p>@enderror
 
         <p class="text-gray-400 text-xs text-justify">By submitting this information request form,

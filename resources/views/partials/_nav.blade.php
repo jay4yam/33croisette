@@ -58,22 +58,28 @@
     </ul>
 
     <div id="form_brochure" class="border-t border-t-gold pb-6">
+
         <h4 class="h4 text-xl text-gray-600 font-bold font-cinzel">Get the Brochure</h4>
+
         <img class="img" src="{{ asset('/images/download-the-brochure.webp') }}" alt="download">
-        <form class="form_brochure_form" action="{{ route('download.brochure') }}" method="post">
+
+        <form id="downloadBrochureId" action="{{ route('download.brochure') }}" class="form_brochure_form" method="post">
             @csrf
             @method('post')
+
             <input type="hidden" name="source" value="download_brochure">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
+            <input type="hidden" name="recaptcha_token" id="recaptcha-token-brochure">
+            <input type="hidden" name="action" value="download_brochure">
+
             <div class="py-2">
-                <input type="email" name="email" class="email w-full border-gray-200 p-1" placeholder="your email">
+                <input type="email" name="email" class="email w-full border-gray-200 p-1" placeholder="your email" required>
             </div>
-            <button type="submit"
-                    data-sitekey="6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK"
-                    data-callback="onSubmitBrochure"
-                    data-action="request"
-                    class="g-recaptcha w-full bg-gold text-white p-1 rounded-md hover:bg-white hover:ring-gold hover:ring-2 hover:text-gold uppercase">Get the Brochure</button>
+
+            <button onclick="downloadBrochure(event, 'download_brochure')" type="submit" class="g-recaptcha w-full bg-gold text-white p-1 rounded-md hover:bg-white hover:ring-gold hover:ring-2 hover:text-gold uppercase">Get the Brochure</button>
+
         </form>
+
     </div>
 
     <div id="socials" class="border-t border-t-gold">

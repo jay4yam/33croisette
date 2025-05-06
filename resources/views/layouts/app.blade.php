@@ -68,6 +68,41 @@
 
 <!-- Include JavaScript resources -->
 @vite('resources/js/app.js')
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK"></script>
+<script>
+    function sendRequest(e, action) {
+        e.preventDefault();
+
+        grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK', {
+                action: action,
+            });
+
+            // Ajoute le token dans le champ caché
+            document.getElementById('recaptcha-token-request').value = token;
+
+            // Envoie ensuite le formulaire
+            document.getElementById('sendRequestId').submit();
+        });
+    }
+
+    function downloadBrochure(e, action) {
+        e.preventDefault();
+
+        grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK', {
+                action: action,
+            });
+
+            // Ajoute le token dans le champ caché
+            document.getElementById('recaptcha-token-brochure').value = token;
+
+            // Envoie ensuite le formulaire
+            document.getElementById('downloadBrochureId').submit();
+        });
+    }
+</script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
