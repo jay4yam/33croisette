@@ -234,7 +234,7 @@
                 <!-- end text-container -->
 
                 <div class="img_left hidden md:block">
-                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/terrace-right.webp') }}" alt="apartment's terrace">
+                    <img loading="lazy" src="{{ asset('images/apartments/terrace-right.webp') }}" alt="apartment's terrace">
                 </div>
 
             </div>
@@ -280,7 +280,7 @@
                 <!-- end text-container -->
 
                 <div class="img_left hidden md:block">
-                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/tv-right.webp') }}" alt="front of the building">
+                    <img loading="lazy" src="{{ asset('images/apartments/tv-right.webp') }}" alt="front of the building">
                 </div>
 
             </div>
@@ -312,7 +312,7 @@
 
                 <!-- image left -->
                 <div class="img_left hidden md:block">
-                    <img class="h-full" loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
+                    <img loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
                 </div>
 
                 <!-- text container -->
