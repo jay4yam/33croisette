@@ -191,7 +191,7 @@ html{
 
 .swiper_exterior{
     width: 100%;
-    height: calc(100vh - 40px);
+    height: fit-content;
 }
 
 @media screen and (max-width: 640px) {
@@ -203,8 +203,11 @@ html{
 
 .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
     display: flex;
+    margin-top: 10px;
+    position: relative!important;
     align-items: center;
-    bottom: 20%!important;
+    bottom: 10%!important;
+    left:0!important;
 }
 
 .swiper-scrollbar-drag{
@@ -246,9 +249,17 @@ html{
 }
 
 .swiper-button-prev, .swiper-button-next{
+    position: relative!important;
     background-color: rgba(255,255,255, 0.8)!important;
-    padding: 30px!important;
     color: #B6967B!important;
+    width: 20px!important;
+    height: 20px!important;
+    padding: 0 20px!important;
+    margin-top: 0!important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 20px!important;
 }
 
 .modal {

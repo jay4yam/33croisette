@@ -94,7 +94,7 @@
         <!-- end parralax -->
 
         <!-- slogan -->
-        <section id="slogan" class="container mx-auto py-40 px-6 text-gray-600 text-4xl md:text-6xl font-bold font-cinzel">
+        <section id="slogan" class="container py-20 mx-auto px-6 text-gray-600 text-4xl md:text-6xl font-bold font-cinzel">
 
             <div class="relative py-2">
                 The most high-end
@@ -121,7 +121,7 @@
         <!-- end slogan -->
 
         <!-- swiper home -->
-        <section class="relative px-2 h-1/2 md:h-[calc(100vh-40px)]">
+        <section class="relative my-4 px-2 h-1/2 md:h-fit">
             <!-- Slider main container -->
             <div class="swiper_exterior">
                 <!-- Additional required wrapper -->
@@ -151,11 +151,14 @@
                 </div>
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="flex gap-4 m-4">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
 
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
+
             </div>
         </section>
         <!-- end swiper home -->
@@ -216,26 +219,17 @@
         <section id="terrace" class="w-full h-[calc(100dvh-40px)]">
 
             <!-- container -->
-            <div  class="h-full flex mx-auto items-center justify-center">
+            <div  class="h-full w-full flex mx-auto items-center justify-center">
 
-                <!-- text-container -->
-                <div class="relative flex flex-col items-end justify-center">
-
-                    <!-- text -->
-                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-gray-600 font-bold">
-                        <span class="text-intro font-gotham">The Terrace</span>
-                        <p class="text-intro text-4xl font-cinzel">offers an exceptional view</p>
-                        <p class="text-intro font-gotham">The prime location of La Croisette providing an exceptional seafront living environnement with the Mediterranean as a backdrop</p>
-                    </div>
-                    <!-- end text -->
-
-                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/terrace-left.webp') }}" alt="tv room">
+                <!-- text -->
+                <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-gray-600 font-bold">
+                    <span class="text-intro font-gotham">The Terrace</span>
+                    <p class="text-intro text-4xl font-cinzel">Offers an exceptional view</p>
+                    <p class="text-intro font-gotham">The prime location of La Croisette providing an exceptional seafront<br> living environnement with the Mediterranean as a backdrop.</p>
                 </div>
-                <!-- end text-container -->
+                <!-- end text -->
 
-                <div class="img_left hidden md:block">
-                    <img loading="lazy" src="{{ asset('images/apartments/terrace-right.webp') }}" alt="apartment's terrace">
-                </div>
+                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="tv room">
 
             </div>
             <!-- container -->
@@ -262,26 +256,17 @@
         <section id="tvroom" class="w-full h-[calc(100dvh-40px)]">
 
             <!-- container -->
-            <div  class="h-full flex mx-auto items-center justify-center">
+            <div  class="h-full w-full flex mx-auto items-center justify-center">
 
-                <!-- text-container -->
-                <div class="relative flex flex-col items-end justify-center">
-
-                    <!-- text -->
-                    <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
-                        <span class="text-intro font-gotham">Tv Room</span>
-                        <p class="text-intro text-4xl font-cinzel">A haven of comfort</p>
-                        <p class="text-intro font-gotham">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings, and advanced technology for an exceptional entertainment experience.</p>
-                    </div>
-                    <!-- end text -->
-
-                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/tv-left.webp') }}" alt="tv room">
+                <!-- text -->
+                <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
+                    <span class="text-intro font-gotham">Tv Room</span>
+                    <p class="text-intro text-4xl font-cinzel">A haven of comfort</p>
+                    <p class="text-intro font-gotham">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings,<br> and advanced technology for an exceptional entertainment experience.</p>
                 </div>
-                <!-- end text-container -->
+                <!-- end text -->
 
-                <div class="img_left hidden md:block">
-                    <img loading="lazy" src="{{ asset('images/apartments/tv-right.webp') }}" alt="front of the building">
-                </div>
+                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/tv-saloon-1.webp') }}" alt="tv room">
 
             </div>
             <!-- container -->
@@ -308,27 +293,17 @@
         <section id="kitchen" class="w-full h-[calc(100dvh-40px)]">
 
             <!-- container -->
-            <div class="h-full flex mx-auto items-center justify-center">
+            <div class="h-full w-full flex mx-auto items-center justify-center">
 
-                <!-- image left -->
-                <div class="img_left hidden md:block">
-                    <img loading="lazy" src="{{ asset('images/apartments/kitchen-left.webp') }}" alt="kitchen in the apartment">
+                <!-- text -->
+                <div class="absolute z-20 px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
+                    <span class="text-intro font-gotham">The Kitchen</span>
+                    <p class="text-intro text-4xl font-cinzel">A space for culinary inspiration</p>
+                    <p class="text-intro font-gotham">Each kitchen is a refined, functional space with high-end finishes,<br> perfectly suited to a Mediterranean seaside lifestyle.</p>
                 </div>
+                <!-- end text -->
 
-                <!-- text container -->
-                <div class="relative flex flex-col items-start justify-center">
-
-                    <!-- text -->
-                    <div class="absolute z-20 px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
-                        <span class="text-intro font-gotham">The Kitchen</span>
-                        <p class="text-intro text-4xl font-cinzel">A space for culinary inspiration</p>
-                        <p class="text-intro font-gotham">Each kitchen is a refined, functional space with high-end finishes, perfectly suited to a Mediterranean seaside lifestyle.</p>
-                    </div>
-                    <!-- end text -->
-
-                    <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-right.webp') }}" alt="Kitchen">
-                </div>
-                <!-- end text container -->
+                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
 
             </div>
             <!-- end container -->
@@ -357,9 +332,10 @@
 
         <!-- parralax -->
         <section id="parralax_2" class="py-24 flex flex-col items-center justify-center" style="background-image: url('{{ asset('images/apartments/balcony.webp') }}')">
-            <div id="parralax_text" class="container mx-auto text-center">
-                <h4 class="text-white text-3xl font-cinzel w-full uppercase">Become the owner of a rare address in the heart of the Croisette</h4>
-                <p class="text-white">33 Croisette offers you exceptional flats with top-of-the-range amenities and privileged views, on one of the world's most prestigious avenues.</p>
+            <div id="parralax_text" class="container mx-auto text-center text-white">
+                <h4 class="text-3xl font-cinzel w-full uppercase text-white">Become the owner of a rare address in the heart of the Croisette</h4>
+                <p>33 Croisette offers you exceptional flats with top-of-the-range amenities and privileged views, on one of the world's most prestigious avenues.</p>
+                <p>call us on +33(0)4.93.39.7777</p>
             </div>
         </section>
         <!-- end parralax -->
@@ -536,13 +512,14 @@
                 scrollTrigger: {
                     trigger: '#slogan',
                     pin: true, // pin the trigger element while active
-                    start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=600', // end after scrolling 800px beyond the start
-                    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    start: 'top center', // when the top of the trigger hits the top of the viewport
+                    end: '+=0', // end after scrolling 800px beyond the start
+                    scrub: 5, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    once:false,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
-                        duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-                        delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                        duration: { min: 2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                        delay: 5, // wait 0.2 seconds from the last scroll event before doing the snapping
                         ease: 'power1.inOut' // the ease of the snap animation ("power3" by default)
                     }
                 }
@@ -561,9 +538,10 @@
                     trigger: '#terrace',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=800', // end after scrolling 400px beyond the start
+                    end: '+=400', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
+                    toggleActions: 'play none none none',
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -607,9 +585,9 @@
                     trigger: '#tvroom',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=800', // end after scrolling 800px beyond the start
+                    end: '+=200', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -652,9 +630,9 @@
                     trigger: '#kitchen',
                     pin: true, // pin the trigger element while active
                     start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=400', // end after scrolling 400px beyond the start
+                    end: '+=200', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                    once:false,
+                    once:true,
                     snap: {
                         snapTo: 'labels', // snap to the closest label in the timeline
                         duration: { min: 1, max: 5 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -716,7 +694,7 @@
                 direction: 'horizontal',
                 loop: false,
                 spaceBetween: 10,
-                slidesPerView:2,
+                slidesPerView:3,
                 fadeEffect: {
                     crossFade: true
                 },
@@ -728,7 +706,7 @@
                     },
                     // when window width is >= 640px
                     640: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 10
                     }
                 },
