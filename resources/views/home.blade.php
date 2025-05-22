@@ -216,20 +216,20 @@
         <!-- end video -->
 
         <!-- terrace -->
-        <section id="terrace" class="w-full h-[calc(100dvh-40px)]">
+        <section id="terrace" class="w-full h-[400px] md:h-[calc(100dvh-40px)]">
 
             <!-- container -->
-            <div  class="h-full w-full flex mx-auto items-center justify-center">
+            <div  class="h-fit md:h-full w-full flex mx-auto items-center justify-center">
 
                 <!-- text -->
                 <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-gray-600 font-bold">
                     <span class="text-intro font-gotham">The Terrace</span>
-                    <p class="text-intro text-4xl font-cinzel">Offers an exceptional view</p>
+                    <p class="text-intro text-2xl md:text-4xl font-cinzel">Offers an exceptional view</p>
                     <p class="text-intro font-gotham">The prime location of La Croisette providing an exceptional seafront<br> living environnement with the Mediterranean as a backdrop.</p>
                 </div>
                 <!-- end text -->
 
-                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="tv room">
+                <img class="img_right md:h-full w-full" loading="lazy" src="{{ asset('images/apartments/terrace-1.webp') }}" alt="tv room">
 
             </div>
             <!-- container -->
@@ -238,10 +238,10 @@
         <!-- tv -->
 
         <!-- living space -->
-        <section class="py-6">
+        <section class="py-6 h-fit">
             <div id="text_left" class="pl-6 py-12 w-full md:w-1/2 text-left">
                 <span class="font-gotham text-gray-400">The living room</span>
-                <p class="text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
+                <p class="text-2xl md:text-4xl text-gray-600 font-bold font-cinzel">An abundance of space</p>
                 <p class="font-gotham text-gray-400">Each apartment has open, airy living spaces that open onto breathtaking views. These panoramas - whether of the infinite blue of the Mediterranean or the red rocks of the Esterel - are framed by three-metre-high ceilings, floor-to-ceiling windows and vast private terraces.</p>
             </div>
 
@@ -253,7 +253,7 @@
         <!-- end living space -->
 
         <!-- tv -->
-        <section id="tvroom" class="w-full h-[calc(100dvh-40px)]">
+        <section id="tvroom" class="w-full h-[400px] md:h-[calc(100dvh-40px)]">
 
             <!-- container -->
             <div  class="h-full w-full flex mx-auto items-center justify-center">
@@ -261,12 +261,12 @@
                 <!-- text -->
                 <div class="absolute z-20 text-right px-6 md:px-0 pb-2 w-full md:w-1/2 text-white font-bold">
                     <span class="text-intro font-gotham">Tv Room</span>
-                    <p class="text-intro text-4xl font-cinzel">A haven of comfort</p>
+                    <p class="text-intro text-2xl md:text-4xl font-cinzel">A haven of comfort</p>
                     <p class="text-intro font-gotham">Each apartment offers a cozy TV room, combining soft lighting, plush furnishings,<br> and advanced technology for an exceptional entertainment experience.</p>
                 </div>
                 <!-- end text -->
 
-                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/tv-saloon-1.webp') }}" alt="tv room">
+                <img class="img_right md:h-full w-full" loading="lazy" src="{{ asset('images/apartments/tv-saloon-1.webp') }}" alt="tv room">
 
             </div>
             <!-- container -->
@@ -290,7 +290,7 @@
         <!-- end bedrooms -->
 
         <!-- kitchen -->
-        <section id="kitchen" class="w-full h-[calc(100dvh-40px)]">
+        <section id="kitchen" class="w-full h-[400px] md:h-[calc(100dvh-40px)]">
 
             <!-- container -->
             <div class="h-full w-full flex mx-auto items-center justify-center">
@@ -298,12 +298,12 @@
                 <!-- text -->
                 <div class="absolute z-20 px-6 md:px-0 pb-2 w-full md:w-1/2 text-left text-white font-bold">
                     <span class="text-intro font-gotham">The Kitchen</span>
-                    <p class="text-intro text-4xl font-cinzel">A space for culinary inspiration</p>
+                    <p class="text-intro text-2xl md:text-4xl font-cinzel">A space for culinary inspiration</p>
                     <p class="text-intro font-gotham">Each kitchen is a refined, functional space with high-end finishes,<br> perfectly suited to a Mediterranean seaside lifestyle.</p>
                 </div>
                 <!-- end text -->
 
-                <img class="img_right h-full w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
+                <img class="img_right md:h-full w-full" loading="lazy" src="{{ asset('images/apartments/kitchen-1.webp') }}" alt="Kitchen">
 
             </div>
             <!-- end container -->
@@ -313,8 +313,8 @@
 
         <!-- text -->
         <section class="container mx-auto py-16">
-            <div class="w-1/2 mx-auto">
-                <h3 class="text-4xl text-gray-600 font-cinzel font-bold">18 apartments, 2 penthouses<br>
+            <div class="w-full md:w-1/2 mx-auto px-6">
+                <h3 class="text-2xl md:text-4xl text-gray-600 font-cinzel font-bold">18 apartments, 2 penthouses<br>
                     <span class="text-gold">and luxury boutiques</span>
                 </h3>
                 <div class="text-justify text-gray-400 font-gotham pt-6">
@@ -537,8 +537,8 @@
                     normalize:true,
                     trigger: '#terrace',
                     pin: true, // pin the trigger element while active
-                    start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=400', // end after scrolling 400px beyond the start
+                    start: 'top center', // when the top of the trigger hits the top of the viewport
+                    end: '+=200', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
                     once:true,
                     toggleActions: 'play none none none',
@@ -584,8 +584,8 @@
                 scrollTrigger: {
                     trigger: '#tvroom',
                     pin: true, // pin the trigger element while active
-                    start: 'top top', // when the top of the trigger hits the top of the viewport
-                    end: '+=200', // end after scrolling 800px beyond the start
+                    start: 'top center', // when the top of the trigger hits the top of the viewport
+                    end: '+=100', // end after scrolling 800px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
                     once:true,
                     snap: {
@@ -629,7 +629,7 @@
                 scrollTrigger: {
                     trigger: '#kitchen',
                     pin: true, // pin the trigger element while active
-                    start: 'top top', // when the top of the trigger hits the top of the viewport
+                    start: 'top center', // when the top of the trigger hits the top of the viewport
                     end: '+=200', // end after scrolling 400px beyond the start
                     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
                     once:true,
