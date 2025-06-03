@@ -440,14 +440,14 @@
             <!-- end title -->
 
             <!-- list appart -->
-            <div id="products" class="container mx-auto grid grid-cols-1 md:grid-cols-6 gap-4 p-6">
+            <div id="apartments" class="container mx-auto grid grid-cols-1 md:grid-cols-6 gap-4 p-6">
                 @foreach($properties as $property)
                     @if($loop->index % 3 === 0)
                         <div class="col-span-1 md:col-span-6 p-0 font-cinzel text-xl text-gold font-black">
                             {{ config('floors.'.$property->floor) }} Floor
                         </div>
                     @endif
-                    <a class="p-0 @if($property->floor == 8) col-span-1 md:col-span-3 @else col-span-1 md:col-span-2 @endif" href="{{ route('property.show', ['property' => $property, 'slug' => \Illuminate\Support\Str::slug($property->title)]) }}">
+                    <a @if($property->floor == 8) id="penthouse" @endif class="p-0 @if($property->floor == 8) col-span-1 md:col-span-3 @else col-span-1 md:col-span-2 @endif" href="{{ route('property.show', ['property' => $property, 'slug' => \Illuminate\Support\Str::slug($property->title)]) }}">
                         <div class="h-full group relative rounded-md cursor-pointer overflow-hidden">
                             <img class="object-cover w-full h-full group-hover:scale-110 transition-all duration-200 delay-150 ease-in-out" src="{{ $property->picture->url }}" alt="{{ $property->title }}">
                             <div class="invisible -bottom-12 flex flex-col group-hover:bottom-0 group-hover:visible transition-all duration-200 delay-150 ease-in-out absolute w-full bg-white/90 text-gold p-4">

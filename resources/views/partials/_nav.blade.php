@@ -51,7 +51,11 @@
         <li>
             <a href="{{ route('home') }}" class="hover:text-gold">Home</a>
         </li>
-        <li>Penthouse</li>
+        <li>
+            <a href="#apartments">Apartments</a></li>
+        <li>
+        <li>
+            <a href="#penthouse">Penthouses</a></li>
         <li>
             <a href="{{ route('digital.brochure') }}" class="hover:text-gold">Digital Brochure</a>
         </li>
