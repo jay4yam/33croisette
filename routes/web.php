@@ -33,6 +33,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('contact/export/', [\App\Http\Controllers\PropertyImportController::class, 'export'])->name('export.contacts');
 
+    Route::get('import/property/{property}/edit', [\App\Http\Controllers\PropertyController::class, 'edit'])->name('property.edit');
+    Route::post('import/property/{property}', [\App\Http\Controllers\PropertyController::class, 'update'])->name('property.update');
+    Route::post('import/image/{picture}', [\App\Http\Controllers\PropertyController::class, 'updateImage'])->name('property.update.image');
+    Route::post('import/images/{property}/bulk', [\App\Http\Controllers\PropertyController::class, 'updateBulkImage'])->name('property.update.image.bulk');
+
 })->name('dashboard');
 
 require __DIR__.'/auth.php';

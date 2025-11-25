@@ -8,7 +8,7 @@
             <div class="swiper-wrapper">
                 @foreach($property->pictures as $picture)
                     <div class="swiper-slide">
-                        <img src="{{ $picture->url }}" alt="{{ $picture->title }}">
+                        <img class="h-full" src="{{ $picture->url }}" alt="{{ $picture->title }}">
                     </div>
                 @endforeach
             </div>

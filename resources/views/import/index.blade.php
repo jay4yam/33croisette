@@ -32,6 +32,7 @@
                     <th class="text-left">Picture</th>
                     <th class="text-left">Surf.</th>
                     <th class="text-left">Price</th>
+                    <th>Plan</th>
                     <th>Option</th>
                 </tr>
             </thead>
@@ -71,6 +72,9 @@
                                 @endif
                                 <img class="h-40" src="{{ asset('storage/plan/'.$property->floorPlan->name) }}" alt="floor plan">
                             @endif
+                        </td>
+                        <td>
+                            <a href="{{ route('property.edit', [$property]) }}">edit</a>
                         </td>
                     </tr>
                 @endforeach

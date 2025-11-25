@@ -6,11 +6,19 @@
     <main id="content">
 
         <!-- header - image - slogan -->
-        <header class="relative h-svh md:h-[calc(100vh-40px)] overflow-hidden flex items-center justify-center flex-col gap-12 ">
+        <header class="relative h-svh md:h-[calc(100vh-40px)] overflow-hidden flex items-center justify-center flex-col gap-12">
 
-            <div class="absolute top-6 md:top-14 w-full z-30 flex gap-4 items-center justify-center">
+            <div class="absolute w-full z-30 flex gap-4 items-center justify-center">
+                <div class="h-svh w-full" style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/1140346680?h=5ef5b67012&amp;loop=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;" title="33 CROISETTE - CANNES"></iframe>
+                </div>
+                <!--
                 <img id="logo33" class="w-24 md:w-40" src="{{ asset('images/logo-33-croisette.webp') }}" alt="logo 33 croisette">
                 <img id="logoMZ" class="w-24 md:w-40" src="{{ asset('images/logo-MZRE.webp') }}" alt="logo 33">
+                -->
             </div>
 
             <!-- image bg -->
