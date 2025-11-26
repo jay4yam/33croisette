@@ -322,3 +322,16 @@ html{
         margin: auto;
     }
 }
+
+.video-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* ratio 16:9 basé sur la largeur */
+
+    min-width: 177.78vh; /* inverse 9/16 basé sur la hauteur */
+    min-height: 100vh;
+
+    transform: translate(-50%, -50%);
+}
