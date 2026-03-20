@@ -11,7 +11,7 @@
             <div class="absolute inset-0 z-30 overflow-hidden">
                 <iframe
                     class="video-cover"
-                    src="https://player.vimeo.com/video/1140346680?h=5ef5b67012&loop=1&badge=0&autopause=0&player_id=0&app_id=58479"
+                    src="https://player.vimeo.com/video/1175416957?h=5ef5b67012&loop=1&badge=0&autopause=0&player_id=0&app_id=58479"
                     frameborder="0"
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"

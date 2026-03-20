@@ -49,7 +49,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: 'Eurostile';
     src: url('../fonts/EurostileRegular.woff2') format('woff2'),
@@ -328,10 +327,8 @@ html{
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 56.25vw; /* ratio 16:9 basé sur la largeur */
-
-    min-width: 177.78vh; /* inverse 9/16 basé sur la hauteur */
+    height: 56.25vw;
     min-height: 100vh;
-
+    min-width: 177.77vh;
     transform: translate(-50%, -50%);
 }
