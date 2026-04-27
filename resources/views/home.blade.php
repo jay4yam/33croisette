@@ -211,7 +211,7 @@
         <!-- video -->
         <section class="h-auto md:h-[calc(100svh-40px)]">
             <div style="padding:60% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1078590332?background=1&muted=1&autoplay=1&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                <iframe src="https://player.vimeo.com/video/1186930902?background=1&muted=1&autoplay=1&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                         frameborder="0"
                         allow="autoplay; fullscreen;"
                         style="position:absolute;top:0;left:0;width:100%;height:100%;" title="33 Croisette">
