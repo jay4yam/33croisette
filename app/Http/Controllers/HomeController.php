@@ -44,25 +44,20 @@ class HomeController extends Controller
     {
         try {
 
-            $score = $this->recaptchaService->create_assessment($request->get('recaptcha_token'), $request->get('action'));
+            //1. crée le contact en bdd
+            Contact::create([
+                'source' => $request->source,
+                'ip_address' => $request->ip_address,
+                'email' => $request->email,
+            ]);
 
-            if($score['score'] > 0.7) {
+            //2. envoie le mail au client au au marketing
+            Mail::to($request->email)
+                ->bcc(['lea@michaelzingraf.com', 'team-marketing@michaelzingraf.com'])
+                ->queue(new DownloadBrochure());
 
-                //1. crée le contact en bdd
-                Contact::create([
-                    'source' => $request->source,
-                    'ip_address' => $request->ip_address,
-                    'email' => $request->email,
-                ]);
-
-                //2. envoie le mail au client au au marketing
-                Mail::to($request->email)
-                    ->bcc(['lea@michaelzingraf.com', 'team-marketing@michaelzingraf.com'])
-                    ->queue(new DownloadBrochure());
-
-                //3. retour avec message en session
-                return back()->with(['brochure_success' => true]);
-            }
+            //3. retour avec message en session
+            return back()->with(['brochure_success' => true]);
 
         } catch (\Exception $exception) {
 
@@ -82,24 +77,20 @@ class HomeController extends Controller
     {
         try{
 
-            $score = $this->recaptchaService->create_assessment($request->get('recaptcha_token'), $request->get('action'));
+            //3. crée le contact en bdd
+            Contact::create([
+                'source' => $request->source,
+                'ip_address' => $request->ip_address,
+                'email' => $request->email,
+                'name' => $request->name,
+                'phone' => $request->phone,
+            ]);
 
-            if($score['score'] > 0.7) {
-                //3. crée le contact en bdd
-                Contact::create([
-                    'source' => $request->source,
-                    'ip_address' => $request->ip_address,
-                    'email' => $request->email,
-                    'name' => $request->name,
-                    'phone' => $request->phone,
-                ]);
+            Mail::to('lea@michaelzingraf.com')
+                ->bcc('team-marketing@michaelzingraf.com')
+                ->queue(new SendRequest($request->all()));
 
-                Mail::to('lea@michaelzingraf.com')
-                    ->bcc('team-marketing@michaelzingraf.com')
-                    ->queue(new SendRequest($request->all()));
-
-                return back()->with(['form_success' => true]);
-            }
+            return back()->with(['form_success' => true]);
 
         }catch (\Exception $exception){
             Log::error($exception->getMessage());
