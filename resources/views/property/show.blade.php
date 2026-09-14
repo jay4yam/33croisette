@@ -1,279 +1,225 @@
 @extends('layouts.app', ['title' => $property->title, 'robots' => 'index,follow'])
 
 @section('content')
-    <section class="relative">
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                @foreach($property->pictures as $picture)
-                    <div class="swiper-slide">
-                        <img class="h-full" src="{{ $picture->url }}" alt="{{ $picture->title }}">
+    <main class="property-page">
+        <section class="property-hero" aria-label="{{ $property->title }}">
+            <div class="property-hero-swiper swiper">
+                <div class="swiper-wrapper">
+                    @foreach($property->pictures as $picture)
+                        <div class="swiper-slide">
+                            <img src="{{ $picture->url }}" alt="{{ $picture->title ?: $property->title }}">
+                        </div>
+                    @endforeach
+                </div>
+                <div class="property-hero-controls" aria-label="Gallery controls">
+                    <button class="property-swiper-prev" type="button" aria-label="Previous image"></button>
+                    <button class="property-swiper-next" type="button" aria-label="Next image"></button>
+                </div>
+            </div>
+
+            <div class="property-brand">
+                <a href="{{ route('home') }}" aria-label="Back to 33 Croisette homepage">
+                    <img loading="lazy" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="Michaël Zingraf Real Estate">
+                    <img loading="lazy" src="{{ asset('images/logo-33-croisette.png') }}" alt="33 Croisette">
+                </a>
+            </div>
+
+            <div class="property-hero-content">
+                <p class="property-kicker">33 Croisette Cannes</p>
+                <h1>{{ $property->title }}</h1>
+                <div class="property-hero-actions">
+                    <a href="#property-enquire" class="property-btn property-btn-primary">Request information</a>
+                    @if($property->floorPlan)
+                        <button class="property-btn property-btn-secondary" type="button" x-on:click="isModalOpen = true">View floor plan</button>
+                    @endif
+                </div>
+            </div>
+
+            <aside class="property-spec-card" aria-label="Apartment key details">
+                <div>
+                    <span>Floor</span>
+                    <strong>{{ config('floors.'.$property->floor) ?? $property->floor }}</strong>
+                </div>
+                <div>
+                    <span>Rooms</span>
+                    <strong>{{ $property->rooms }}</strong>
+                </div>
+                <div>
+                    <span>Bedrooms</span>
+                    <strong>{{ $property->bedrooms }}</strong>
+                </div>
+                <div>
+                    <span>Area</span>
+                    <strong>{{ $property->area }} <small>sqm</small></strong>
+                </div>
+                <div>
+                    <span>Price</span>
+                    <strong>On request</strong>
+                </div>
+            </aside>
+        </section>
+
+        <section class="property-intro" id="residence">
+            <div class="property-intro-inner">
+                <div class="property-copy">
+                    <p class="property-kicker">Private residence</p>
+                    <h2>An exceptional apartment on La Croisette</h2>
+                    <div class="property-description">
+                        {!! $property->description !!}
                     </div>
-                @endforeach
+                </div>
+
+                <figure class="property-image-card">
+                    <img loading="lazy" src="{{ asset('images/property/cannes-front.webp') }}" alt="Cannes seafront">
+                    <figcaption>Facing the most iconic address on the Riviera.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="property-enquire" id="property-enquire">
+            <div class="property-enquire-inner">
+                <div class="property-enquire-copy">
+                    <p class="property-kicker">Enquire</p>
+                    <h2>Arrange a private presentation</h2>
+                    <p>Receive the complete residence file, availability details and a personal introduction to this apartment.</p>
+                    @if($property->floorPlan)
+                        <button class="property-plan-link" type="button" x-on:click="isModalOpen = true">
+                            <img src="{{ asset('images/floor-plan.png') }}" alt="">
+                            <span>View the floor plan</span>
+                        </button>
+                    @endif
+                </div>
+
+                <div class="property-form-panel">
+                    @include('partials._form_request', ['source' => $property->title])
+                </div>
+            </div>
+        </section>
+
+        <section class="property-cannes">
+            <div class="property-cannes-copy">
+                <p class="property-kicker">Cannes lifestyle</p>
+                <h2>The most emblematic city on the French Riviera</h2>
+                <p>
+                    Cannes cultivates a refined art of living, from private beaches and gastronomic restaurants
+                    to the light of the bay, the Lerins islands and the international rhythm of La Croisette.
+                </p>
+            </div>
+            <figure class="property-cannes-media">
+                <img loading="lazy" src="{{ asset('images/property/port-cannes.webp') }}" alt="Cannes harbour">
+            </figure>
+        </section>
+
+        <section class="property-quote">
+            <figure>
+                <img loading="lazy" src="{{ asset('images/property/sunshine.webp') }}" alt="Sunset over Cannes">
+            </figure>
+            <blockquote>
+                <q>The light here is stronger than elsewhere, and it seems to seep into our souls and warm them.</q>
+                <cite>Albert Camus</cite>
+            </blockquote>
+        </section>
+
+        <section class="property-interiors" aria-label="Interior perspectives">
+            <div class="property-section-heading">
+                <p class="property-kicker">Interior perspectives</p>
+                <h2>A refined Mediterranean atmosphere</h2>
             </div>
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-        </div>
-        <!-- end main carousel-->
-
-        <!-- logo mzre et 33 -->
-        <div class="absolute left-0 right-0 top-4 z-50">
-            <a href="{{ route('home') }}" class="mx-auto flex justify-center gap-2">
-                <img loading="lazy" class="w-1/12" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="michael zingraf real estate">
-                <img loading="lazy" class="w-1/12" src="{{ asset('images/logo-33-croisette.png') }}" alt="michael zingraf real estate">
-            </a>
-        </div>
-        <!-- logo mzre et 33 -->
-    </section>
-
-    <!-- info produit -->
-    <section>
-
-        <div class="grid grid-cols-2 md:grid-cols-5 justify-around w-full p-12 gap-4">
-
-            <div class="flex flex-col gap-4 text-2xl text-center text-gold">
-                <p class="italic">floor</p>
-                <p class="text-2xl font-black">{{ $property->floor }}</p>
+            <div class="property-interiors-carousel interiors-carousel">
+                <div class="swiper-wrapper">
+                    @for($i = 1; $i <= 17; $i++)
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="{{ asset('images/property/interiors/app-'.$i.'.webp') }}" alt="33 Croisette interior perspective {{ $i }}">
+                        </div>
+                    @endfor
+                </div>
             </div>
+        </section>
 
-            <div class="flex flex-col gap-4 text-2xl text-center text-gold">
-                <p class="italic">rooms</p>
-                <p class="text-2xl font-black">{{ $property->rooms }}</p>
+        <section class="property-agent">
+            <div class="property-agent-inner">
+                <div class="property-agent-copy">
+                    <p class="property-kicker">Sole Agent</p>
+                    <h2>Michaël Zingraf Real Estate</h2>
+                    <p>Christie's International Real Estate exclusive affiliate for Provence-Alpes-Côte d'Azur.</p>
+                    <address>
+                        7 rue Docteur Gérard Monod<br>
+                        06400 Cannes<br>
+                        <a href="tel:+33493397777">+33 4 93 39 77 77</a><br>
+                        <a href="mailto:33croisette@michaelzingraf.com">33croisette@michaelzingraf.com</a>
+                    </address>
+                </div>
+                <figure class="property-agent-media">
+                    <img loading="lazy" src="{{ asset('images/bureau_vente.jpg') }}" alt="Michaël Zingraf Real Estate Cannes office">
+                    <figcaption>
+                        <img loading="lazy" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="Michaël Zingraf Real Estate">
+                        <img loading="lazy" src="{{ asset('images/christies-logo-or.png') }}" alt="Christie's International Real Estate">
+                    </figcaption>
+                </figure>
             </div>
+        </section>
 
-            <div class="flex flex-col gap-4 text-2xl text-center text-gold">
-                <p class="italic">bedrooms</p>
-                <p class="text-2xl font-black">{{ $property->bedrooms }}</p>
-            </div>
-
-            <div class="flex flex-col gap-4 text-2xl text-center text-gold">
-                <p class="italic">area</p>
-                <p class="text-2xl font-black">{{ $property->area }} <span class="text-xl">.sqm</span></p>
-            </div>
-
-            <div class="col-span-2 md:col-span-1 p-0 flex flex-col gap-4 text-2xl text-center text-gold">
-                <p class="italic">price</p>
-                <p class="text-2xl font-black">Price On Request *</p>
-            </div>
-
-        </div>
-
-    </section>
-    <!-- end info produit -->
-
-    <!--container text-->
-    <section class="container mx-auto flex flex-col md:flex-row gap-2 md:gap-4">
-
-        <div class="w-full md:w-3/4 p-6 md:p-2">
-            <h1 class="text-3xl text-gold">{{ $property->title }}</h1>
-            <div class="text-justify text-gray-500">
-                {!! $property->description !!}
-            </div>
-
-            <div class="group relative cursor-pointer">
-                <img class="invisible absolute top-0 left-32 w-12 border-4 border-white group-hover:top-36 group-hover:visible transition-all ease-in-out delay-300 duration-300" loading="lazy" src="{{ asset('images/logo-33-croisette.png') }}" alt="logo 33 croisette">
-                <img loading="lazy" class="py-6 w-full" src="{{ asset('images/property/cannes-front.webp') }}" alt="cannes">
-            </div>
-        </div>
-
-        <div class="flex flex-col gap-4 w-full md:w-1/4 p-6 md:p-2">
-
-            @if($property->floorPlan)
-            <div x-on:click="isModalOpen = true" class="flex gap-2 justify-center items-center bg-gold hover:bg-gold/80 text-white rounded-md p-4 drop-shadow cursor-pointer">
-                <img src="{{ asset('images/floor-plan.png') }}" alt="floor_plan">
-                <span class="font-bold">Take a look at the floor plan</span>
-            </div>
-            @endif
-
-            @include('partials._form_request', ['source' => $property->title])
-
-            <img loading="lazy" class="pt-6" src="{{ asset('images/property/chaise-bleue.webp') }}" alt="blue chair in cannes">
-        </div>
-
-    </section>
-    <!-- end container text-->
-
-    <!-- cannes infos -->
-    <section class="bg-gray-100 mx-auto">
-
-        <!-- container -->
-        <div class="container flex flex-col md:flex-row gap-8 items-center justify-end py-6 md:py-0 ">
-
-            <div class="flex flex-col gap-2 font-retro text-7xl">
-                <span class="text-right">Cannes</span>
-                <span class="font-eurostile text-lg">The most emblematic city on the French Riviera</span>
-            </div>
-
-            <div class="w-full md:w-1/5 text-gray-500 text-justify p-6">
-                Cannes is a city that cultivates a refined art of living.
-                Gastronomic restaurants abound, and local chefs draw their inspiration from the richness of the Mediterranean
-                terroir to create tasty dishes based on fresh, local produce.
-                Superb relaxation areas, such as the many private beaches and
-                the newly refurbished Palm Beach complex, complete the Cannes lifestyle experience.
-                The bay of Cannes, bordered by the Lérins islands and the Estérel massif,
-                is the ideal setting for unforgettable sea escapades. Cannes also boasts a diverse cultural offering.
-                In addition to the Cannes Film Festival, the city hosts a multitude of international
-                events throughout the year, making Cannes a dynamic city and a leading economic hub on the world stage.
-            </div>
-
-            <img loading="lazy" src="{{ asset('images/property/port-cannes.webp') }}" alt="cannes harbour">
-
-        </div>
-
-    </section>
-    <!-- end cannes infos -->
-
-    <!-- albert camus -->
-    <section class="py-6">
-
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 w-full">
-
-            <img class="w-full md:w-1/3" loading="lazy" src="{{ asset('images/property/sunshine.webp') }}" alt="sunset in cannes">
-
-            <div class="flex flex-col w-full md:w-1/2 p-6">
-                <span class="font-retro text-5xl">"The light here is stronger than elsewhere, <br>
-                    and it seems to seep into our souls and warm them."
-                </span>
-                <span class="text-right">Albert Camus</span>
-            </div>
-
-        </div>
-
-    </section>
-    <!-- end albert camus -->
-
-    <!-- carousel interiors -->
-    <section class="py-6">
-        <div class="interiors-carousel">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-1.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-2.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-3.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-4.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-5.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-6.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-7.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-8.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-9.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-10.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-11.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-12.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-13.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-14.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-15.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-16.webp') }}" alt="{{ $picture->title }}"></div>
-                <div class="swiper-slide"><img class="w-full" loading="lazy" src="{{ asset('images/property/interiors/app-17.webp') }}" alt="{{ $picture->title }}"></div>
-
-            </div>
-        </div>
-    </section>
-    <!-- carousel interiors -->
-
-    <section class="py-6">
-
-        <div class="w-1/2 flex justify-center flex-col mx-auto">
-            <h1 class="text-gold text-3xl text-center">Sole Agent</h1>
-            <img class="w-32 mx-auto" src="{{ asset('images/Logo_MZCIRE_33.png') }}" alt="logo Michaël Zingraf Real Estate">
-        </div>
-
-        <div class="mx-auto flex flex-col md:flex-row items-center justify-center w-full gap-8 my-6 bg-gray-100">
-            <img src="{{ asset('images/bureau_vente.jpg') }}" alt="bureau de vente">
-
-            <div class="w-full md:w-1/3 flex flex-col text-gray-500 gap-3 text-center md:text-left">
-                <span class="text-gold text-xl font-black">Michaël Zingraf Real Estate</span>
-                <span>7 rue Docteur Gérard Monod</span>
-                <span>06400 - Cannes</span>
-                <a href="tel:+33(0)4.93.39.77.77">+33(0)4.93.39.77.77</a>
-                <a href="mailto:33croisette@michaelzingraf.com">33croisette@michaelzingraf.com</a>
-            </div>
-
-        </div>
-
-        <img class="mx-auto w-48" src="{{ asset('images/christies-logo-or.png') }}" alt="Christie's International Real Estate">
-
-    </section>
-
-
-    <!-- overlay plan -->
-    <div class="overlay" x-show="isModalOpen"></div>
-
-    <!-- modal plan -->
-    <div class="modal" role="dialog" tabindex="-1" x-show="isModalOpen" x-on:click.away="isModalOpen = false" x-cloak x-transition>
-        <div class="model-inner">
-            <div class="modal-header text-center w-full">
-                <h3 class="uppercase text-center">Floor Plan</h3>
-                <button aria-label="Close" x-on:click="isModalOpen=false">✖ close</button>
-            </div>
-            <div>
+        <div class="overlay property-plan-overlay" x-show="isModalOpen" x-cloak></div>
+        <div class="modal property-plan-modal" role="dialog" aria-modal="true" aria-label="Floor plan" tabindex="-1" x-show="isModalOpen" x-on:click.away="isModalOpen = false" x-cloak x-transition>
+            <div class="model-inner property-plan-inner">
+                <div class="modal-header property-plan-header">
+                    <h3>Floor plan</h3>
+                    <button aria-label="Close floor plan" type="button" x-on:click="isModalOpen=false">Close</button>
+                </div>
                 @if($property->floorPlan)
-                <img src="{{ asset('storage/plan/'. $property->floorPlan->name) }}" alt="plan">
+                    <img src="{{ asset('storage/plan/'. $property->floorPlan->name) }}" alt="{{ $property->title }} floor plan">
                 @endif
             </div>
         </div>
-    </div>
-    <!-- end modal plan -->
-
+    </main>
 @endsection
 
 @section('dedicated_js')
 <script type="module">
     window.onload = function() {
-        const swiper = new Swiper('.swiper', {
-            autoplay:{
-                delay:5000,
+        new Swiper('.property-hero-swiper', {
+            autoplay: {
+                delay: 5200,
             },
-            direction: 'horizontal',
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true,
+            },
+            speed: 1200,
             loop: true,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.property-swiper-next',
+                prevEl: '.property-swiper-prev',
+            },
+            keyboard: {
+                enabled: true,
             },
         });
 
-        const interior = new Swiper('.interiors-carousel', {
-            breakpoints:{
+        new Swiper('.property-interiors-carousel', {
+            breakpoints: {
                 320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                // when window width is >= 480px
-                480: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
+                    slidesPerView: 1.08,
+                    spaceBetween: 14,
                 },
                 768: {
-                    slidesPerView: 5,
-                    spaceBetween: 10
-                }
+                    slidesPerView: 2.35,
+                    spaceBetween: 18,
+                },
+                1180: {
+                    slidesPerView: 3.35,
+                    spaceBetween: 22,
+                },
             },
-            autoplay:{
-                delay:3000,
+            autoplay: {
+                delay: 3000,
             },
-            slidesPerView:5,
-            spaceBetween:10,
-            direction: 'horizontal',
+            speed: 900,
             loop: true,
-            keyboard:{
-                enabled:true,
-            }
+            keyboard: {
+                enabled: true,
+            },
         });
     }
 </script>
