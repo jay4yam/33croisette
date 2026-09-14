@@ -2973,7 +2973,7 @@ html{
 .property-hero-content h1 {
     margin-top: 22px;
     font-family: 'Cinzel', serif;
-    font-size: clamp(42px, 6.4vw, 92px);
+    font-size: clamp(30px, 6.4vw, 46px);
     font-weight: bold;
     line-height: 0.98;
     text-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
@@ -3100,7 +3100,7 @@ html{
 .property-spec-card strong {
     color: var(--croisette-ivory);
     font-family: 'Cinzel', serif;
-    font-size: clamp(21px, 2.3vw, 32px);
+    font-size: clamp(12px, 2.3vw, 20px);
     line-height: 1;
 }
 
