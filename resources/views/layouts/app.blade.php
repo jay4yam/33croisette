@@ -56,12 +56,77 @@
 </div>
 
 <!--Footer-->
-<footer id="landing-footer" class="clearfix">
-    <div class="container mx-auto w-full md:w-1/2 flex flex-wrap justify-between h-12 p-2">
+<footer id="landing-footer" class="footer-luxury">
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'RealEstateAgent',
+            'name' => 'Michaël Zingraf Real Estate',
+            'url' => 'https://www.michaelzingraf.com',
+            'telephone' => '+33 4 93 39 77 77',
+            'email' => '33croisette@michaelzingraf.com',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => '7 rue Docteur Gérard Monod',
+                'postalCode' => '06400',
+                'addressLocality' => 'Cannes',
+                'addressCountry' => 'FR',
+            ],
+            'sameAs' => [
+                'https://www.instagram.com/33croisette/',
+                'https://fr.pinterest.com/33croisette/',
+                'https://www.linkedin.com/company/michael-zingraf-immobilier',
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
 
-        <p class="w-full md:w-1/2 text-center">Exclusive sale by <a href="https://www.michaelzingraf.com">Michaël Zingraf Real Estate</a></p>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <img class="footer-logo-small" alt="33 Croisette" loading="lazy" src="{{ asset('images/logo-33-croisette.png') }}">
+                <p class="footer-title">33 Croisette</p>
+                <p class="footer-muted">33 boulevard de la Croisette<br>06400 Cannes</p>
+            </div>
 
-        <p class="w-full md:w-1/2 text-center">call us on <a href="tel:+33(0)4.93.39.77.77">+33(0)4.93.39.7777</a></p>
+            <div>
+                <img class="footer-logo-small" alt="Michaël Zingraf Christie's International Real Estate" loading="lazy" src="{{ asset('images/Logo_MZCIRE_33.png') }}">
+                <p class="footer-kicker">Sole Agent</p>
+                <p class="footer-title">Michaël Zingraf Real Estate</p>
+                <p class="footer-subtitle">Christie's International Real Estate</p>
+                <p class="footer-muted">Exclusive affiliate for Provence-Alpes-Côte d'Azur</p>
+                <p class="footer-muted footer-address">7 rue Docteur Gérard Monod<br>06400 Cannes</p>
+                <p><a href="tel:+33493397777">+33 4 93 39 77 77</a></p>
+                <p><a href="mailto:33croisette@michaelzingraf.com">33croisette@michaelzingraf.com</a></p>
+            </div>
+
+            <div class="footer-links-grid">
+                <nav aria-label="Footer">
+                    <p class="footer-kicker">Site</p>
+                    <ul>
+                        <li><a href="/#intro">Residence</a></li>
+                        <li><a href="/#apartments">Apartments</a></li>
+                        <li><a href="/#maps">Location</a></li>
+                    </ul>
+                </nav>
+
+                <div>
+                    <p class="footer-kicker">Follow</p>
+                    <ul>
+                        <li><a href="https://www.instagram.com/33croisette/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://fr.pinterest.com/33croisette/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+                        <li><a href="https://www.linkedin.com/company/michael-zingraf-immobilier" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© {{ now()->year }} Michaël Zingraf Real Estate. Non-contractual visuals.</p>
+            <p>
+                <a href="/legal-notice/">Legal notice</a>
+                <a href="/privacy-policy/">Privacy policy</a>
+            </p>
+        </div>
     </div>
 </footer>
 <!--End of Footer-->
