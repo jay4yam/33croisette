@@ -879,10 +879,12 @@
 
             let activeFloor = null;
             let activeResidence = null;
+            let pinnedResidence = null;
 
             const setActiveFloor = (floor) => {
                 activeFloor = activeFloor === floor ? null : floor;
                 activeResidence = null;
+                pinnedResidence = null;
                 apartmentsMap?.classList.toggle('has-active-floor', Boolean(activeFloor));
                 apartmentsSelector?.classList.toggle('has-active-floor', Boolean(activeFloor));
                 apartmentsSelector?.classList.toggle('has-active-state', Boolean(activeFloor));
@@ -906,7 +908,11 @@
                 }
             };
 
-            const setActiveResidence = (residenceId) => {
+            const setActiveResidence = (residenceId, pin = false) => {
+                if (pin) {
+                    pinnedResidence = residenceId;
+                }
+
                 activeResidence = residenceId;
                 const activeSource = document.querySelector(`.apartment-residence[data-residence="${residenceId}"]`) || document.querySelector(`.apartment-zone[data-residence="${residenceId}"]`);
                 const floor = activeSource?.dataset.floor || null;
@@ -929,6 +935,11 @@
                 renderResidencePanel(activeSource);
             };
             const clearActiveResidence = () => {
+                if (pinnedResidence) {
+                    setActiveResidence(pinnedResidence);
+                    return;
+                }
+
                 if (activeResidence) {
                     activeResidence = null;
                     apartmentZones.forEach((zone) => {
@@ -961,13 +972,11 @@
                 zone.addEventListener('focus', () => setActiveResidence(zone.dataset.residence));
                 zone.addEventListener('mouseleave', clearActiveResidence);
                 zone.addEventListener('blur', clearActiveResidence);
-                zone.addEventListener('click', () => {
-                    window.location.href = zone.dataset.url;
-                });
+                zone.addEventListener('click', () => setActiveResidence(zone.dataset.residence, true));
                 zone.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter' || event.key === ' ') {
                         event.preventDefault();
-                        window.location.href = zone.dataset.url;
+                        setActiveResidence(zone.dataset.residence, true);
                     }
                 });
             });
@@ -977,6 +986,9 @@
                 link.addEventListener('focus', () => setActiveResidence(link.dataset.residence));
                 link.addEventListener('mouseleave', clearActiveResidence);
                 link.addEventListener('blur', clearActiveResidence);
+                link.addEventListener('click', () => {
+                    pinnedResidence = link.dataset.residence;
+                });
             });
 
             //swiper js
