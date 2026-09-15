@@ -2931,8 +2931,8 @@ html{
 
 .property-hero {
     position: relative;
-    height: 100vh;
-    min-height: 680px;
+    height: clamp(540px, 56.25vw, 760px);
+    min-height: 0;
     background: var(--croisette-graphite);
     color: var(--croisette-ivory);
     isolation: isolate;
@@ -3002,7 +3002,7 @@ html{
     width: min(760px, calc(100% - 48px));
     min-height: 100%;
     margin-left: clamp(24px, 8vw, 128px);
-    padding: 150px 0 clamp(150px, 17vh, 210px);
+    padding: 140px 0 clamp(130px, 13vw, 170px);
 }
 
 .property-hero-content h1 {
@@ -3483,13 +3483,12 @@ html{
 
 @media screen and (max-width: 860px) {
     .property-hero {
-        height: 100svh;
-        min-height: 720px;
+        height: clamp(620px, 76vw, 720px);
     }
 
     .property-hero-content {
         margin: 0 24px;
-        padding-bottom: 310px;
+        padding-bottom: 300px;
     }
 
     .property-spec-card {
@@ -3540,7 +3539,7 @@ html{
 
 @media screen and (max-width: 560px) {
     .property-hero {
-        min-height: 760px;
+        height: 680px;
     }
 
     .property-brand img {
@@ -3551,7 +3550,7 @@ html{
     .property-hero-content {
         width: calc(100% - 48px);
         padding-top: 120px;
-        padding-bottom: 430px;
+        padding-bottom: 390px;
     }
 
     .property-hero-actions {
