@@ -485,6 +485,7 @@
                                     @endphp
                                     @if($zone)
                                         <g class="apartment-zone" role="button" tabindex="0" data-residence="{{ $property->id }}" data-floor="{{ $property->floor }}" data-title="{{ $property->title }}" data-rooms="{{ $property->rooms }}" data-bedrooms="{{ $property->bedrooms }}" data-area="{{ $property->area }}" data-url="{{ $propertyUrl }}" aria-pressed="false" aria-label="{{ $property->title }}, {{ config('floors.'.$property->floor) }} floor, {{ $property->area }} sqm">
+                                            <rect class="apartment-zone-hit" x="{{ $zone['x'] }}" y="{{ $zone['y'] }}" width="{{ $zone['w'] }}" height="{{ $zone['h'] }}"></rect>
                                             <rect class="apartment-zone-fill" x="{{ $zone['x'] }}" y="{{ $zone['y'] }}" width="{{ $zone['w'] }}" height="{{ $zone['h'] }}"></rect>
                                             <rect class="apartment-zone-border" x="{{ $zone['x'] + 6 }}" y="{{ $zone['y'] + 6 }}" width="{{ $zone['w'] - 12 }}" height="{{ $zone['h'] - 12 }}"></rect>
                                             <rect class="apartment-zone-label-bg" x="{{ $zone['labelX'] - 42 }}" y="{{ $zone['labelY'] - 30 }}" width="84" height="44" rx="22"></rect>

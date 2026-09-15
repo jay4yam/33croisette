@@ -2224,11 +2224,18 @@ html{
 .apartment-zone {
     cursor: pointer;
     outline: none;
+    pointer-events: all;
+}
+
+.apartment-zone-hit {
+    fill: transparent;
+    pointer-events: all;
 }
 
 .apartment-zone-fill {
     fill: var(--croisette-gold);
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.28s ease;
 }
 
@@ -2237,6 +2244,7 @@ html{
     stroke: var(--croisette-ivory);
     stroke-width: 0;
     opacity: 0.92;
+    pointer-events: none;
     transition: stroke-width 0.28s ease;
 }
 
@@ -2245,6 +2253,7 @@ html{
     stroke: var(--croisette-gold);
     stroke-width: 1.5;
     opacity: 0.96;
+    pointer-events: none;
     transform-box: fill-box;
     transform-origin: center;
     transition: fill 0.28s ease, stroke 0.28s ease, transform 0.28s ease, stroke-width 0.28s ease;
@@ -2256,6 +2265,7 @@ html{
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
+    pointer-events: none;
     transform-box: fill-box;
     transform-origin: center;
     transition: fill 0.28s ease, font-size 0.28s ease, transform 0.28s ease;
