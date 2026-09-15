@@ -21,7 +21,14 @@ class RecaptchaService
 
     protected static function credentials(): array
     {
-        $useCredentials = file_get_contents( base_path('application_default_credentials.json') );
+        $credentialsPath = base_path('application_default_credentials.json');
+
+        if (! file_exists($credentialsPath)) {
+            Log::error('reCAPTCHA Enterprise credentials file is missing.', ['path' => $credentialsPath]);
+            return [];
+        }
+
+        $useCredentials = file_get_contents($credentialsPath);
 
         return json_decode($useCredentials, true);
     }
@@ -34,8 +41,19 @@ class RecaptchaService
      */
     public function create_assessment(string $token, string $action): array
     {
+        if (! $this->recaptchaKey || ! config('google_recaptcha.project_id')) {
+            Log::error('reCAPTCHA Enterprise is not configured.');
+            return ['score' => 0, 'reason' => null];
+        }
+
+        $credentials = static::credentials();
+
+        if (empty($credentials)) {
+            return ['score' => 0, 'reason' => null];
+        }
+
         // Create the reCAPTCHA client.
-        $client = new RecaptchaEnterpriseServiceClient([ 'credentials' => static::credentials()] );
+        $client = new RecaptchaEnterpriseServiceClient(['credentials' => $credentials]);
 
         $projectName = $client->projectName( config('google_recaptcha.project_id') );
 

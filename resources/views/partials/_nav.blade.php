@@ -86,7 +86,7 @@
 
             <input type="hidden" name="source" value="download_brochure">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
-            <input type="hidden" name="recaptcha_token" id="recaptcha-token-brochure">
+            <input type="hidden" name="recaptcha_token">
             <input type="hidden" name="action" value="download_brochure">
 
             <div class="py-2">
@@ -94,6 +94,9 @@
             </div>
 
             <button onclick="downloadBrochure(event, 'download_brochure')" type="submit" class="g-recaptcha menu-submit">Get the Brochure</button>
+            @error('recaptcha_token')
+            <span class="form-error">{{ $message }}</span>
+            @enderror
 
         </form>
 

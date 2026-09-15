@@ -5,7 +5,7 @@
         <div class="form-field">
             <input type="hidden" name="source" value="{{ $source }}">
             <input type="hidden" name="ip_address" value="{{ request()->ip() }}">
-            <input type="hidden" name="recaptcha_token" id="recaptcha-token-request">
+            <input type="hidden" name="recaptcha_token">
             <input type="hidden" name="action" value="send_request">
 
             <label for="request_name">Name</label>
@@ -40,7 +40,9 @@
         </div>
 
         <button onclick="sendRequest(event, 'send_request')" type="submit" data-action='request' class="g-recaptcha form-submit">Send request</button>
-        @error('g-recaptcha-response')<p>{{ $message }}</p>@enderror
+        @error('recaptcha_token')
+        <span class="form-error">{{ $message }}</span>
+        @enderror
 
         <p class="form-privacy">By submitting this information request form,
             you consent to the collection and use of your personal

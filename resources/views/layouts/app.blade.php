@@ -133,38 +133,51 @@
 
 <!-- Include JavaScript resources -->
 @vite('resources/js/app.js')
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK"></script>
+@if(config('google_recaptcha.site_key'))
+<script src="https://www.google.com/recaptcha/enterprise.js?render={{ config('google_recaptcha.site_key') }}"></script>
+@endif
 <script>
-    function sendRequest(e, action) {
+    const recaptchaSiteKey = @json(config('google_recaptcha.site_key'));
+
+    function submitWithRecaptcha(e, action) {
         e.preventDefault();
 
+        const form = e.currentTarget.closest('form');
+        const tokenInput = form.querySelector('input[name="recaptcha_token"]');
+        const actionInput = form.querySelector('input[name="action"]');
+
+        if (! form.reportValidity()) {
+            return;
+        }
+
+        if (! tokenInput || ! actionInput) {
+            form.submit();
+            return;
+        }
+
+        if (! recaptchaSiteKey || typeof grecaptcha === 'undefined') {
+            form.submit();
+            return;
+        }
+
         grecaptcha.enterprise.ready(async () => {
-            const token = await grecaptcha.enterprise.execute('6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK', {
+            const token = await grecaptcha.enterprise.execute(recaptchaSiteKey, {
                 action: action,
             });
 
-            // Ajoute le token dans le champ caché
-            document.getElementById('recaptcha-token-request').value = token;
+            tokenInput.value = token;
+            actionInput.value = action;
 
-            // Envoie ensuite le formulaire
-            document.getElementById('sendRequestId').submit();
+            form.submit();
         });
     }
 
+    function sendRequest(e, action) {
+        submitWithRecaptcha(e, action);
+    }
+
     function downloadBrochure(e, action) {
-        e.preventDefault();
-
-        grecaptcha.enterprise.ready(async () => {
-            const token = await grecaptcha.enterprise.execute('6Lct5sIqAAAAAOAAG_IubdmbZPxD_XNV4LIPuBLK', {
-                action: action,
-            });
-
-            // Ajoute le token dans le champ caché
-            document.getElementById('recaptcha-token-brochure').value = token;
-
-            // Envoie ensuite le formulaire
-            document.getElementById('downloadBrochureId').submit();
-        });
+        submitWithRecaptcha(e, action);
     }
 </script>
 

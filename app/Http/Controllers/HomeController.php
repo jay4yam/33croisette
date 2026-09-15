@@ -8,11 +8,12 @@ use App\Mail\SendRequest;
 use App\Models\Contact;
 use App\Repository\PropertyRepository;
 use App\Services\RecaptchaService;
-use Google\ApiCore\ValidationException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -38,10 +39,17 @@ class HomeController extends Controller
     /**
      * @param Request $request
      * @return RedirectResponse
-     * @throws ValidationException
      */
     public function downloadBrochure(Request $request): RedirectResponse
     {
+        $this->validateRecaptcha($request, 'download_brochure');
+
+        $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'source' => ['nullable', 'string', 'max:255'],
+            'ip_address' => ['nullable', 'ip'],
+        ]);
+
         try {
 
             //1. crée le contact en bdd
@@ -71,10 +79,11 @@ class HomeController extends Controller
      * Gère l'envoie du formulaire de contact
      * @param RequestInformation $request
      * @return RedirectResponse
-     * @throws \Google\ApiCore\ValidationException
      */
     public function sendRequest(RequestInformation $request): RedirectResponse
     {
+        $this->validateRecaptcha($request, 'send_request');
+
         try{
 
             //3. crée le contact en bdd
@@ -97,6 +106,31 @@ class HomeController extends Controller
 
             return back()->with(['failed' => 'something went wrong']);
 
+        }
+    }
+
+    /**
+     * Bloque les soumissions dont le token reCAPTCHA Enterprise est invalide ou trop risqué.
+     *
+     */
+    private function validateRecaptcha(Request $request, string $expectedAction): void
+    {
+        Validator::make($request->all(), [
+            'recaptcha_token' => ['required', 'string'],
+            'action' => ['required', 'string', 'in:'.$expectedAction],
+        ])->validate();
+
+        $assessment = $this->recaptchaService->create_assessment(
+            $request->string('recaptcha_token')->toString(),
+            $expectedAction
+        );
+
+        if (($assessment['score'] ?? 0) < config('google_recaptcha.minimum_score', 0.5)) {
+            throw new HttpResponseException(
+                back()
+                    ->withErrors(['recaptcha_token' => 'We could not verify that you are human. Please try again.'])
+                    ->withInput($request->except('recaptcha_token'))
+            );
         }
     }
 }

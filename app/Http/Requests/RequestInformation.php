@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Oneduo\RecaptchaEnterprise\Rules\Recaptcha;
 
 class RequestInformation extends FormRequest
 {
@@ -26,7 +25,11 @@ class RequestInformation extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'phone' => 'required|string|max:255',
-            'message' => 'string|max:1000',
+            'user_message' => 'nullable|string|max:1000',
+            'source' => 'nullable|string|max:255',
+            'ip_address' => 'nullable|ip',
+            'recaptcha_token' => 'required|string',
+            'action' => 'required|string|in:send_request',
         ];
     }
 }

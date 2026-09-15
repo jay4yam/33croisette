@@ -252,7 +252,7 @@
         <section class="video-luxury">
             <div class="video-heading">
                 <span>The residence</span>
-                <h2>A cinematic glimpse of 33 Croisette</h2>
+                <h2>A cinematic glimpse of<br><span>33 Croisette</span></h2>
             </div>
 
             <div class="video-frame">
