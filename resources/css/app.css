@@ -403,10 +403,7 @@ html{
 
 .hero-shade {
     z-index: 2;
-    background:
-        radial-gradient(circle at 72% 35%, rgba(182, 150, 123, 0.18), transparent 33%),
-        linear-gradient(90deg, rgba(13, 10, 8, 0.88) 0%, rgba(13, 10, 8, 0.58) 42%, rgba(13, 10, 8, 0.18) 100%),
-        linear-gradient(180deg, rgba(13, 10, 8, 0.42) 0%, transparent 42%, rgba(13, 10, 8, 0.7) 100%);
+    display: none;
 }
 
 .hero-content {
@@ -440,7 +437,10 @@ html{
     font-weight: bold;
     line-height: 0.98;
     color: var(--croisette-ivory);
-    text-shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
+    text-shadow:
+        0 2px 10px rgba(20, 17, 15, 0.62),
+        0 18px 48px rgba(20, 17, 15, 0.54),
+        0 34px 90px rgba(20, 17, 15, 0.36);
 }
 
 .hero-lede {
@@ -569,8 +569,7 @@ html{
     }
 
     .hero-shade {
-        background:
-            linear-gradient(180deg, rgba(13, 10, 8, 0.28) 0%, rgba(13, 10, 8, 0.68) 44%, rgba(13, 10, 8, 0.9) 100%);
+        display: none;
     }
 
     .hero-content {
@@ -1129,7 +1128,7 @@ html{
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    background: linear-gradient(90deg, #14110fe0, #14110f9e 23%, #14110f38, #14110f00 40%);
+    background: linear-gradient(90deg, rgba(214, 194, 173, 0.82), rgba(214, 194, 173, 0.54) 23%, rgba(248, 243, 236, 0.18), rgba(248, 243, 236, 0) 40%);
 }
 
 .terrace-copy {
@@ -1143,7 +1142,7 @@ html{
 .terrace-kicker {
     display: block;
     margin-bottom: 22px;
-    color: var(--croisette-gold-soft);
+    color: rgba(20, 17, 15, 0.72);
     font-family: 'Gotham', sans-serif;
     font-size: 11px;
     letter-spacing: 0.32em;
@@ -1156,6 +1155,9 @@ html{
     font-size: clamp(34px, 5vw, 66px);
     font-weight: bold;
     line-height: 1.05;
+    text-shadow:
+        0 2px 12px rgba(20, 17, 15, 0.34),
+        0 18px 42px rgba(20, 17, 15, 0.24);
 }
 
 .terrace-text {
@@ -1172,6 +1174,7 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
 }
 
 @media screen and (max-width: 640px) {
@@ -1181,7 +1184,7 @@ html{
     }
 
     .terrace-stage:after {
-        background: linear-gradient(180deg, rgba(20, 17, 15, 0) 0%, rgba(20, 17, 15, 0.58) 48%, rgba(20, 17, 15, 0.86) 100%);
+        background: linear-gradient(180deg, rgba(248, 243, 236, 0) 0%, rgba(214, 194, 173, 0.42) 48%, rgba(214, 194, 173, 0.76) 100%);
     }
 
     .terrace-copy {
@@ -1258,6 +1261,7 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
     will-change: transform;
 }
 
@@ -1285,9 +1289,19 @@ html{
     position: absolute;
     inset: 0;
     z-index: 1;
+    display: none;
+    pointer-events: none;
+}
+
+.living-panel-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
     background:
-        linear-gradient(90deg, rgba(20, 17, 15, 0.78) 0%, rgba(20, 17, 15, 0.52) 42%, rgba(20, 17, 15, 0.08) 100%),
-        linear-gradient(180deg, rgba(20, 17, 15, 0) 0%, rgba(20, 17, 15, 0.38) 100%);
+        linear-gradient(90deg, rgba(214, 194, 173, 0.76) 0%, rgba(214, 194, 173, 0.46) 42%, rgba(248, 243, 236, 0.08) 100%),
+        linear-gradient(180deg, rgba(248, 243, 236, 0) 0%, rgba(20, 17, 15, 0.24) 100%);
+    opacity: 0.18;
     pointer-events: none;
 }
 
@@ -1312,7 +1326,7 @@ html{
 .living-panel-caption span {
     display: block;
     margin-bottom: 18px;
-    color: var(--croisette-gold-soft);
+    color: rgba(20, 17, 15, 0.72);
     font-family: 'Gotham', sans-serif;
     font-size: 11px;
     letter-spacing: 0.3em;
@@ -1325,7 +1339,9 @@ html{
     font-size: clamp(24px, 3.2vw, 42px);
     font-weight: bold;
     line-height: 1.12;
-    text-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+    text-shadow:
+        0 2px 12px rgba(20, 17, 15, 0.36),
+        0 18px 44px rgba(20, 17, 15, 0.26);
 }
 
 @media screen and (max-width: 768px) {
@@ -1349,10 +1365,10 @@ html{
         width: 82%;
     }
 
-    .living-panel-reveal:before {
+    .living-panel-veil {
         background:
-            linear-gradient(180deg, rgba(20, 17, 15, 0.04) 0%, rgba(20, 17, 15, 0.76) 100%),
-            linear-gradient(90deg, rgba(20, 17, 15, 0.38) 0%, rgba(20, 17, 15, 0.08) 100%);
+            linear-gradient(180deg, rgba(248, 243, 236, 0.02) 0%, rgba(214, 194, 173, 0.7) 100%),
+            linear-gradient(90deg, rgba(214, 194, 173, 0.38) 0%, rgba(248, 243, 236, 0.08) 100%);
     }
 
     .living-panel-reveal:after {
@@ -1467,6 +1483,14 @@ html{
     will-change: transform;
 }
 
+.kitchen-media img {
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
+}
+
+.tvroom-media img {
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
+}
+
 @media screen and (max-width: 768px) {
     .tvroom-inner,
     .kitchen-inner {
@@ -1528,9 +1552,9 @@ html{
     z-index: 3;
     pointer-events: none;
     background:
-        radial-gradient(circle at 70% 32%, rgba(182, 150, 123, 0.16), transparent 30%),
-        linear-gradient(90deg, rgba(20, 17, 15, 0.88) 0%, rgba(20, 17, 15, 0.62) 34%, rgba(20, 17, 15, 0.16) 64%, rgba(20, 17, 15, 0) 100%),
-        linear-gradient(180deg, rgba(20, 17, 15, 0.06) 0%, rgba(20, 17, 15, 0.2) 100%);
+        radial-gradient(circle at 70% 32%, rgba(248, 243, 236, 0.22), transparent 32%),
+        linear-gradient(90deg, rgba(214, 194, 173, 0.76) 0%, rgba(214, 194, 173, 0.48) 34%, rgba(248, 243, 236, 0.14) 64%, rgba(248, 243, 236, 0) 100%),
+        linear-gradient(180deg, rgba(248, 243, 236, 0.04) 0%, rgba(20, 17, 15, 0.24) 100%);
 }
 
 .master-image {
@@ -1545,6 +1569,7 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
     will-change: transform;
 }
 
@@ -1578,7 +1603,7 @@ html{
 .master-kicker {
     display: block;
     margin-bottom: 22px;
-    color: var(--croisette-gold-soft);
+    color: rgba(20, 17, 15, 0.72);
     font-family: 'Gotham', sans-serif;
     font-size: 11px;
     letter-spacing: 0.32em;
@@ -1592,7 +1617,10 @@ html{
     font-size: clamp(38px, 6vw, 82px);
     font-weight: bold;
     line-height: 0.98;
-    text-shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
+    text-shadow:
+        0 2px 12px rgba(20, 17, 15, 0.38),
+        0 20px 52px rgba(20, 17, 15, 0.3),
+        0 34px 90px rgba(20, 17, 15, 0.2);
 }
 
 .master-copy p {
@@ -1611,7 +1639,7 @@ html{
 
     .master-stage:after {
         background:
-            linear-gradient(180deg, rgba(20, 17, 15, 0.06) 0%, rgba(20, 17, 15, 0.22) 32%, rgba(20, 17, 15, 0.9) 100%);
+            linear-gradient(180deg, rgba(248, 243, 236, 0.04) 0%, rgba(214, 194, 173, 0.3) 32%, rgba(214, 194, 173, 0.76) 100%);
     }
 
     .master-image-reveal {
@@ -3755,7 +3783,7 @@ html{
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(20, 17, 15, 0) 42%, rgba(20, 17, 15, 0.68) 100%);
+    background: linear-gradient(180deg, rgba(248, 243, 236, 0) 42%, rgba(214, 194, 173, 0.66) 100%);
     pointer-events: none;
 }
 
@@ -3764,7 +3792,7 @@ html{
     width: 100%;
     height: clamp(420px, 54vw, 680px);
     object-fit: cover;
-    filter: saturate(0.98) contrast(1.02);
+    filter: brightness(1.18) saturate(0.98) contrast(1.18);
     will-change: transform;
 }
 
@@ -3779,7 +3807,9 @@ html{
     font-size: clamp(22px, 3vw, 38px);
     font-weight: bold;
     line-height: 1.12;
-    text-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+    text-shadow:
+        0 2px 12px rgba(20, 17, 15, 0.34),
+        0 18px 45px rgba(20, 17, 15, 0.24);
 }
 
 @media screen and (max-width: 768px) {

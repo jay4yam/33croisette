@@ -302,6 +302,7 @@
                 </figure>
                 <figure class="living-panel living-panel-reveal">
                     <img id="living_2" src="{{ asset('images/apartments/living-area-1.webp') }}" alt="Living area interior perspective">
+                    <span class="living-panel-veil" aria-hidden="true"></span>
                     <figcaption class="living-panel-caption">
                         <span>Generous proportions</span>
                         <p>Expansive salons extend toward the Mediterranean, where full-height glazing frames the sea as part of the interior experience.</p>
@@ -746,6 +747,7 @@
                 .fromTo('#living_room #living_1', { scale:1.08, xPercent:0 }, { scale:1, xPercent:-6, duration:3, ease:"none" })
                 .fromTo('#living_room .living-panel-reveal', { xPercent:100 }, { xPercent:0, duration:3, ease:"sine.out" }, 0)
                 .fromTo('#living_room #living_2', { scale:1.06 }, { scale:1, duration:3, ease:"none" }, 0)
+                .fromTo('#living_room .living-panel-veil', { opacity:0.18 }, { opacity:1, duration:2.4, ease:"sine.out" }, 0.35)
                 .fromTo('#living_room .living-panel-caption', { y:34, opacity:0 }, { y:0, opacity:1, duration:1.6, ease:"sine.out" }, 1.05);
 
 
