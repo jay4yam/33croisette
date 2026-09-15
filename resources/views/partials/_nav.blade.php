@@ -23,13 +23,7 @@
 </nav>
 
 <!-- Menu Slide -->
-<div
-    class="menu-backdrop"
-    x-cloak
-    x-show="menuOpen"
-    x-transition.opacity
-    @click="menuOpen = false"
-></div>
+<div class="menu-backdrop" x-cloak x-show="menuOpen" x-transition.opacity @click="menuOpen = false"></div>
 
 <div class="side-menu"
     x-cloak
@@ -76,7 +70,7 @@
 
     <div id="form_brochure" class="menu-panel">
 
-        <h4 class="h4 text-xl font-bold font-cinzel">Get the Brochure</h4>
+        <h4 class="h4 text-lg font-bold font-cinzel">Get the Brochure</h4>
 
         <img class="img" src="{{ asset('/images/download-the-brochure.webp') }}" alt="download">
 
