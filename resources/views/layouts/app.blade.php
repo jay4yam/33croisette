@@ -33,7 +33,9 @@
         })(window,document,'script','dataLayer','GTM-KQNR7868');</script>
     <!-- End Google Tag Manager -->
 </head>
-<body x-data="{'isModalOpen': false, 'menuOpen': false}" x-on:keydown.escape="isModalOpen=false">
+<body x-data="{'isModalOpen': false, 'menuOpen': false, 'awardRibbonVisible': false}"
+      x-init="awardRibbonVisible = window.scrollY > 200; window.addEventListener('scroll', () => { awardRibbonVisible = window.scrollY > 200 }, { passive: true })"
+      x-on:keydown.escape="isModalOpen=false">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -54,6 +56,19 @@
     @include('partials._nav')
     @yield('content')
 </div>
+
+<aside class="award-ribbon-fixed"
+       x-cloak
+       x-show="awardRibbonVisible"
+       x-transition:enter="award-ribbon-enter"
+       x-transition:enter-start="award-ribbon-enter-start"
+       x-transition:enter-end="award-ribbon-enter-end"
+       x-transition:leave="award-ribbon-leave"
+       x-transition:leave-start="award-ribbon-leave-start"
+       x-transition:leave-end="award-ribbon-leave-end"
+       aria-label="European Property Awards 2026-2027">
+    <img src="{{ asset('images/european_property_awards_ribon.png') }}" alt="European Property Awards 2026-2027">
+</aside>
 
 <!--Footer-->
 <footer id="landing-footer" class="footer-luxury">
@@ -108,6 +123,11 @@
                         <li><a href="https://www.linkedin.com/company/michael-zingraf-immobilier" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                     </ul>
                 </div>
+
+                <figure class="footer-award">
+                    <img loading="lazy" src="{{ asset('images/european_property_awards.png') }}" alt="European Property Awards">
+                    <figcaption>33 Croisette won the European Property Awards for 2026-2027.</figcaption>
+                </figure>
             </div>
         </div>
 
