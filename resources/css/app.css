@@ -2931,8 +2931,8 @@ html{
 
 .property-hero {
     position: relative;
-    height: clamp(540px, 56.25vw, 760px);
-    min-height: 0;
+    height: 100vh;
+    min-height: 680px;
     background: var(--croisette-graphite);
     color: var(--croisette-ivory);
     isolation: isolate;
@@ -3002,7 +3002,7 @@ html{
     width: min(760px, calc(100% - 48px));
     min-height: 100%;
     margin-left: clamp(24px, 8vw, 128px);
-    padding: 140px 0 clamp(130px, 13vw, 170px);
+    padding: 150px 0 clamp(150px, 17vh, 210px);
 }
 
 .property-hero-content h1 {
@@ -3380,13 +3380,15 @@ html{
 .property-interiors-carousel .swiper-slide {
     overflow: hidden;
     background: var(--croisette-graphite);
+    aspect-ratio: 16 / 10;
 }
 
 .property-interiors-carousel img {
     display: block;
     width: 100%;
-    height: clamp(360px, 42vw, 620px);
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.8s ease;
 }
 
@@ -3483,12 +3485,13 @@ html{
 
 @media screen and (max-width: 860px) {
     .property-hero {
-        height: clamp(620px, 76vw, 720px);
+        height: 100svh;
+        min-height: 720px;
     }
 
     .property-hero-content {
         margin: 0 24px;
-        padding-bottom: 300px;
+        padding-bottom: 310px;
     }
 
     .property-spec-card {
@@ -3535,11 +3538,15 @@ html{
     .property-quote {
         width: calc(100% - 32px);
     }
+
+    .property-interiors-carousel .swiper-slide {
+        aspect-ratio: 16 / 10;
+    }
 }
 
 @media screen and (max-width: 560px) {
     .property-hero {
-        height: 680px;
+        min-height: 760px;
     }
 
     .property-brand img {
@@ -3550,7 +3557,7 @@ html{
     .property-hero-content {
         width: calc(100% - 48px);
         padding-top: 120px;
-        padding-bottom: 390px;
+        padding-bottom: 430px;
     }
 
     .property-hero-actions {
@@ -3569,6 +3576,10 @@ html{
     .property-hero-controls {
         right: 24px;
         bottom: 18px;
+    }
+
+    .property-interiors-carousel .swiper-slide {
+        aspect-ratio: 16 / 11;
     }
 
     .property-image-card img,
