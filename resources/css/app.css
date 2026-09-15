@@ -1,5 +1,4 @@
 @import "font-awesome.css";
-@import "namari-color.css";
 @import "style.css";
 
 @tailwind base;
@@ -1051,7 +1050,7 @@ html{
     margin: 0 auto clamp(38px, 5vw, 64px);
 }
 
-.video-heading span {
+.video-heading p {
     color: var(--croisette-gold);
     font-family: 'Gotham', sans-serif;
     font-size: 11px;
@@ -1660,7 +1659,7 @@ html{
     margin-bottom: clamp(44px, 7vw, 86px);
 }
 
-.testimonials-heading span {
+.testimonials-heading p {
     color: var(--croisette-gold);
     font-family: 'Gotham', sans-serif;
     font-size: 11px;
@@ -1691,7 +1690,7 @@ html{
     position: relative;
     margin: 0;
     border: 1px solid rgba(182, 150, 123, 0.26);
-    background: rgba(248, 243, 236, 0.62);
+    background: white;
 }
 
 .testimonial-feature {
@@ -2840,6 +2839,7 @@ html{
 .footer-links-grid ul {
     display: flex;
     flex-direction: column;
+    text-align: left!important;
     gap: 8px;
     margin: 18px 0 0;
     padding: 0;

@@ -88,7 +88,7 @@
                 <p class="footer-muted">33 boulevard de la Croisette<br>06400 Cannes</p>
             </div>
 
-            <div>
+            <div class="space-y-1">
                 <img class="footer-logo-small" alt="Michaël Zingraf Christie's International Real Estate" loading="lazy" src="{{ asset('images/Logo_MZCIRE_33.png') }}">
                 <p class="footer-kicker">Sole Agent</p>
                 <p class="footer-title">Michaël Zingraf Real Estate</p>
@@ -100,18 +100,9 @@
             </div>
 
             <div class="footer-links-grid">
-                <nav aria-label="Footer">
-                    <p class="footer-kicker">Site</p>
-                    <ul>
-                        <li><a href="/#intro">Residence</a></li>
-                        <li><a href="/#apartments">Apartments</a></li>
-                        <li><a href="/#maps">Location</a></li>
-                    </ul>
-                </nav>
-
                 <div>
                     <p class="footer-kicker">Follow</p>
-                    <ul>
+                    <ul class="text-left">
                         <li><a href="https://www.instagram.com/33croisette/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                         <li><a href="https://fr.pinterest.com/33croisette/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
                         <li><a href="https://www.linkedin.com/company/michael-zingraf-immobilier" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

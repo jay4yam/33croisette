@@ -156,7 +156,7 @@
                 </div>
             </div>
 
-            <p class="slogan-note">18 apartments, 2 penthouses and luxury boutiques at 33 Croisette.</p>
+            <p class="slogan-note">18 apartments, 2 penthouses and luxury boutiques<br> at 33 Croisette.</p>
 
         </section>
         <!-- end slogan -->
@@ -251,8 +251,8 @@
         <!-- video -->
         <section class="video-luxury">
             <div class="video-heading">
-                <span>The residence</span>
-                <h2>A cinematic glimpse of<br><span>33 Croisette</span></h2>
+                <p>The residence</p>
+                <h2>A cinematic glimpse of<br><span class="text-gold">33 Croisette</span></h2>
             </div>
 
             <div class="video-frame">
@@ -384,7 +384,7 @@
             <div id="parralax_text" class="rare-address-inner">
                 <div class="rare-address-copy">
                     <span class="text-intro rare-address-kicker">A rare address</span>
-                    <h3 class="text-intro">18 apartments, 2 penthouses and luxury boutiques</h3>
+                    <h3 class="text-intro">18 apartments,<br> 2 penthouses and luxury boutiques</h3>
                     <p class="text-intro">
                         33 Croisette offers a premium collection of exceptional apartments and sumptuous penthouses, with privileged views over the Bay of Cannes, the palm trees of La Croisette and the surrounding gardens.
                     </p>
@@ -543,8 +543,8 @@
         <section id="testimonials" class="testimonials-luxury scrollto">
             <div class="testimonials-inner">
                 <div class="testimonials-heading">
-                    <span>Signatures</span>
-                    <h2>The trusted names behind 33 Croisette</h2>
+                    <p>Signatures</p>
+                    <h2>The trusted names behind<br><span class="text-gold">33 Croisette</span> </h2>
                 </div>
 
                 <div id="brands" class="testimonials-grid">
