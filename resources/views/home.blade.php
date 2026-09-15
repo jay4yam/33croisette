@@ -881,14 +881,17 @@
             let activeFloor = null;
             let activeResidence = null;
             let pinnedResidence = null;
+            let selectedFloor = null;
 
             const setActiveFloor = (floor) => {
-                activeFloor = activeFloor === floor ? null : floor;
+                selectedFloor = selectedFloor === floor ? null : floor;
+                activeFloor = selectedFloor;
                 activeResidence = null;
                 pinnedResidence = null;
                 apartmentsMap?.classList.toggle('has-active-floor', Boolean(activeFloor));
                 apartmentsSelector?.classList.toggle('has-active-floor', Boolean(activeFloor));
                 apartmentsSelector?.classList.toggle('has-active-state', Boolean(activeFloor));
+                apartmentsSelector?.classList.toggle('has-list-open', Boolean(activeFloor));
 
                 floorGuides.forEach((guide) => guide.classList.toggle('is-active', guide.dataset.floor === activeFloor));
                 floorGuides.forEach((guide) => guide.setAttribute('aria-pressed', guide.dataset.floor === activeFloor ? 'true' : 'false'));
@@ -918,10 +921,12 @@
                 const activeSource = document.querySelector(`.apartment-residence[data-residence="${residenceId}"]`) || document.querySelector(`.apartment-zone[data-residence="${residenceId}"]`);
                 const floor = activeSource?.dataset.floor || null;
                 activeFloor = floor;
+                selectedFloor = pin ? floor : selectedFloor;
 
                 apartmentsMap?.classList.toggle('has-active-floor', Boolean(activeFloor));
                 apartmentsSelector?.classList.add('has-active-state');
                 apartmentsSelector?.classList.toggle('has-active-floor', Boolean(activeFloor));
+                apartmentsSelector?.classList.toggle('has-list-open', Boolean(selectedFloor || pinnedResidence));
                 floorGuides.forEach((guide) => guide.classList.toggle('is-active', guide.dataset.floor === activeFloor));
                 floorGuides.forEach((guide) => guide.setAttribute('aria-pressed', guide.dataset.floor === activeFloor ? 'true' : 'false'));
                 floorVeils.forEach((veil) => veil.classList.toggle('is-muted', Boolean(activeFloor) && veil.dataset.floor !== activeFloor));
@@ -948,10 +953,31 @@
                         zone.setAttribute('aria-pressed', 'false');
                     });
                     apartmentLinks.forEach((link) => link.classList.remove('is-active'));
-                    if (activeFloor) {
-                        renderFloorPanel(activeFloor);
+                    if (selectedFloor) {
+                        activeFloor = selectedFloor;
+                        apartmentsMap?.classList.toggle('has-active-floor', true);
+                        apartmentsSelector?.classList.toggle('has-active-floor', true);
+                        apartmentsSelector?.classList.toggle('has-active-state', true);
+                        apartmentsSelector?.classList.toggle('has-list-open', true);
+                        floorGuides.forEach((guide) => guide.classList.toggle('is-active', guide.dataset.floor === activeFloor));
+                        floorGuides.forEach((guide) => guide.setAttribute('aria-pressed', guide.dataset.floor === activeFloor ? 'true' : 'false'));
+                        floorVeils.forEach((veil) => veil.classList.toggle('is-muted', veil.dataset.floor !== activeFloor));
+                        floorBlocks.forEach((block) => block.classList.toggle('is-active-floor', block.dataset.floor === activeFloor));
+                        apartmentZones.forEach((zone) => zone.classList.toggle('is-on-floor', zone.dataset.floor === activeFloor));
+                        renderFloorPanel(selectedFloor);
                     } else {
+                        activeFloor = null;
+                        apartmentsMap?.classList.remove('has-active-floor');
+                        apartmentsSelector?.classList.remove('has-active-floor');
                         apartmentsSelector?.classList.remove('has-active-state');
+                        apartmentsSelector?.classList.remove('has-list-open');
+                        floorGuides.forEach((guide) => {
+                            guide.classList.remove('is-active');
+                            guide.setAttribute('aria-pressed', 'false');
+                        });
+                        floorVeils.forEach((veil) => veil.classList.remove('is-muted'));
+                        floorBlocks.forEach((block) => block.classList.remove('is-active-floor'));
+                        apartmentZones.forEach((zone) => zone.classList.remove('is-on-floor'));
                         renderDefaultPanel();
                     }
                 }

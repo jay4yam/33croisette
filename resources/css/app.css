@@ -2396,7 +2396,7 @@ html{
     border-bottom: 1px solid rgba(182, 150, 123, 0.22);
 }
 
-.apartments-selector.has-active-floor .apartments-floor:not(.is-active-floor) {
+.apartments-selector.has-list-open .apartments-floor:not(.is-active-floor) {
     opacity: 0.34;
 }
 
@@ -2434,15 +2434,15 @@ html{
     display: none;
 }
 
-.apartments-selector.has-active-floor .apartments-floor-list {
+.apartments-selector.has-list-open .apartments-floor-list {
     display: block;
 }
 
-.apartments-selector.has-active-floor .apartments-floor {
+.apartments-selector.has-list-open .apartments-floor {
     display: none;
 }
 
-.apartments-selector.has-active-floor .apartments-floor.is-active-floor {
+.apartments-selector.has-list-open .apartments-floor.is-active-floor {
     display: block;
 }
 
