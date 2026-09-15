@@ -2420,6 +2420,22 @@ html{
     gap: 10px;
 }
 
+.apartments-floor-list {
+    display: none;
+}
+
+.apartments-selector.has-active-floor .apartments-floor-list {
+    display: block;
+}
+
+.apartments-selector.has-active-floor .apartments-floor {
+    display: none;
+}
+
+.apartments-selector.has-active-floor .apartments-floor.is-active-floor {
+    display: block;
+}
+
 .apartment-residence {
     display: grid;
     grid-template-columns: minmax(90px, 1.2fr) repeat(3, minmax(58px, 0.72fr)) minmax(108px, 1fr);
